@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libglib2.0-bin gjs zip debhelper devscripts lintian
+      - name: Lint, translations and tests
+        run: make test
+      - name: Versions agree
+        run: scripts/check-version.sh
+      - name: Build the extension, tarball and packages
+        run: make pack dist deb checksums
+      - name: Lintian
+        run: lintian --suppress-tags initial-upload-closes-no-bugs dist/*.deb
+      - uses: actions/upload-artifact@v4
+        with:
+          name: roj-${{ github.sha }}
+          path: dist/*

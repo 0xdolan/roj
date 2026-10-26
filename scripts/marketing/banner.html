@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- GitHub social preview and README hero: 1280×640 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<style>
+  :root { --w: 1280px; --h: 640px; }
+  .left { position: absolute; left: 72px; top: 92px; width: 600px; }
+  .tag { font-size: 34px; font-weight: 700; margin-top: 28px; line-height: 1.25; }
+  .langs { margin-top: 18px; font-size: 26px; color: var(--muted); display: flex; gap: 14px; align-items: baseline; }
+  .langs .rtl { color: #e6e6ea; font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+  .gnome { position: absolute; left: 72px; bottom: 54px; font-size: 18px; color: var(--muted); font-weight: 600; }
+  .gnome b { color: var(--text); }
+  .back { position: absolute; right: 70px; top: 70px; width: 330px; transform: rotate(4deg); opacity: 0.96; }
+  .front { position: absolute; right: 300px; top: 40px; width: 350px; transform: rotate(-3deg); }
+</style>
+</head>
+<body>
+<div class="rays"></div>
+<div class="left">
+  <div class="brand"><img src="../../assets/logo.svg" alt=""><h1>Roj</h1></div>
+  <p class="tag">The Kurdish calendar<br>for your GNOME desktop</p>
+  <div class="langs"><span class="rtl">ساڵنامەی کوردی</span><span>·</span><span>Salnameya Kurdî</span></div>
+  <div class="chips">
+    <span class="chip"><i></i>Sorani &amp; Kurmanji</span>
+    <span class="chip"><i style="background:var(--greg)"></i>4 calendars in every day</span>
+    <span class="chip"><i style="background:var(--pers)"></i>Events &amp; .ics</span>
+    <span class="chip"><i style="background:var(--isl)"></i>Converter &amp; CLI</span>
+  </div>
+</div>
+<div class="gnome">GNOME Shell <b>45 to 50</b> · Debian, Ubuntu, Kali and more</div>
+<img class="shot back" src="../../docs/images/popup/popup-kmr-light.png" alt="">
+<img class="shot front" src="../../docs/images/popup/popup-ckb-events.png" alt="">
+</body>
+</html>

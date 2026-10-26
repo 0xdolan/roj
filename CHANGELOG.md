@@ -1,0 +1,30 @@
+# Changelog
+
+Every change that users can notice is recorded here, newest first. The format
+follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and versions
+follow [Semantic Versioning](https://semver.org/). How to write entries and cut
+a release is described in [RELEASING.md](RELEASING.md).
+
+## [Unreleased]
+
+## [0.1.0] - 2026-10-26
+
+The first release.
+
+### Added
+
+- The Kurdish solar date in the GNOME top bar, with any strftime pattern, and a marker (dot, count or title, red on holidays) when today has events.
+- A popup with the selected day in four calendars, a month of day cards, the day's events, quick actions and a credits line. It keeps the same size on every day.
+- Day cards: the Kurdish day large, with the Gregorian (on by default), Persian and Islamic days as small numbers, in a row or in the corners.
+- Five languages for the dates and the interface: Sorani, Kurmanji, English, Persian and Arabic, with right-to-left layouts. The other calendars can follow the main date, the interface, or their own language.
+- Digits per language (Persian ۰۱۲, Sorani and Arabic ٠١٢, English and Kurmanji 012 by default), with overrides.
+- Sorani ezafe (ی) per calendar, on for the Kurdish date by default; leading zero control; month and weekday name variants; Kurdish solar or Fall of Nineveh year numbering; Islamic day adjustment.
+- Events: built-in Kurdish events, your own JSON files, and local or online .ics calendars with an offline cache and one-click national holiday calendars.
+- Fonts per script: Manrope for left-to-right text; Vazirmatn, Estedad or Sahel for right-to-left text; any installed font or a font file.
+- Preferences: General, Appearance, Formats (every token with live examples), Events, Converter, Guide and About pages; light, dark and system themes; settings export, import and reset.
+- The `roj` command-line tool, with a man page, for GJS or Node.js.
+- Packages: extensions.gnome.org bundle, `roj` and `gnome-shell-extension-roj` .deb packages, a source tarball and checksums.
+- Engine: tsroj 1.0.6.
+
+[Unreleased]: https://github.com/0xdolan/roj/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/0xdolan/roj/releases/tag/v0.1.0

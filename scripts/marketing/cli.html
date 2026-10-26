@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Command line: 1600×1000. Terminal content is real `roj` output (build/marketing/cli.js). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<script src="../../build/marketing/cli.js"></script>
+<style>
+  :root { --w: 1600px; --h: 1000px; }
+  .copy { position: absolute; left: 80px; top: 110px; width: 430px; }
+  .copy h2 { font-size: 50px; font-weight: 800; line-height: 1.08; letter-spacing: -1px; }
+  .copy p { margin-top: 22px; font-size: 20px; color: var(--muted); line-height: 1.55; }
+  .copy code { font: 700 18px ui-monospace, monospace; color: var(--sun); }
+  .win { position: absolute; left: 570px; top: 80px; width: 950px; bottom: 80px; background: #0b0b0e; border-radius: 16px;
+         border: 1px solid var(--line); box-shadow: 0 40px 90px rgba(0,0,0,.6); overflow: hidden; }
+  .title { height: 42px; display: flex; align-items: center; gap: 8px; padding: 0 16px; background: #18181d; border-bottom: 1px solid var(--line); }
+  .title i { width: 12px; height: 12px; border-radius: 99px; background: #3a3a42; }
+  .title span { margin: 0 auto; color: var(--muted); font-size: 14px; font-weight: 700; }
+  pre { padding: 22px 26px; font: 17px/1.55 "DejaVu Sans Mono", ui-monospace, monospace; color: #e7e7ea; white-space: pre; }
+  pre .cmd { color: #fff; font-weight: 700; }
+  pre .prompt { color: var(--sun); }
+  .a1 { font-weight: 700; } .a2 { opacity: .6; } .a7 { background: #f5cd0e; color: #111; }
+  .a31 { color: #ff7b72; } .a33 { color: #f5cd0e; } .a34 { color: #62a0ea; } .a32 { color: #57e389; } .a35 { color: #c061cb; }
+</style>
+</head>
+<body>
+<div class="rays" style="opacity:.5"></div>
+<div class="copy">
+  <div class="brand" style="margin-bottom:30px"><img src="../../assets/logo.svg" alt="" style="width:64px;height:64px"><h1 style="font-size:44px">roj</h1></div>
+  <h2>The same calendar in your terminal.</h2>
+  <p><code>roj</code> uses the extension’s engine and your settings: today in four calendars, month grids, conversions, patterns and events, or <code>--json</code> for scripts.</p>
+</div>
+<div class="win">
+  <div class="title"><i></i><i></i><i></i><span>Terminal</span></div>
+  <pre id="out"></pre>
+</div>
+<script>
+  document.getElementById('out').innerHTML = window.CLI.map(c =>
+    `<span class="prompt">$</span> <span class="cmd">${c.cmd}</span>\n${c.html}`).join('\n');
+</script>
+</body>
+</html>

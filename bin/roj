@@ -1,0 +1,7 @@
+#!/bin/sh
+# Run the roj CLI from a source checkout. Prefers gjs (reads your GNOME
+# extension settings), falls back to Node.js.
+DIR="$(dirname "$(readlink -f "$0")")"
+CLI="$DIR/../extension/cli/roj.js"
+if command -v gjs >/dev/null 2>&1; then exec gjs -m "$CLI" "$@"; fi
+exec node "$CLI" "$@"

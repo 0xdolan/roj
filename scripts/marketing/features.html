@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- Feature overview: 1600×1000 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<script src="../../build/marketing/data.js"></script>
+<style>
+  :root { --w: 1600px; --h: 1000px; }
+  header { position: absolute; left: 80px; top: 64px; right: 80px; display: flex; justify-content: space-between; align-items: center; }
+  header h2 { font-size: 48px; font-weight: 800; letter-spacing: -1px; }
+  header .brand img { width: 64px; height: 64px; }
+  header .brand h1 { font-size: 44px; letter-spacing: -1px; }
+  .grid { position: absolute; left: 80px; right: 80px; top: 180px; bottom: 70px;
+          display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 26px; }
+  .card { padding: 30px 32px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+  .card h3 { font-size: 26px; font-weight: 800; }
+  .card p { font-size: 17px; color: var(--muted); line-height: 1.45; }
+  .demo { margin-top: auto; }
+  .lang { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 21px; font-weight: 700; padding: 3px 0; }
+  .lang small { font: 700 13px ui-monospace, monospace; color: var(--sun); }
+  .lang.rtl { direction: rtl; }
+  .big { font-size: 29px; font-weight: 800; color: var(--sun); line-height: 1.5; white-space: nowrap; }
+  .big.l { color: var(--text); font-size: 28px; }
+  .week { display: flex; gap: 10px; direction: rtl; justify-content: center; font-family: Vazirmatn, Manrope; }
+  .week .day { width: 74px; height: 92px; gap: 8px; }
+  .week .day b { font-size: 32px; }
+  .week .day span { font-size: 14px; gap: 6px; }
+  .ev { display: flex; align-items: center; gap: 10px; font-size: 18px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+  .ev:last-child { border: 0; }
+  .ev i { width: 9px; height: 9px; border-radius: 99px; background: var(--sun); flex: none; }
+  .ev .d { color: var(--muted); font-size: 14px; min-width: 120px; }
+  .ev .h { margin-inline-start: auto; font-size: 12px; font-weight: 800; color: #ff7b72; background: rgba(224,27,36,.16); padding: 3px 10px; border-radius: 99px; }
+  .font { display: flex; justify-content: space-between; align-items: baseline; font-size: 26px; padding: 3px 0; }
+  .font small { font-family: Manrope; font-size: 14px; color: var(--muted); }
+  .pat { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .pat:last-child { border: 0; }
+  .pat code { font: 600 15px ui-monospace, monospace; color: var(--sun); white-space: nowrap; }
+  .pat span { font-size: 19px; }
+  .term { background: #0a0a0d; border-radius: 12px; padding: 14px 16px; font: 15px/1.6 ui-monospace, "DejaVu Sans Mono", monospace; border: 1px solid var(--line); }
+  .term .c { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="rays" style="opacity:.6"></div>
+<header>
+  <h2>Everything a Kurdish calendar needs</h2>
+  <div class="brand"><img src="../../assets/logo.svg" alt=""><h1>Roj</h1></div>
+</header>
+<div class="grid">
+  <section class="card">
+    <h3>Five languages</h3>
+    <p>Sorani, Kurmanji, English, Persian and Arabic, each with its own digits, and the Sorani ezafe (ی) where it belongs.</p>
+    <div class="demo" id="langs"></div>
+  </section>
+  <section class="card">
+    <h3>Four calendars in every day</h3>
+    <p>The Kurdish day stays big. Add the <span class="g">Gregorian</span>, <span class="p">Persian</span> and <span class="i">Islamic</span> days as small numbers: one, two or all three.</p>
+    <div class="demo week" id="week"></div>
+  </section>
+  <section class="card">
+    <h3>Events and holidays</h3>
+    <p>Kurdish days built in. Add your own JSON events, or any .ics calendar, such as the public holidays of a country.</p>
+    <div class="demo rtl" id="events"></div>
+  </section>
+  <section class="card">
+    <h3>A font for each script</h3>
+    <p>Latin text uses Manrope; Arabic-script text uses Vazirmatn, Estedad or Sahel, or any installed font or font file.</p>
+    <div class="demo">
+      <div class="font"><small>Vazirmatn</small><span class="rtl" style="font-family:Vazirmatn" data-ckb></span></div>
+      <div class="font"><small>Estedad</small><span class="rtl" style="font-family:Estedad" data-ckb></span></div>
+      <div class="font"><small>Sahel</small><span class="rtl" style="font-family:Sahel" data-ckb></span></div>
+      <div class="font"><small>Manrope</small><span style="font-family:Manrope;font-weight:700" data-kmr></span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h3>Your own patterns</h3>
+    <p>Every strftime token from tsroj and pyroj, with presets and a live preview for the top bar, popup and Copy.</p>
+    <div class="demo" id="patterns"></div>
+  </section>
+  <section class="card">
+    <h3>Converter, guide and CLI</h3>
+    <p>Convert any date between the four calendars, learn how it works, or get the same answers in a terminal.</p>
+    <div class="demo term" id="term"></div>
+  </section>
+</div>
+<script>
+  const R = window.ROJ;
+  document.getElementById('langs').innerHTML = R.languages.map(l =>
+    `<div class="lang${l.rtl ? ' rtl' : ''}"><small>${l.locale}</small><span>${l.text}</span></div>`).join('');
+  document.querySelectorAll('[data-ckb]').forEach(e => (e.textContent = R.today.ckbShort));
+  document.querySelectorAll('[data-kmr]').forEach(e => (e.textContent = R.today.kmrShort));
+  document.getElementById('week').innerHTML = R.week.slice(0, 5).map(d =>
+    `<div class="day${d.today ? ' today' : ''}"><b>${d.main}</b><span><em class="g">${d.g}</em><em class="p">${d.p}</em><em class="i">${d.i}</em></span></div>`).join('');
+  document.querySelectorAll('.week em').forEach(e => (e.style.fontStyle = 'normal'));
+  document.getElementById('events').innerHTML = R.events.slice(0, 4).map(e =>
+    `<div class="ev"><i></i><span class="d">${e.ckbDay}</span><span>${e.ckb}</span>${e.holiday ? '<span class="h">پشوو</span>' : ''}</div>`).join('');
+  document.getElementById('patterns').innerHTML = R.patterns.slice(0, 3).map(p =>
+    `<div class="pat"><code>${p.pattern}</code><span class="rtl">${p.ckb}</span></div>`).join('');
+  document.getElementById('term').innerHTML =
+    `<div><span class="sun">$</span> roj convert 2026-10-25 --to kurdish</div><div>${R.today.iso.kurdish}</div>` +
+    `<div><span class="sun">$</span> roj format "%d %B %Y" -l kmr</div><div>${R.today.kmrShort}</div>`;
+</script>
+</body>
+</html>

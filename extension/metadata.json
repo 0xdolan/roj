@@ -1,0 +1,17 @@
+{
+  "uuid": "roj@0xdolan.github.io",
+  "name": "Roj Kurdish Calendar",
+  "description": "Kurdish solar calendar in the top bar, in Sorani (ckb) and Kurmanji (kmr).\n\n• Kurdish day numbers with optional Gregorian, Persian and Islamic numbers in every day card\n• Fully configurable strftime patterns for the panel and the popup\n• Sorani ezafe (ی), Eastern Arabic digits, month and weekday name variants\n• Kurdish events, plus your own JSON files and .ics calendars (local or online)\n• Separate fonts for Latin and Arabic-script text: Manrope, Vazirmatn, Estedad, Sahel, any installed font or a font file\n• Built-in date converter, guide, light/dark/system themes and settings backup\n\nPowered by tsroj.",
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+  ],
+  "url": "https://github.com/0xdolan/roj",
+  "settings-schema": "org.gnome.shell.extensions.roj",
+  "gettext-domain": "roj",
+  "version-name": "0.1.0"
+}

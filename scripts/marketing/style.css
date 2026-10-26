@@ -1,0 +1,86 @@
+/* Shared look for the marketing images rendered by scripts/marketing/render.sh. */
+@font-face { font-family: Manrope; src: url(../../extension/fonts/Manrope.ttf); font-weight: 200 800; }
+@font-face { font-family: Vazirmatn; src: url(../../extension/fonts/Vazirmatn.ttf); font-weight: 100 900; }
+@font-face { font-family: Estedad; src: url(../../extension/fonts/Estedad.ttf); font-weight: 100 900; }
+@font-face { font-family: Sahel; src: url(../../extension/fonts/Sahel.ttf); font-weight: 400; }
+@font-face { font-family: Sahel; src: url(../../extension/fonts/Sahel-Bold.ttf); font-weight: 700; }
+
+:root {
+  --sun: #f5cd0e;
+  --sun-deep: #c79a00;
+  --ink: #0b0c10;
+  --bg: #111217;
+  --panel: #1b1c22;
+  --line: rgba(255, 255, 255, 0.08);
+  --text: #f3f3f5;
+  --muted: #a3a3ad;
+  --greg: #62a0ea;
+  --pers: #57e389;
+  --isl: #c061cb;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { width: var(--w); height: var(--h); overflow: hidden; }
+
+body {
+  position: relative;
+  font-family: Manrope, Vazirmatn, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1100px 620px at 82% 118%, rgba(245, 205, 14, 0.22), transparent 62%),
+    radial-gradient(900px 500px at -10% -20%, rgba(98, 160, 234, 0.10), transparent 60%),
+    linear-gradient(160deg, #15161c 0%, #0e0f13 55%, #120f06 100%);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Sun rays rising from the bottom edge, echoing the logo. */
+.rays {
+  position: absolute;
+  inset: auto -20% -55% -20%;
+  height: 120%;
+  background: repeating-conic-gradient(from 180deg at 50% 100%,
+    rgba(245, 205, 14, 0.07) 0deg 2.2deg, transparent 2.2deg 11deg);
+  mask-image: radial-gradient(closest-side at 50% 100%, #000 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(closest-side at 50% 100%, #000 30%, transparent 100%);
+  pointer-events: none;
+}
+
+.rtl { direction: rtl; font-family: Vazirmatn, Manrope, sans-serif; }
+.muted { color: var(--muted); }
+.sun { color: var(--sun); }
+
+.brand { display: flex; align-items: center; gap: 22px; }
+.brand img { width: 96px; height: 96px; border-radius: 50%; box-shadow: 0 10px 40px rgba(245, 205, 14, 0.25); }
+.brand h1 { font-size: 76px; font-weight: 800; letter-spacing: -2px; line-height: 1; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 99px;
+  background: rgba(255, 255, 255, 0.06); border: 1px solid var(--line);
+  font-weight: 700; font-size: 18px; color: #e9e9ee;
+}
+.chip i { width: 9px; height: 9px; border-radius: 99px; background: var(--sun); display: inline-block; }
+
+.shot {
+  border-radius: 18px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.07);
+  display: block;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+}
+
+.g { color: var(--greg); } .p { color: var(--pers); } .i { color: var(--isl); }
+
+.day {
+  width: 76px; height: 78px; border-radius: 16px; background: #26262c;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+}
+.day b { font-size: 30px; font-weight: 800; line-height: 1; }
+.day span { display: flex; gap: 7px; font-size: 14px; font-weight: 800; }
+.day.today { background: var(--sun); color: #141414; }
+.day.today span * { color: #3d3300; }

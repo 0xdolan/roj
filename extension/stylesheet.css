@@ -1,0 +1,207 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later
+ * Roj popup styles. Sizes are in em so the "Text size" setting (applied as a
+ * font-size on .roj-popup) scales everything. Colours come in two palettes,
+ * .roj-light and .roj-dark, chosen by the Theme setting or the desktop.
+ */
+
+/* Panel */
+.roj-panel-box { spacing: 6px; }
+.roj-panel-label { font-weight: 600; }
+.roj-panel-icon { icon-size: 16px; }
+.roj-panel-dot { width: 7px; height: 7px; border-radius: 99px; background-color: #f5cd0e; margin: 0 1px; }
+.roj-panel-event { font-weight: 600; color: #f5cd0e; }
+.roj-panel-event.roj-panel-count {
+  font-size: 0.8em; font-weight: 800; color: #141414; background-color: #f5cd0e;
+  border-radius: 99px; padding: 0 0.45em; min-width: 0.8em; text-align: center;
+}
+.roj-panel-dot.roj-panel-holiday { background-color: #ff6b62; }
+.roj-panel-event.roj-panel-holiday { color: #ff8a80; }
+.roj-panel-event.roj-panel-count.roj-panel-holiday { color: #ffffff; background-color: #e01b24; }
+
+/* Menu surface */
+.popup-menu-boxpointer.roj-dark { -arrow-background-color: #1d1d21; -arrow-border-color: #34343a; -arrow-border-width: 1px; }
+.popup-menu-boxpointer.roj-light { -arrow-background-color: #fbfbfc; -arrow-border-color: #d9d9de; -arrow-border-width: 1px; }
+.roj-menu.roj-dark { background-color: #1d1d21; color: #f1f1f3; }
+.roj-menu.roj-light { background-color: #fbfbfc; color: #1b1b1f; }
+.roj-menu { padding: 0; }
+
+.roj-popup {
+  width: 28em;
+  padding: 0.9em 0.9em 0.6em;
+  spacing: 0.7em;
+}
+
+/* Header */
+.roj-header {
+  border-radius: 14px;
+  padding: 0.9em 1em;
+  spacing: 0.55em;
+}
+.roj-dark .roj-header { background-color: #26262b; border: 1px solid #303036; }
+.roj-light .roj-header { background-color: #ffffff; border: 1px solid #e6e6ea; }
+
+/* Fixed line heights: Arabic and Latin fonts have different metrics, and the
+ * popup must keep one size whatever day is selected. */
+.roj-header-title { font-size: 1.45em; font-weight: 700; height: 1.75em; }
+.roj-dark .roj-header-title { color: #f5cd0e; }
+.roj-light .roj-header-title { color: #1b1b1f; }
+
+.roj-header-lines { spacing: 0.3em; }
+.roj-header-line { spacing: 0.55em; height: 1.7em; }
+.roj-header-line-text { font-size: 0.95em; }
+.roj-dark .roj-header-line-text { color: #d6d6db; }
+.roj-light .roj-header-line-text { color: #3a3a42; }
+
+.roj-chip {
+  font-size: 0.72em;
+  font-weight: 700;
+  border-radius: 99px;
+  padding: 0.12em 0.7em;
+  min-width: 4.6em;
+  text-align: center;
+}
+.roj-chip-gregorian { background-color: rgba(53, 132, 228, 0.18); color: #62a0ea; }
+.roj-chip-persian { background-color: rgba(46, 194, 126, 0.18); color: #57e389; }
+.roj-chip-islamic { background-color: rgba(145, 65, 172, 0.22); color: #c061cb; }
+.roj-light .roj-chip-gregorian { color: #1a5fb4; }
+.roj-light .roj-chip-persian { color: #1f7a4f; }
+.roj-light .roj-chip-islamic { color: #613583; }
+
+/* Month navigation */
+.roj-nav { spacing: 0.2em; }
+.roj-nav-title { spacing: 0.1em; }
+.roj-month-title { font-size: 1.12em; font-weight: 700; border-radius: 8px; padding: 0.1em 0.6em; height: 1.75em; }
+.roj-dark .roj-month-title:hover { background-color: rgba(255, 255, 255, 0.07); }
+.roj-light .roj-month-title:hover { background-color: rgba(0, 0, 0, 0.05); }
+.roj-month-spans { spacing: 0.05em; }
+.roj-span { font-size: 0.74em; font-weight: 600; height: 1.7em; }
+
+.roj-icon-button {
+  border-radius: 99px;
+  padding: 0.45em;
+  min-width: 1em;
+}
+.roj-nav-year .roj-icon { icon-size: 12px; }
+.roj-icon { icon-size: 16px; }
+.roj-dark .roj-icon-button:hover { background-color: rgba(255, 255, 255, 0.08); }
+.roj-light .roj-icon-button:hover { background-color: rgba(0, 0, 0, 0.06); }
+
+/* Grid */
+.roj-weekdays { spacing: 0.25em; padding: 0 0.1em; }
+.roj-weekday { font-size: 0.74em; font-weight: 700; text-align: center; padding: 0.2em 0; }
+.roj-dark .roj-weekday { color: #9a9aa4; }
+.roj-light .roj-weekday { color: #6a6a74; }
+.roj-dark .roj-weekday-weekend { color: #ff7b72; }
+.roj-light .roj-weekday-weekend { color: #c01c28; }
+
+.roj-grid { spacing: 0.25em; }
+.roj-week { spacing: 0.25em; }
+
+.roj-day {
+  border-radius: 10px;
+  min-width: 2.95em;
+  min-height: 2.9em;
+  padding: 0.18em 0.2em;
+  /* Every card has a 2px border so selecting a day never changes its size. */
+  border: 2px solid transparent;
+}
+.roj-dark .roj-day { background-color: #26262b; color: #f1f1f3; }
+.roj-light .roj-day { background-color: #f1f1f4; color: #1b1b1f; }
+.roj-dark .roj-day:hover { background-color: #303037; }
+.roj-light .roj-day:hover { background-color: #e6e6eb; }
+.roj-dark .roj-day:focus { border-color: rgba(245, 205, 14, 0.6); }
+.roj-light .roj-day:focus { border-color: rgba(176, 133, 0, 0.6); }
+
+.roj-day-number { font-size: 1.12em; font-weight: 700; }
+.roj-day-has-sub .roj-day-number { margin-bottom: 0.75em; }
+.roj-day-corners .roj-day-number { margin-bottom: 0; }
+
+.roj-day-secondary { spacing: 0.32em; }
+.roj-sub { font-size: 0.62em; font-weight: 700; text-align: center; }
+.roj-day-corners .roj-sub { font-size: 0.6em; }
+.roj-dark .roj-sub-gregorian, .roj-dark .roj-span-gregorian { color: #62a0ea; }
+.roj-dark .roj-sub-persian, .roj-dark .roj-span-persian { color: #57e389; }
+.roj-dark .roj-sub-islamic, .roj-dark .roj-span-islamic { color: #c061cb; }
+.roj-light .roj-sub-gregorian, .roj-light .roj-span-gregorian { color: #1a5fb4; }
+.roj-light .roj-sub-persian, .roj-light .roj-span-persian { color: #1f7a4f; }
+.roj-light .roj-sub-islamic, .roj-light .roj-span-islamic { color: #813d9c; }
+
+.roj-day-dot { width: 0.36em; height: 0.36em; border-radius: 99px; margin: 0.1em; }
+.roj-dark .roj-day-dot { background-color: #f5cd0e; }
+.roj-light .roj-day-dot { background-color: #c79a00; }
+
+.roj-dark .roj-day-weekend .roj-day-number { color: #ff7b72; }
+.roj-light .roj-day-weekend .roj-day-number { color: #c01c28; }
+.roj-dark .roj-day-holiday { background-color: rgba(255, 123, 114, 0.14); }
+.roj-light .roj-day-holiday { background-color: rgba(224, 27, 36, 0.09); }
+.roj-dark .roj-day-holiday .roj-day-number { color: #ff7b72; }
+.roj-light .roj-day-holiday .roj-day-number { color: #c01c28; }
+
+.roj-popup .roj-day.roj-day-outside { background-color: transparent; }
+.roj-dark .roj-day.roj-day-outside .roj-day-number { color: #55555d; }
+.roj-light .roj-day.roj-day-outside .roj-day-number { color: #b4b4bc; }
+.roj-day-outside .roj-sub, .roj-day-outside .roj-day-dot { opacity: 0.45; }
+
+.roj-dark .roj-day.roj-day-selected { border-color: #f5cd0e; }
+.roj-light .roj-day.roj-day-selected { border-color: #c79a00; }
+
+.roj-popup .roj-day.roj-day-today,
+.roj-popup .roj-day.roj-day-today:hover { background-color: #f5cd0e; }
+.roj-popup .roj-day.roj-day-today .roj-day-number { color: #141414; }
+.roj-popup .roj-day.roj-day-today .roj-sub { color: #3d3300; }
+.roj-popup .roj-day.roj-day-today .roj-day-dot { background-color: #141414; }
+
+/* Legend */
+.roj-legend { spacing: 1em; }
+.roj-legend-item { spacing: 0.35em; }
+.roj-legend-dot { width: 0.55em; height: 0.55em; border-radius: 99px; }
+.roj-legend-kurdish { background-color: #f5cd0e; }
+.roj-legend-gregorian { background-color: #3584e4; }
+.roj-legend-persian { background-color: #2ec27e; }
+.roj-legend-islamic { background-color: #9141ac; }
+.roj-legend-label { font-size: 0.74em; }
+.roj-dark .roj-legend-label { color: #a8a8b1; }
+.roj-light .roj-legend-label { color: #5e5e68; }
+
+/* Events */
+.roj-events { border-radius: 12px; padding: 0.7em 0.85em; spacing: 0.45em; }
+.roj-dark .roj-events { background-color: #232327; }
+.roj-light .roj-events { background-color: #f4f4f6; }
+.roj-events-title { font-size: 0.8em; font-weight: 700; height: 1.8em; }
+.roj-dark .roj-events-title { color: #f5cd0e; }
+.roj-light .roj-events-title { color: #8a6a00; }
+/* Fixed height for three rows keeps the popup the same size on every day. */
+.roj-events-list { spacing: 0.4em; height: 5.4em; }
+.roj-event { spacing: 0.55em; height: 1.53em; }
+.roj-event-dot { width: 0.5em; height: 0.5em; border-radius: 99px; background-color: #f5cd0e; }
+.roj-event-title { font-size: 0.92em; }
+.roj-event-badge {
+  font-size: 0.68em; font-weight: 700; border-radius: 99px; padding: 0.1em 0.6em;
+  background-color: rgba(224, 27, 36, 0.16); color: #ff7b72;
+}
+.roj-light .roj-event-badge { color: #c01c28; }
+.roj-event-empty, .roj-event-more { font-size: 0.85em; }
+.roj-dark .roj-event-empty, .roj-dark .roj-event-more { color: #8e8e98; }
+.roj-light .roj-event-empty, .roj-light .roj-event-more { color: #74747e; }
+
+/* Actions */
+.roj-actions { spacing: 0.35em; }
+.roj-action { border-radius: 10px; padding: 0.45em 0.3em; }
+.roj-action-content { spacing: 0.35em; }
+.roj-action-icon { icon-size: 14px; }
+.roj-action StLabel { font-size: 0.8em; font-weight: 600; }
+.roj-dark .roj-action { background-color: #2a2a30; color: #e8e8ec; }
+.roj-dark .roj-action:hover { background-color: #34343b; }
+.roj-light .roj-action { background-color: #ececf0; color: #26262c; }
+.roj-light .roj-action:hover { background-color: #e1e1e6; }
+
+/* Footer */
+.roj-footer { spacing: 0.3em; padding-top: 0.25em; }
+.roj-footer-text, .roj-footer-link { font-size: 0.74em; }
+.roj-dark .roj-footer-text { color: #85858f; }
+.roj-light .roj-footer-text { color: #7a7a84; }
+.roj-footer-link { font-weight: 700; border-radius: 6px; padding: 0 0.2em; }
+.roj-dark .roj-footer-link { color: #f5cd0e; }
+.roj-light .roj-footer-link { color: #8a6a00; }
+.roj-footer-link:hover { text-decoration: underline; }
+.roj-heart { icon-size: 11px; }

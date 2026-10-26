@@ -1,0 +1,102 @@
+.TH ROJ 1 "0.1.0" "roj 0.1.0" "User Commands"
+.SH NAME
+roj \- the Kurdish solar calendar in your terminal
+.SH SYNOPSIS
+.B roj
+[\fICOMMAND\fR] [\fIARGUMENTS\fR] [\fIOPTIONS\fR]
+.SH DESCRIPTION
+.B roj
+shows and converts dates in the Kurdish solar calendar, with the Gregorian,
+Persian (Jalali) and Islamic (Hijri) calendars beside it. It uses the same
+engine as the Roj GNOME Shell extension (the tsroj library) and, when run with
+\fBgjs\fR, the extension's settings.
+.PP
+Roj means both sun and day in Kurdish.
+.SH COMMANDS
+.TP
+.B today
+Today in all four calendars. This is the default command.
+.TP
+.BR cal " [\fIYYYY-MM\fR]"
+A Kurdish month as a grid, this month by default.
+.TP
+.BI convert " DATE"
+Convert \fIDATE\fR (YYYY-MM-DD) between calendars.
+.TP
+.BI format " PATTERN"
+Format a date with a strftime pattern, for example "%A %d %B %Y".
+.TP
+.BR events " [\fIDATE\fR]"
+Events on a day (today by default), from the built-in Kurdish events, your
+extension's event sources and any \fB\-\-file\fR.
+.TP
+.B months
+The twelve Kurdish months of this year, with lengths and start dates.
+.TP
+.B tokens
+Every pattern token with examples.
+.SH OPTIONS
+.TP
+.BR \-l ", " \-\-locale " \fILANG\fR"
+Date language: ckb (Sorani), kmr (Kurmanji), en, fa or ar.
+.TP
+.BI \-\-secondary " MODE"
+Language of the other calendars: same, or native (Gregorian in English,
+Persian in Persian, Islamic in Arabic).
+.TP
+.BR \-f ", " \-\-from " \fICALENDAR\fR"
+Calendar of the input date: kurdish, gregorian, persian or islamic.
+.TP
+.BR \-t ", " \-\-to " \fICALENDAR\fR"
+Output calendar.
+.TP
+.BR \-d ", " \-\-date " \fIDATE\fR"
+Date used by \fBformat\fR and \fBevents\fR.
+.TP
+.BI \-\-with " g,p,i"
+Small Gregorian, Persian and Islamic day numbers in \fBcal\fR.
+.TP
+.B \-\-month
+With \fBevents\fR: the whole Kurdish month.
+.TP
+.BI \-\-file " PATH"
+An extra JSON or .ics events file. Can be repeated.
+.TP
+.BI \-\-digits " SET"
+native, latin, arabic or persian digits.
+.TP
+.BR \-\-era " solar|nineveh"
+Kurdish year numbering: Persian year + 1321, or + 1233.
+.TP
+.B \-\-no\-ezafe
+Turn off the Sorani ezafe (ی).
+.TP
+.BI \-\-islamic\-offset " N"
+Days added to the Islamic date, from -3 to 3.
+.TP
+.B \-\-json
+Machine-readable output.
+.TP
+.BR \-\-color ", " \-\-no\-color
+Force or disable colours.
+.TP
+.B \-\-no\-config
+Ignore the GNOME extension's settings.
+.TP
+.BR \-v ", " \-\-version
+Print the version.
+.SH EXAMPLES
+.nf
+roj
+roj cal \-\-with g
+roj convert 2026\-06\-26
+roj convert 2726\-01\-01 \-\-from kurdish \-\-to gregorian
+roj format "%A %d %B %Y" \-\-locale kmr
+roj events \-\-month \-\-file holidays.ics
+.fi
+.SH EXIT STATUS
+0 on success, 1 on an error such as an invalid date, 2 on a usage error.
+.SH SEE ALSO
+https://0xdolan.github.io/roj/guide.html
+.SH AUTHOR
+0xdolan, https://github.com/0xdolan/roj

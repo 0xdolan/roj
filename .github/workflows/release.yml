@@ -1,0 +1,111 @@
+name: Release
+
+# Push an annotated tag like v0.2.0 (see RELEASING.md). This workflow:
+#   1. tests and builds every release file,
+#   2. publishes them as a GitHub release with the CHANGELOG.md section as notes,
+#   3. uploads the extension to extensions.gnome.org (secrets EGO_USERNAME, EGO_PASSWORD),
+#   4. uploads source packages to the Launchpad PPA (secrets LAUNCHPAD_GPG_PRIVATE_KEY,
+#      LAUNCHPAD_GPG_PASSPHRASE, DEBEMAIL, DEBFULLNAME; variables PPA, PPA_SERIES).
+# Steps 3 and 4 are skipped until their secrets exist.
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libglib2.0-bin gjs zip debhelper devscripts lintian
+      - name: The tag matches every version string
+        run: scripts/check-version.sh "$GITHUB_REF_NAME"
+      - name: Test and build
+        run: make release-assets
+      - name: Release notes from CHANGELOG.md
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          awk -v v="## [$v]" 'index($0, v) == 1 {f = 1; next} /^## \[/ {f = 0} /^\[[^]]*\]: / {next} f' CHANGELOG.md > dist/NOTES.md
+          printf '\n**Install**: see the [guide](https://0xdolan.github.io/roj/guide.html#start). Verify downloads with `sha256sum -c SHA256SUMS`.\n' >> dist/NOTES.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release
+          path: dist/*
+
+  github-release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: release
+          path: dist
+      - name: Publish the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" \
+            --title "Roj ${GITHUB_REF_NAME#v}" --notes-file dist/NOTES.md \
+            dist/*.zip dist/*.tar.gz dist/*.deb dist/SHA256SUMS
+
+  extensions-gnome-org:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: release
+          path: dist
+      - name: Upload to extensions.gnome.org
+        env:
+          EGO_USERNAME: ${{ secrets.EGO_USERNAME }}
+          EGO_PASSWORD: ${{ secrets.EGO_PASSWORD }}
+        run: |
+          if [ -z "$EGO_USERNAME" ] || [ -z "$EGO_PASSWORD" ]; then
+            echo "EGO_USERNAME / EGO_PASSWORD not set: skipping."; exit 0
+          fi
+          token="$(jq -n --arg u "$EGO_USERNAME" --arg p "$EGO_PASSWORD" '{login: $u, password: $p}' \
+            | curl -fsS -H 'Content-Type: application/json' -d @- \
+                https://extensions.gnome.org/api/v1/accounts/login/ | jq -r '.token')"
+          [ -n "$token" ] && [ "$token" != null ] || { echo "Login to extensions.gnome.org failed"; exit 1; }
+          curl -fsS -H "Authorization: Token $token" \
+            -F "source=@dist/roj@0xdolan.github.io.shell-extension.zip" \
+            -F shell_license_compliant=true -F tos_compliant=true \
+            https://extensions.gnome.org/api/v1/extensions
+          echo "Uploaded. It goes live after GNOME's review."
+
+  launchpad-ppa:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload source packages to the PPA
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.LAUNCHPAD_GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.LAUNCHPAD_GPG_PASSPHRASE }}
+          DEBEMAIL: ${{ secrets.DEBEMAIL }}
+          DEBFULLNAME: ${{ secrets.DEBFULLNAME }}
+          PPA: ${{ vars.PPA || 'ppa:0xdolan/roj' }}
+          SERIES: ${{ vars.PPA_SERIES || 'noble questing resolute' }}
+        run: |
+          if [ -z "$GPG_PRIVATE_KEY" ]; then
+            echo "LAUNCHPAD_GPG_PRIVATE_KEY not set: skipping."; exit 0
+          fi
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends debhelper devscripts dput gnupg
+          mkdir -p ~/.gnupg && chmod 700 ~/.gnupg
+          echo "allow-loopback-pinentry" > ~/.gnupg/gpg-agent.conf
+          printf '%s' "$GPG_PASSPHRASE" > ~/.gnupg/passphrase
+          printf 'pinentry-mode loopback\npassphrase-file %s\n' ~/.gnupg/passphrase > ~/.gnupg/gpg.conf
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+          export GPG_KEY_ID="$(gpg --list-secret-keys --with-colons | awk -F: '/^sec/ {print $5; exit}')"
+          scripts/ppa-upload.sh

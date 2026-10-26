@@ -1,0 +1,45 @@
+name: tsroj update
+
+# Every Monday, check npm for a newer @0xdolan/tsroj. If there is one, vendor
+# it, run the tests and open a pull request. Merging it and tagging a release
+# ships the new engine everywhere.
+
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Compare versions
+        id: v
+        run: |
+          echo "latest=$(npm view @0xdolan/tsroj version)" >> "$GITHUB_OUTPUT"
+          echo "current=$(sed -n "s/^export const TSROJ_VERSION = '\(.*\)';/\1/p" extension/lib/constants.js)" >> "$GITHUB_OUTPUT"
+      - name: Vendor, test and open a pull request
+        if: steps.v.outputs.latest != steps.v.outputs.current
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LATEST: ${{ steps.v.outputs.latest }}
+        run: |
+          branch="tsroj-$LATEST"
+          if git ls-remote --exit-code --heads origin "$branch"; then echo "A pull request branch already exists."; exit 0; fi
+          scripts/vendor-tsroj.sh "$LATEST"
+          node --test tests/*.test.js
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git commit -am "Update tsroj to $LATEST"
+          git push origin "$branch"
+          gh pr create --title "Update tsroj to $LATEST" \
+            --body "Vendored @0xdolan/tsroj $LATEST into extension/lib/tsroj.js and the tests pass. Merge, add a CHANGELOG entry and release."

@@ -1,0 +1,32 @@
+Source: roj
+Section: utils
+Priority: optional
+Maintainer: 0xdolan <0xdolan@users.noreply.github.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://github.com/0xdolan/roj
+Vcs-Browser: https://github.com/0xdolan/roj
+Vcs-Git: https://github.com/0xdolan/roj.git
+Rules-Requires-Root: no
+
+Package: roj
+Architecture: all
+Depends: gjs | nodejs (>= 18), ${misc:Depends}
+Description: Kurdish solar calendar on the command line
+ roj shows and converts dates in the Kurdish solar calendar, in Sorani,
+ Kurmanji, English, Persian or Arabic, with the Gregorian, Persian and
+ Islamic calendars beside it. It prints month grids, converts dates,
+ formats them with strftime patterns and lists Kurdish events and .ics
+ calendars. Roj means both sun and day in Kurdish.
+
+Package: gnome-shell-extension-roj
+Architecture: all
+Section: gnome
+Depends: gnome-shell (>= 45), gjs, ${misc:Depends}
+Recommends: roj, gnome-shell-extension-prefs | gnome-shell-extension-manager
+Description: Kurdish solar calendar for the GNOME top bar
+ Roj puts the Kurdish solar date in the GNOME Shell top bar, in Sorani,
+ Kurmanji, English, Persian or Arabic. Every day in its calendar shows
+ the Kurdish day with optional Gregorian, Persian and Islamic days, and
+ the popup lists Kurdish events and any .ics calendar. It includes a
+ date converter, a guide, light and dark themes and settings backup.

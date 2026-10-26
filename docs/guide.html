@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roj guide</title>
+<meta name="description" content="How to use Roj, the Kurdish calendar for GNOME: the popup and top bar, languages and digits, every setting, how dates are converted, events and .ics calendars, fonts, patterns and the roj command.">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="site.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="./"><img src="images/logo.svg" alt="">Roj</a>
+    <nav>
+      <a href="./#install">Install</a>
+      <a href="guide.html" aria-current="page">Guide</a>
+      <a href="story.html" class="hide-sm">Story</a>
+      <a href="https://github.com/0xdolan/roj">GitHub</a>
+      <button class="theme-toggle" type="button" data-theme-toggle>Theme: system</button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <nav class="toc" aria-label="Contents">
+    <a href="#start">Getting started</a>
+    <a href="#popup">The popup</a>
+    <a href="#top-bar">The top bar</a>
+    <a href="#day-cards">Day cards</a>
+    <a href="#languages">Languages and digits</a>
+    <a href="#how">How dates are converted</a>
+    <a href="#settings">Settings, page by page</a>
+    <a href="#patterns">Patterns and tokens</a>
+    <a href="#fonts">Fonts</a>
+    <a href="#events">Events and .ics</a>
+    <a href="#converter">Converter</a>
+    <a href="#cli">Command line</a>
+    <a href="#backup">Backup and restore</a>
+    <a href="#help">Troubleshooting</a>
+  </nav>
+
+  <article class="article">
+    <h1>Roj guide</h1>
+    <p class="muted">Everything Roj does, with screenshots. Roj (<span class="rtl">ڕۆژ</span>) means both sun and day in Kurdish; <a href="story.html">read why</a>.</p>
+
+    <h2 id="start">Getting started</h2>
+    <ol>
+      <li>Install Roj from extensions.gnome.org, the Ubuntu PPA, the .deb packages or the tarball. See <a href="./#install">Install</a>.</li>
+      <li>On Wayland, log out and back in once, so GNOME Shell loads it.</li>
+      <li>The Kurdish date appears next to the clock. Click it to open the calendar.</li>
+      <li>Choose your language: click <b>Settings</b> in the popup, then <b>General, Languages</b>.</li>
+    </ol>
+    <figure><img src="images/screenshots/panel.png" alt="The Kurdish date in the top bar, next to the clock"><figcaption>The top bar: the Kurdish date sits next to the GNOME clock.</figcaption></figure>
+
+    <h2 id="popup">The popup</h2>
+    <div class="pair">
+      <figure><img src="images/popup/popup-ckb-dark.png" alt="The Roj popup in Sorani"><figcaption>Sorani, dark theme, default settings.</figcaption></figure>
+      <div>
+        <p>From top to bottom:</p>
+        <ul>
+          <li><b>Header</b>: the selected day in Kurdish, large, and under it the same day in the Gregorian, Persian and Islamic calendars, each with a coloured label.</li>
+          <li><b>Month bar</b>: the Kurdish month and year, and the Gregorian (and, if shown, Persian and Islamic) months it spans. The inner arrows change the month, the outer arrows the year. <b>Click the month name to return to today.</b> You can also scroll over the days.</li>
+          <li><b>Weekdays</b>: the week starts on Saturday by default, and the weekend is red.</li>
+          <li><b>Day cards</b>: see <a href="#day-cards">Day cards</a>. Today is yellow, the selected day has a yellow outline, and a dot means the day has events.</li>
+          <li><b>Legend</b>: which colour belongs to which calendar.</li>
+          <li><b>Events</b>: the selected day's events. Holidays carry a red badge.</li>
+          <li><b>Buttons</b>: Today, Convert (opens the converter), Copy (copies the selected day with the Copy pattern) and Settings.</li>
+          <li><b>Credits line</b>: links to the author, the source, these docs and the website. You can hide it.</li>
+        </ul>
+        <p>In Sorani, Persian and Arabic the popup is laid out right to left. Its size never changes when you pick another day.</p>
+      </div>
+    </div>
+
+    <h2 id="top-bar">The top bar</h2>
+    <p>The top bar shows the Kurdish date with your <a href="#patterns">pattern</a>. When today has events, it also shows a marker; choose it under <b>Appearance, Top bar, Today's events</b>:</p>
+    <figure><img src="images/screenshots/panel-markers.png" alt="The three event markers: a dot, a count and the title"><figcaption>A dot, the number of events, or the first event's title. The marker is red when today is a holiday.</figcaption></figure>
+
+    <h2 id="day-cards">Day cards</h2>
+    <p>The large number in each card is always the <b>Kurdish</b> day. Up to three small numbers, all the same size, can sit beside it:</p>
+    <table>
+      <thead><tr><th>Calendar</th><th>Colour</th><th>Default</th></tr></thead>
+      <tbody>
+        <tr><td>Gregorian</td><td style="color:var(--greg)">● blue</td><td>On</td></tr>
+        <tr><td>Persian (Jalali)</td><td style="color:var(--pers)">● green</td><td>Off</td></tr>
+        <tr><td>Islamic (Hijri)</td><td style="color:var(--isl)">● purple</td><td>Off</td></tr>
+      </tbody>
+    </table>
+    <p>Turn each on or off under <b>Appearance, Day cards</b>: any one, two or all three, <b>in a row</b> under the day or <b>in the corners</b>. Each small number uses the digits of the language its calendar is written in.</p>
+    <div class="pair">
+      <figure><img src="images/popup/popup-ckb-events.png" alt="All three small numbers in a row"><figcaption>All three in a row. 19 Reşemê is Eid al-Fitr and Kurdish Clothing Day.</figcaption></figure>
+      <figure><img src="images/popup/popup-ckb-corners.png" alt="Small numbers in the corners"><figcaption>The same month with the numbers in the corners.</figcaption></figure>
+    </div>
+
+    <h2 id="languages">Languages and digits</h2>
+    <p>Roj speaks <b>Sorani</b>, <b>Kurmanji</b>, <b>English</b>, <b>Persian</b> and <b>Arabic</b>. Under <b>General, Languages</b> you choose three things:</p>
+    <ul>
+      <li><b>Main date language</b>: the language of the Kurdish date.</li>
+      <li><b>Other calendars</b>: the same language as the main date, the interface language, or <b>each in its own language</b>: Gregorian in English, Persian in Persian, Islamic in Arabic.</li>
+      <li><b>Interface language</b>: menus, labels and the settings window. By default it follows the main date language.</li>
+    </ul>
+    <p>Friday 26 June 2026 in each language:</p>
+    <table>
+      <thead><tr><th>Language</th><th>Kurdish date</th><th>Gregorian date</th></tr></thead>
+      <tbody>
+<tr><td>Sorani</td><td class="rtl">هەینی ٥ی پووشپەڕی ٢٧٢٦</td><td class="rtl">٢٦ یونیۆ ٢٠٢٦</td></tr>
+<tr><td>Kurmanji</td><td>În 05 Tîrmeh 2726</td><td>26 June 2026</td></tr>
+<tr><td>English</td><td>Friday 05 Pûşper 2726</td><td>26 June 2026</td></tr>
+<tr><td>Persian</td><td class="rtl">آدینه ۵ پووشپەڕ ۲۷۲۶</td><td class="rtl">۲۶ ژوئن ۲۰۲۶</td></tr>
+<tr><td>Arabic</td><td class="rtl">الجمعة ٥ پووشپەڕ ٢٧٢٦</td><td class="rtl">٢٦ يونيو ٢٠٢٦</td></tr>
+      </tbody>
+    </table>
+    <p>With <b>each in its own language</b>, a Sorani user sees <span class="rtl">٥ی پووشپەڕی ٢٧٢٦</span> together with 26 June 2026, <span class="rtl">۵ تیر ۱۴۰۵</span> and <span class="rtl">١٠ محرم ١٤٤٨</span>.</p>
+    <figure class="narrow"><img src="images/popup/popup-fa-native.png" alt="Persian popup with each calendar in its own language"><figcaption>Persian, with each calendar in its own language.</figcaption></figure>
+    <h3>Digits</h3>
+    <p>Each language uses its own digits by default: <b>Persian</b> <span class="rtl">۰۱۲۳</span>, <b>Sorani and Arabic</b> <span class="rtl">٠١٢٣</span>, <b>English and Kurmanji</b> 0123. Change them per language under <b>General, Digits</b>.</p>
+    <h3>Sorani ezafe</h3>
+    <p>Sorani writes a linking <b>ی</b> after the day when a month name follows (<span class="rtl">٥ی پووشپەڕ</span>) and after the month when a year follows (<span class="rtl">پووشپەڕی ٢٧٢٦</span>). Under <b>General, Sorani ezafe</b> you switch it on or off for each calendar. By default it is on for the Kurdish date only. It applies only to dates written in Sorani.</p>
+
+    <h2 id="how">How dates are converted</h2>
+    <p>The Kurdish calendar follows the sun. Each year begins at <b>Newroz</b>, the March equinox, usually on 21 March. Its months have the same lengths as the Persian (Jalali) calendar:</p>
+    <ul>
+      <li>months 1 to 6 have <b>31 days</b>,</li>
+      <li>months 7 to 11 have <b>30 days</b>,</li>
+      <li>month 12 has <b>29 days</b>, or <b>30</b> in a leap year.</li>
+    </ul>
+    <p>Only the year differs. Roj counts from the Median kingdom (700 BC): <b>Kurdish year = Persian year + 1321</b>. Some writers count from the fall of Nineveh (612 BC), which is Persian year + 1233; choose it under <b>General, Year numbering</b>.</p>
+    <h3>One number for every calendar</h3>
+    <p>Roj turns any date into a <b>Julian Day Number</b> (JDN), a plain count of days used by astronomers, and turns that number into the other calendars. For <b>26 June 2026</b>:</p>
+    <table>
+      <thead><tr><th>Step</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>1. The Gregorian date</td><td>2026-06-26</td></tr>
+        <tr><td>2. Its Julian Day Number</td><td>2461218</td></tr>
+        <tr><td>3. The Persian date, from the JDN (2820-year arithmetic cycle)</td><td>1405-04-05 · <span class="rtl">۵ تیر ۱۴۰۵</span></td></tr>
+        <tr><td>4. Add 1321 to the year: the Kurdish date</td><td>2726-04-05 · <span class="rtl">٥ی پووشپەڕی ٢٧٢٦</span> · 05 Tîrmeh 2726</td></tr>
+        <tr><td>5. The Islamic date, from the JDN (30-year tabular cycle)</td><td>1448-01-10 · <span class="rtl">١٠ محرم ١٤٤٨</span></td></tr>
+      </tbody>
+    </table>
+    <p>Going the other way works the same. The mathematics comes from <a href="https://www.npmjs.com/package/@0xdolan/tsroj">tsroj</a>, the same engine as <a href="https://pypi.org/project/pyroj/">pyroj</a> for Python, so Roj, tsroj and pyroj always agree. The <b>Guide</b> page in the settings shows these steps for today.</p>
+    <div class="note"><b>Islamic dates.</b> Roj uses the arithmetic (tabular) Hijri calendar. Where months begin with the sighting of the moon, the date can differ by a day or two. Set <b>General, Islamic calendar, Day adjustment</b> (from -3 to 3); weekdays never shift.</div>
+
+    <h2 id="settings">Settings, page by page</h2>
+    <p>Open them with <b>Settings</b> in the popup, from the Extensions app, or with <code>gnome-extensions prefs roj@0xdolan.github.io</code>. The window follows your interface language, right to left for Sorani, Persian and Arabic.</p>
+
+    <h3 id="general">General</h3>
+    <div class="pair">
+      <figure><img src="images/screenshots/prefs-general.png" alt="General settings" loading="lazy"></figure>
+      <ul>
+        <li><b>Languages</b>: main date, other calendars, interface; year numbering.</li>
+        <li><b>Digits</b>: per language, with leading zero control.</li>
+        <li><b>Sorani ezafe</b>: per calendar, after the day and after the month.</li>
+        <li><b>Names</b>: traditional month name variants (Newroz or Xakelêwe, Gulan or Banemêr) and weekday name variants.</li>
+        <li><b>Week</b>: first day and weekend days.</li>
+        <li><b>Islamic calendar</b>: day adjustment.</li>
+        <li><b>Backup and restore</b>: see <a href="#backup">Backup</a>.</li>
+      </ul>
+    </div>
+
+    <h3 id="appearance">Appearance</h3>
+    <div class="pair">
+      <figure><img src="images/screenshots/prefs-appearance.png" alt="Appearance settings" loading="lazy"></figure>
+      <ul>
+        <li><b>Theme</b>: follow the system, light or dark; popup text size; credits line.</li>
+        <li><b>Top bar</b>: position and order; show the date and/or the icon; today's events marker.</li>
+        <li><b>Day cards</b>: the small numbers and their placement, with a live preview of this week.</li>
+        <li><b>Popup header</b>: which calendars appear under the Kurdish date.</li>
+        <li><b>Fonts</b>: see <a href="#fonts">Fonts</a>.</li>
+      </ul>
+    </div>
+
+    <h3 id="formats-page">Formats</h3>
+    <div class="pair">
+      <figure><img src="images/screenshots/prefs-formats.png" alt="Formats settings" loading="lazy"></figure>
+      <p>One pattern each for the top bar, the four header lines and the Copy button. Each has a live preview, a list button to insert any token or apply a preset, and a button to restore the default. Below them, every token is shown for today in all four calendars.</p>
+    </div>
+
+    <h3 id="events-page">Events</h3>
+    <div class="pair">
+      <figure><img src="images/screenshots/prefs-events.png" alt="Events settings" loading="lazy"></figure>
+      <p>Show or hide events, mark days with dots, colour holidays, and set how often online calendars refresh. Manage the sources: the included Kurdish events, your files and online calendars. Each source has a colour and an on/off switch; files and links can also be treated as holidays. See <a href="#events">Events and .ics</a>.</p>
+    </div>
+
+    <h3 id="other-pages">Converter, Guide and About</h3>
+    <div class="pair">
+      <figure><img src="images/screenshots/prefs-guide.png" alt="Guide page" loading="lazy"><figcaption>Guide: how it works, with today's numbers.</figcaption></figure>
+      <figure><img src="images/screenshots/prefs-about.png" alt="About page" loading="lazy"><figcaption>About: the story of the name, links, credits and the command-line installer.</figcaption></figure>
+    </div>
+
+    <h2 id="patterns">Patterns and tokens</h2>
+    <p>Patterns use the strftime tokens of tsroj and pyroj; everything else is kept as written. Examples for Friday 26 June 2026 at 21:05:</p>
+    <table>
+      <thead><tr><th>Pattern</th><th>Sorani</th><th>Kurmanji</th></tr></thead>
+      <tbody>
+        <tr><td><code>%A %d %B %Y</code></td><td class="rtl">هەینی ٥ی پووشپەڕی ٢٧٢٦</td><td>În 05 Tîrmeh 2726</td></tr>
+        <tr><td><code>%d %B %Y</code></td><td class="rtl">٥ی پووشپەڕی ٢٧٢٦</td><td>05 Tîrmeh 2726</td></tr>
+        <tr><td><code>%d %B</code></td><td class="rtl">٥ی پووشپەڕ</td><td>05 Tîrmeh</td></tr>
+        <tr><td><code>%Y/%m/%d</code></td><td class="rtl">٢٧٢٦/٤/٥</td><td>2726/04/05</td></tr>
+        <tr><td><code>%a %d %b · %I:%M %p</code></td><td class="rtl">هەینی ٥ی پووش · ٩:٠٥ د.ن</td><td>În 05 Tîrm · 09:05 piştî niweroj</td></tr>
+      </tbody>
+    </table>
+    <h3>All tokens</h3>
+    <table>
+      <thead><tr><th>Token</th><th>Meaning</th><th>Sorani</th><th>Kurmanji</th></tr></thead>
+      <tbody>
+<tr><td><code>%Y</code></td><td>Year, four digits</td><td class="rtl">٢٧٢٦</td><td>2726</td></tr>
+<tr><td><code>%y</code></td><td>Year, last two digits</td><td class="rtl">٢٦</td><td>26</td></tr>
+<tr><td><code>%B</code></td><td>Month name</td><td class="rtl">پووشپەڕ</td><td>Tîrmeh</td></tr>
+<tr><td><code>%b</code></td><td>Short month name</td><td class="rtl">پووش</td><td>Tîrm</td></tr>
+<tr><td><code>%m</code></td><td>Month number, padding follows the leading zero setting</td><td class="rtl">٤</td><td>04</td></tr>
+<tr><td><code>%-m</code></td><td>Month number, never padded</td><td class="rtl">٤</td><td>4</td></tr>
+<tr><td><code>%d</code></td><td>Day of month, padding follows the leading zero setting</td><td class="rtl">٥</td><td>05</td></tr>
+<tr><td><code>%-d</code></td><td>Day of month, never padded</td><td class="rtl">٥</td><td>5</td></tr>
+<tr><td><code>%A</code></td><td>Weekday name</td><td class="rtl">هەینی</td><td>În</td></tr>
+<tr><td><code>%a</code></td><td>Short weekday name</td><td class="rtl">هەینی</td><td>În</td></tr>
+<tr><td><code>%E</code></td><td>Minimal weekday name</td><td class="rtl">ه</td><td>Î</td></tr>
+<tr><td><code>%w</code></td><td>Weekday number: Saturday is 1, or Monday is 1 for Gregorian</td><td class="rtl">٧</td><td>7</td></tr>
+<tr><td><code>%-w</code></td><td>Weekday number from Saturday (1) to Friday (7)</td><td class="rtl">٧</td><td>7</td></tr>
+<tr><td><code>%H</code></td><td>Hour, 24-hour clock</td><td class="rtl">٢١</td><td>21</td></tr>
+<tr><td><code>%I</code></td><td>Hour, 12-hour clock</td><td class="rtl">٩</td><td>09</td></tr>
+<tr><td><code>%M</code></td><td>Minute</td><td class="rtl">٠٥</td><td>05</td></tr>
+<tr><td><code>%S</code></td><td>Second</td><td class="rtl">٠٩</td><td>09</td></tr>
+<tr><td><code>%p</code></td><td>AM or PM in the date language</td><td class="rtl">د.ن</td><td>piştî niweroj</td></tr>
+<tr><td><code>%%</code></td><td>A literal % sign</td><td class="rtl">%</td><td>%</td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>Persian month names always come from the Persian calendar and Islamic month names from the Arabic one, as in tsroj.</li>
+      <li>The top bar updates every minute, or every second when its pattern has <code>%S</code>.</li>
+      <li>Patterns cannot contain <code>{</code> or <code>}</code>; the preview tells you when a pattern is invalid.</li>
+    </ul>
+
+    <h2 id="fonts">Fonts</h2>
+    <p>Roj splits text by script. Letters in the Arabic Unicode blocks (U+0600 to U+06FF, U+0750 to U+077F, U+08A0 to U+08FF, U+FB50 to U+FDFF, U+FE70 to U+FEFF), used by Sorani, Persian and Arabic, take the <b>right-to-left font</b>. Everything else, such as Kurmanji and English, takes the <b>left-to-right font</b>.</p>
+    <table>
+      <thead><tr><th>Font</th><th>Used for</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Manrope</td><td>Left to right (default)</td><td>Included</td></tr>
+        <tr><td>Vazirmatn</td><td>Right to left (default)</td><td>Included</td></tr>
+        <tr><td>Estedad</td><td>Right to left</td><td>Included</td></tr>
+        <tr><td>Sahel</td><td>Right to left</td><td>Included</td></tr>
+        <tr><td>Any installed font</td><td>Either</td><td>The font button next to each choice</td></tr>
+        <tr><td>A .ttf or .otf file</td><td>Either</td><td>Appearance, Fonts, Load a font file</td></tr>
+      </tbody>
+    </table>
+    <p>The included fonts load straight from the extension without being installed. On systems with Pango older than 1.56 (such as Ubuntu 24.04), the Fonts section offers to copy them to <code>~/.local/share/fonts/roj</code> instead.</p>
+
+    <h2 id="events">Events and .ics calendars</h2>
+    <p>Roj shows events from three kinds of source, all managed on the Events page:</p>
+    <ul>
+      <li><b>Kurdish events</b>, included: Newroz, Kurdish Language Day, Halabja remembrance and more.</li>
+      <li><b>Files</b>: your own JSON events, or any <code>.ics</code> file.</li>
+      <li><b>Online calendars</b>: any <code>https://</code> or <code>webcal://</code> .ics link. <b>Online…</b> offers public holidays for Iraq, Iran, Turkey, Syria and Germany, and Muslim holidays. They are cached in <code>~/.cache/roj</code> and refreshed every 12 hours (you can change it), so they work offline.</li>
+    </ul>
+
+    <h3 id="json">JSON event format</h3>
+<pre><code>{
+  "name": { "ckb": "بۆنەکانی من", "kmr": "Bûyerên min", "en": "My events" },
+  "events": [
+    { "calendar": "kurdish", "month": 1, "day": 1, "holiday": true,
+      "title": { "ckb": "نەورۆز", "kmr": "Newroz", "en": "Newroz", "fa": "نوروز", "ar": "نوروز" } },
+    { "calendar": "gregorian", "month": 5, "day": 15,
+      "title": { "ckb": "ڕۆژی زمانی کوردی", "kmr": "Roja Zimanê Kurdî" } },
+    { "calendar": "islamic", "month": 10, "day": 1, "holiday": true,
+      "title": "Eid al-Fitr" },
+    { "calendar": "gregorian", "year": 2026, "month": 12, "day": 31,
+      "time": "20:00", "title": "A one-off event" }
+  ]
+}</code></pre>
+    <table>
+      <thead><tr><th>Field</th><th>Required</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>calendar</code></td><td>yes</td><td><code>kurdish</code>, <code>gregorian</code>, <code>persian</code> or <code>islamic</code>: the calendar that <code>month</code> and <code>day</code> are in.</td></tr>
+        <tr><td><code>month</code>, <code>day</code></td><td>yes</td><td>1 to 12, and 1 to 31.</td></tr>
+        <tr><td><code>year</code></td><td>no</td><td>Leave it out for an event every year. With a year it happens once. Kurdish years are read in the solar numbering (Persian year + 1321).</td></tr>
+        <tr><td><code>title</code></td><td>yes</td><td>One text, or one per language: <code>ckb</code>, <code>kmr</code>, <code>en</code>, <code>fa</code>, <code>ar</code>. Roj shows the one for your date language, then the closest one available.</td></tr>
+        <tr><td><code>holiday</code></td><td>no</td><td><code>true</code> colours the day like a weekend and adds a holiday badge.</td></tr>
+        <tr><td><code>time</code></td><td>no</td><td><code>"HH:MM"</code>, shown before the title.</td></tr>
+        <tr><td><code>description</code></td><td>no</td><td>Same shapes as <code>title</code>.</td></tr>
+      </tbody>
+    </table>
+    <p>A bare list of events, without <code>name</code>, also works. Events with mistakes are skipped. <b>Save…</b> on the Events page writes a starter file, and <code>roj events --month --file my-events.json</code> checks one in a terminal.</p>
+
+    <h3 id="ics">What Roj reads from .ics files</h3>
+    <ul>
+      <li>All-day and timed events: <code>DTSTART</code>, <code>DTEND</code>, <code>SUMMARY</code>, <code>DESCRIPTION</code>, <code>CATEGORIES</code>.</li>
+      <li>Events over several days (up to 62) and yearly repeats (<code>RRULE:FREQ=YEARLY</code>).</li>
+      <li>Holidays: events with a category containing “holiday”, or the description “Public holiday” (as in Google's national calendars). You can also treat every event of a source as a holiday.</li>
+      <li>Cancelled events are skipped; other repeat rules show only the first occurrence.</li>
+    </ul>
+
+    <h2 id="converter">Converter</h2>
+    <div class="pair">
+      <figure><img src="images/screenshots/prefs-converter.png" alt="Converter" loading="lazy"></figure>
+      <div>
+        <p>Open it with <b>Convert</b> in the popup.</p>
+        <ol>
+          <li>Choose the calendar your date is in.</li>
+          <li>Set the year, month and day, or type <code>YYYY-MM-DD</code> and press Enter. The day range follows the month's real length.</li>
+          <li>Read the date in all four calendars, formatted with your header patterns, each with a copy button.</li>
+        </ol>
+        <p>Details show the weekday, the distance from today, the Kurdish month in both dialects with its length, and the Julian Day Number.</p>
+      </div>
+    </div>
+
+    <h2 id="cli">Command line</h2>
+    <p><code>roj</code> gives the same answers in a terminal with the same engine, and, when run with <code>gjs</code>, your extension settings. <code>make install</code>, the .deb packages, the PPA and the tarball all install it; from the settings window use <b>About, Command-line tool</b>. It also runs with Node.js, so it works without GNOME, for example on Kali with Xfce. <code>man roj</code> has the full reference.</p>
+    <figure><img src="images/marketing/cli.png" alt="roj in a terminal" loading="lazy"></figure>
+<pre><code>roj                                    # today in all four calendars
+roj cal                                # this Kurdish month
+roj cal 2727-01 --with g,p,i           # a month, with small numbers
+roj convert 2026-06-26                 # Gregorian to every calendar
+roj convert 2726-01-01 --from kurdish --to gregorian
+roj format "%A %d %B %Y" --locale kmr
+roj format "%d %B %Y" --date 1448-09-01 --from islamic
+roj -l fa --secondary native           # Persian, each calendar in its own language
+roj events --month                     # this month's events
+roj events 2026-03-21 --file holidays.ics
+roj months                             # the twelve months of this year
+roj tokens                             # every pattern token
+roj convert 2026-10-25 --json          # machine-readable output</code></pre>
+    <table>
+      <thead><tr><th>Option</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>-l, --locale LANG</code></td><td>Date language: ckb, kmr, en, fa or ar</td></tr>
+        <tr><td><code>--secondary same|native</code></td><td>Language of the other calendars</td></tr>
+        <tr><td><code>-f, --from CAL</code> and <code>-t, --to CAL</code></td><td>Input and output calendar: kurdish, gregorian, persian, islamic</td></tr>
+        <tr><td><code>-d, --date DATE</code></td><td>The date for <code>format</code> and <code>events</code></td></tr>
+        <tr><td><code>--with g,p,i</code></td><td>Small numbers in <code>cal</code></td></tr>
+        <tr><td><code>--file PATH</code></td><td>Extra JSON or .ics events (repeatable)</td></tr>
+        <tr><td><code>--digits SET</code></td><td>native, latin, arabic or persian</td></tr>
+        <tr><td><code>--era</code>, <code>--leading-zero</code>, <code>--no-ezafe</code>, <code>--month-variant</code>, <code>--weekday-variant</code>, <code>--islamic-offset</code></td><td>Override the matching settings</td></tr>
+        <tr><td><code>--json</code>, <code>--color</code>, <code>--no-color</code>, <code>--no-config</code></td><td>Output control; <code>--no-config</code> ignores your extension settings</td></tr>
+      </tbody>
+    </table>
+    <p>Exit status: 0 on success, 1 for an error such as an invalid date, 2 for a usage error.</p>
+
+    <h2 id="backup">Backup and restore</h2>
+    <p><b>General, Backup and restore, Export…</b> saves every setting (languages, patterns, fonts, event sources and the rest) to a <code>roj-settings-DATE.json</code> file. On a new computer or a fresh install, <b>Import…</b> that file. Settings that do not apply, for example from a newer version, are skipped and counted. <b>Reset…</b> returns everything to the defaults.</p>
+    <p class="muted">Font files and event files are saved by path. Copy them to the same place on the new computer, or load them again.</p>
+
+    <h2 id="help">Troubleshooting</h2>
+    <h3>I installed Roj but nothing appears</h3>
+    <p>On Wayland, GNOME Shell loads new extensions only after you log out and back in. Then switch Roj on in the Extensions app, or run <code>gnome-extensions enable roj@0xdolan.github.io</code>. Roj needs GNOME Shell 45 or newer (<code>gnome-shell --version</code>).</p>
+    <h3>The roj command is not found</h3>
+    <p><code>make install</code> puts it in <code>~/.local/bin</code>. If that folder is not on your PATH, open a new terminal, or add <code>export PATH="$HOME/.local/bin:$PATH"</code> to your shell's startup file.</p>
+    <h3>The text is not in Vazirmatn or Manrope</h3>
+    <p>On Pango older than 1.56, use <b>Appearance, Fonts, Install the included fonts</b>, then log out and back in.</p>
+    <h3>The Islamic date is a day off</h3>
+    <p>Set <b>General, Islamic calendar, Day adjustment</b> to match the moon sighting where you live.</p>
+    <h3>An online calendar shows an error</h3>
+    <p>Roj keeps the last good copy and tries again at the next refresh. Use the refresh button on the Events page to retry now, and check that the link opens in a browser.</p>
+    <h3>Report a problem</h3>
+    <p>Open an issue on <a href="https://github.com/0xdolan/roj/issues">GitHub</a> with your GNOME Shell version and, if it helps, a settings export.</p>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Made with <span class="heart">♥</span> by <a href="https://github.com/0xdolan">0xdolan</a></span> ·
+    <a href="https://github.com/0xdolan/roj">Source</a> ·
+    <a href="guide.html">Docs</a> ·
+    <a href="./">Site</a> ·
+    <a href="story.html">Story</a>
+  </div>
+</footer>
+</body>
+</html>

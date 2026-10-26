@@ -1,0 +1,13 @@
+metadata.json
+extension.js
+prefs.js
+stylesheet.css
+lib
+ui
+prefs
+cli
+data
+fonts
+icons
+locale
+schemas/org.gnome.shell.extensions.roj.gschema.xml

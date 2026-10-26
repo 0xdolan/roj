@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="roj">
+  <schema id="org.gnome.shell.extensions.roj" path="/org/gnome/shell/extensions/roj/">
+
+    <!-- Language & calendar -->
+    <key name="locale" type="s">
+      <choices><choice value="ckb"/><choice value="kmr"/><choice value="en"/><choice value="fa"/><choice value="ar"/></choices>
+      <default>'ckb'</default>
+      <summary>Language of the Kurdish (main) date</summary>
+    </key>
+    <key name="secondary-language" type="s">
+      <choices><choice value="same"/><choice value="interface"/><choice value="native"/></choices>
+      <default>'same'</default>
+      <summary>Language of the Gregorian, Persian and Islamic dates</summary>
+      <description>same: the main date language. interface: the interface language. native: Gregorian in English, Persian in Persian, Islamic in Arabic.</description>
+    </key>
+    <key name="era" type="s">
+      <choices><choice value="solar"/><choice value="nineveh"/></choices>
+      <default>'solar'</default>
+      <summary>Kurdish year numbering</summary>
+      <description>solar: Persian year + 1321. nineveh: Persian year + 1233 (fall of Nineveh, 612 BC).</description>
+    </key>
+    <key name="ui-language" type="s">
+      <choices><choice value="auto"/><choice value="en"/><choice value="ckb"/><choice value="kmr"/><choice value="fa"/><choice value="ar"/></choices>
+      <default>'auto'</default>
+      <summary>Interface language (auto follows the date language)</summary>
+    </key>
+    <key name="digits-ckb" type="s">
+      <choices><choice value="native"/><choice value="latin"/><choice value="arabic"/><choice value="persian"/></choices>
+      <default>'native'</default>
+      <summary>Digits for Sorani text</summary>
+    </key>
+    <key name="digits-kmr" type="s">
+      <choices><choice value="native"/><choice value="latin"/><choice value="arabic"/><choice value="persian"/></choices>
+      <default>'native'</default>
+      <summary>Digits for Kurmanji text</summary>
+    </key>
+    <key name="digits-en" type="s">
+      <choices><choice value="native"/><choice value="latin"/><choice value="arabic"/><choice value="persian"/></choices>
+      <default>'native'</default>
+      <summary>Digits for English text</summary>
+    </key>
+    <key name="digits-fa" type="s">
+      <choices><choice value="native"/><choice value="latin"/><choice value="arabic"/><choice value="persian"/></choices>
+      <default>'native'</default>
+      <summary>Digits for Persian text</summary>
+    </key>
+    <key name="digits-ar" type="s">
+      <choices><choice value="native"/><choice value="latin"/><choice value="arabic"/><choice value="persian"/></choices>
+      <default>'native'</default>
+      <summary>Digits for Arabic text</summary>
+    </key>
+    <key name="leading-zero" type="s">
+      <choices><choice value="auto"/><choice value="on"/><choice value="off"/></choices>
+      <default>'auto'</default>
+      <summary>Zero-pad day and month numbers</summary>
+    </key>
+    <key name="ezafe-kurdish" type="b">
+      <default>true</default>
+      <summary>Sorani ezafe (ی) in Kurdish dates</summary>
+    </key>
+    <key name="ezafe-gregorian" type="b">
+      <default>false</default>
+      <summary>Sorani ezafe (ی) in Gregorian dates</summary>
+    </key>
+    <key name="ezafe-persian" type="b">
+      <default>false</default>
+      <summary>Sorani ezafe (ی) in Persian dates</summary>
+    </key>
+    <key name="ezafe-islamic" type="b">
+      <default>false</default>
+      <summary>Sorani ezafe (ی) in Islamic dates</summary>
+    </key>
+    <key name="ezafe-after-day" type="b">
+      <default>true</default>
+      <summary>Ezafe after the day number (٥ی پووشپەڕ)</summary>
+    </key>
+    <key name="ezafe-on-month" type="b">
+      <default>true</default>
+      <summary>Ezafe on the month name when a year follows (پووشپەڕی ٢٧٢٦)</summary>
+    </key>
+    <key name="month-variant" type="i">
+      <range min="0" max="5"/>
+      <default>0</default>
+      <summary>Kurdish month name variant</summary>
+    </key>
+    <key name="weekday-variant" type="i">
+      <range min="0" max="5"/>
+      <default>0</default>
+      <summary>Weekday name variant</summary>
+    </key>
+    <key name="islamic-offset" type="i">
+      <range min="-3" max="3"/>
+      <default>0</default>
+      <summary>Days added to the tabular Islamic date</summary>
+    </key>
+    <key name="week-start" type="i">
+      <range min="0" max="6"/>
+      <default>6</default>
+      <summary>First day of the week (0 = Sunday … 6 = Saturday)</summary>
+    </key>
+    <key name="weekend-days" type="ai">
+      <default>[5]</default>
+      <summary>Weekend days (0 = Sunday … 6 = Saturday)</summary>
+    </key>
+
+    <!-- Appearance -->
+    <key name="theme" type="s">
+      <choices><choice value="system"/><choice value="light"/><choice value="dark"/></choices>
+      <default>'system'</default>
+      <summary>Colour scheme of the popup and preferences</summary>
+    </key>
+    <key name="latin-font" type="s">
+      <default>'Manrope'</default>
+      <summary>Font for left-to-right text</summary>
+    </key>
+    <key name="arabic-font" type="s">
+      <default>'Vazirmatn'</default>
+      <summary>Font for Arabic-script (right-to-left) text</summary>
+    </key>
+    <key name="custom-fonts" type="s">
+      <default>'[]'</default>
+      <summary>Font files loaded by the user (JSON list of {family, path})</summary>
+    </key>
+    <key name="font-scale" type="d">
+      <range min="0.8" max="1.5"/>
+      <default>1.0</default>
+      <summary>Popup text size</summary>
+    </key>
+    <key name="show-footer" type="b">
+      <default>true</default>
+      <summary>Show the credits footer in the popup</summary>
+    </key>
+
+    <!-- Panel -->
+    <key name="panel-position" type="s">
+      <choices><choice value="left"/><choice value="center"/><choice value="right"/></choices>
+      <default>'center'</default>
+      <summary>Panel box</summary>
+    </key>
+    <key name="panel-index" type="i">
+      <range min="-1" max="20"/>
+      <default>1</default>
+      <summary>Position inside the panel box (-1 = end)</summary>
+    </key>
+    <key name="panel-format" type="s">
+      <default>'%d %B %Y'</default>
+      <summary>Panel text pattern</summary>
+    </key>
+    <key name="panel-show-icon" type="b">
+      <default>false</default>
+      <summary>Show the Roj icon in the panel</summary>
+    </key>
+    <key name="panel-show-text" type="b">
+      <default>true</default>
+      <summary>Show the date text in the panel</summary>
+    </key>
+    <key name="panel-event-indicator" type="s">
+      <choices><choice value="off"/><choice value="dot"/><choice value="count"/><choice value="title"/></choices>
+      <default>'dot'</default>
+      <summary>How the top bar shows that today has events</summary>
+    </key>
+    <key name="panel-event-length" type="i">
+      <range min="8" max="80"/>
+      <default>28</default>
+      <summary>Longest event title shown in the top bar (characters)</summary>
+    </key>
+
+    <!-- Popup header -->
+    <key name="header-format-kurdish" type="s">
+      <default>'%A %d %B %Y'</default>
+      <summary>Header pattern for the Kurdish date</summary>
+    </key>
+    <key name="header-format-gregorian" type="s">
+      <default>'%A %d %B %Y'</default>
+      <summary>Header pattern for the Gregorian date</summary>
+    </key>
+    <key name="header-format-persian" type="s">
+      <default>'%d %B %Y'</default>
+      <summary>Header pattern for the Persian date</summary>
+    </key>
+    <key name="header-format-islamic" type="s">
+      <default>'%d %B %Y'</default>
+      <summary>Header pattern for the Islamic date</summary>
+    </key>
+    <key name="header-show-gregorian" type="b">
+      <default>true</default>
+      <summary>Show the Gregorian date in the header</summary>
+    </key>
+    <key name="header-show-persian" type="b">
+      <default>true</default>
+      <summary>Show the Persian date in the header</summary>
+    </key>
+    <key name="header-show-islamic" type="b">
+      <default>true</default>
+      <summary>Show the Islamic date in the header</summary>
+    </key>
+    <key name="copy-format" type="s">
+      <default>'%A %d %B %Y'</default>
+      <summary>Pattern used by “Copy date”</summary>
+    </key>
+
+    <!-- Day cards -->
+    <key name="card-show-gregorian" type="b">
+      <default>true</default>
+      <summary>Show the Gregorian day number in day cards</summary>
+    </key>
+    <key name="card-show-persian" type="b">
+      <default>false</default>
+      <summary>Show the Persian day number in day cards</summary>
+    </key>
+    <key name="card-show-islamic" type="b">
+      <default>false</default>
+      <summary>Show the Islamic day number in day cards</summary>
+    </key>
+    <key name="card-layout" type="s">
+      <choices><choice value="row"/><choice value="corners"/></choices>
+      <default>'row'</default>
+      <summary>Where the small numbers sit inside a day card</summary>
+    </key>
+
+    <!-- Events -->
+    <key name="events-enabled" type="b">
+      <default>true</default>
+      <summary>Show events</summary>
+    </key>
+    <key name="event-sources" type="s">
+      <default>'[{"id":"kurdish","kind":"builtin","enabled":true,"color":"#F5CD0E"}]'</default>
+      <summary>Event sources (JSON list)</summary>
+    </key>
+    <key name="highlight-holidays" type="b">
+      <default>true</default>
+      <summary>Colour holidays like weekends</summary>
+    </key>
+    <key name="show-event-dots" type="b">
+      <default>true</default>
+      <summary>Mark days that have events</summary>
+    </key>
+    <key name="ics-refresh-hours" type="i">
+      <range min="1" max="168"/>
+      <default>12</default>
+      <summary>How often online calendars are refreshed</summary>
+    </key>
+
+    <!-- Internal -->
+    <key name="prefs-page" type="s">
+      <default>''</default>
+      <summary>Preferences page to show when the window opens</summary>
+    </key>
+  </schema>
+</schemalist>

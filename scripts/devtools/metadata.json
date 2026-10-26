@@ -1,0 +1,6 @@
+{
+  "uuid": "roj-devtools@0xdolan.github.io",
+  "name": "Roj devtools (development only)",
+  "description": "Drives the Roj extension inside a headless shell for screenshots and smoke tests.",
+  "shell-version": ["45", "46", "47", "48", "49", "50"]
+}

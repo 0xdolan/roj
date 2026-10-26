@@ -1,0 +1,35 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: roj
+Upstream-Contact: https://github.com/0xdolan/roj/issues
+Source: https://github.com/0xdolan/roj
+
+Files: *
+Copyright: 2026 0xdolan
+License: GPL-3+
+
+Files: extension/lib/tsroj.js
+Copyright: 2026 0xdolan
+License: GPL-3
+
+Files: extension/fonts/*
+Copyright: The Manrope Project Authors
+ Saber Rastikerdar (Vazirmatn, Sahel)
+ The Estedad Project Authors
+License: OFL-1.1
+ The full text is in extension/fonts/licenses/.
+
+License: GPL-3+
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation, either version 3 of the License, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 3 can be found in /usr/share/common-licenses/GPL-3.
+
+License: GPL-3
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License version 3.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 3 can be found in /usr/share/common-licenses/GPL-3.

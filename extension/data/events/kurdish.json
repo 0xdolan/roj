@@ -1,0 +1,58 @@
+{
+  "name": {
+    "ckb": "بۆنە کوردییەکان",
+    "kmr": "Bûyerên Kurdî",
+    "en": "Kurdish events"
+  },
+  "version": 1,
+  "events": [
+    {
+      "calendar": "kurdish", "month": 1, "day": 1, "holiday": true,
+      "title": {"ckb": "نەورۆز، سەری ساڵی کوردی", "kmr": "Newroz, Sersala Kurdî", "en": "Newroz, the Kurdish New Year", "fa": "نوروز، سال نو کردی", "ar": "نوروز، رأس السنة الكردية"}
+    },
+    {
+      "calendar": "gregorian", "month": 1, "day": 1,
+      "title": {"ckb": "سەری ساڵی زایینی", "kmr": "Sersala Zayînî", "en": "Gregorian New Year"}
+    },
+    {
+      "calendar": "gregorian", "month": 1, "day": 22,
+      "title": {"ckb": "یادی دامەزراندنی کۆماری کوردستان", "kmr": "Salvegera Komara Kurdistanê", "en": "Anniversary of the Republic of Kurdistan"}
+    },
+    {
+      "calendar": "gregorian", "month": 3, "day": 5,
+      "title": {"ckb": "یادی ڕاپەڕین", "kmr": "Salvegera Raperînê", "en": "Uprising anniversary"}
+    },
+    {
+      "calendar": "gregorian", "month": 3, "day": 10,
+      "title": {"ckb": "ڕۆژی جلوبەرگی کوردی", "kmr": "Roja Cil û Bergên Kurdî", "en": "Kurdish Clothing Day"}
+    },
+    {
+      "calendar": "gregorian", "month": 3, "day": 16,
+      "title": {"ckb": "یادی کیمیابارانی هەڵەبجە", "kmr": "Bîranîna Kîmyabarana Helebceyê", "en": "Halabja remembrance day"}
+    },
+    {
+      "calendar": "gregorian", "month": 4, "day": 14,
+      "title": {"ckb": "یادی ئەنفال", "kmr": "Bîranîna Enfalê", "en": "Anfal remembrance day"}
+    },
+    {
+      "calendar": "gregorian", "month": 4, "day": 22,
+      "title": {"ckb": "ڕۆژی ڕۆژنامەگەریی کوردی", "kmr": "Roja Rojnamegeriya Kurdî", "en": "Kurdish Journalism Day"}
+    },
+    {
+      "calendar": "gregorian", "month": 5, "day": 15,
+      "title": {"ckb": "ڕۆژی زمانی کوردی", "kmr": "Roja Zimanê Kurdî", "en": "Kurdish Language Day"}
+    },
+    {
+      "calendar": "gregorian", "month": 12, "day": 17,
+      "title": {"ckb": "ڕۆژی ئاڵای کوردستان", "kmr": "Roja Ala Kurdistanê", "en": "Kurdistan Flag Day"}
+    },
+    {
+      "calendar": "islamic", "month": 10, "day": 1, "holiday": true,
+      "title": {"ckb": "جەژنی ڕەمەزان", "kmr": "Cejna Remezanê", "en": "Eid al-Fitr"}
+    },
+    {
+      "calendar": "islamic", "month": 12, "day": 10, "holiday": true,
+      "title": {"ckb": "جەژنی قوربان", "kmr": "Cejna Qurbanê", "en": "Eid al-Adha"}
+    }
+  ]
+}
