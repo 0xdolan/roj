@@ -12,7 +12,7 @@
 [![GNOME Shell 45 to 50](https://img.shields.io/badge/GNOME%20Shell-45%20to%2050-4a86cf)](#install)
 [![License: GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue)](LICENSE)
 
-[Website](https://0xdolan.github.io/roj/) · [Guide](https://0xdolan.github.io/roj/guide.html) · [The name and the logo](docs/STORY.md) · [Releases](https://github.com/0xdolan/roj/releases) · [Changelog](CHANGELOG.md)
+[Website](https://0xdolan.github.io/roj/) · [Live calendar](https://0xdolan.github.io/roj/calendar/) · [Guide](https://0xdolan.github.io/roj/guide.html) · [The name and the logo](docs/STORY.md) · [Releases](https://github.com/0xdolan/roj/releases) · [Changelog](CHANGELOG.md)
 
 <img src="docs/images/marketing/banner.png" alt="Roj in Sorani and Kurmanji" width="100%">
 </div>

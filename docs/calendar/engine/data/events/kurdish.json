@@ -8,7 +8,7 @@
   "events": [
     {
       "id": "newroz", "calendar": "kurdish", "month": 1, "day": 1, "holiday": true,
-      "title": {"ckb": "نەورۆز، سەری ساڵی کوردی", "kmr": "Newroz, Sersala Kurdî", "en": "Newroz, the Kurdish New Year", "fa": "نوروز، سال نو کردی", "ar": "نوروز، رأس السنة الكردية"},
+      "title": {"ckb": "نەورۆز، سەری ساڵی کوردی", "kmr": "Newroz, Sersala Kurdî", "en": "Newroz, the Kurdish New Year", "fa": "نوروز، سال نو کوردی", "ar": "نوروز، رأس السنة الكوردية"},
       "description": {"ckb": "سەری ساڵی کوردی و جەژنی بەهار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسنگەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەکات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرامبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخانی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارستانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کوردی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd/calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https://heritage.krd/calendar"}
     },
     {
