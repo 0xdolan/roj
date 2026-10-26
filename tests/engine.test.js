@@ -6,6 +6,7 @@ import {readFileSync} from 'node:fs';
 import {RojEngine, tokenize, weekdayOf} from '../extension/lib/engine.js';
 import {EventIndex, parseEventsDocument, parseEventsJson} from '../extension/lib/events.js';
 import {parseIcs} from '../extension/lib/ics.js';
+import {buildIcs} from '../extension/lib/icsExport.js';
 import {fontMarkup, scriptRuns} from '../extension/lib/richtext.js';
 
 const ckb = new RojEngine({locale: 'ckb'});
@@ -112,6 +113,40 @@ test('bundled events file is valid and indexes across calendars', () => {
     assert.equal(newroz[0].title.kmr, 'Newroz, Sersala Kurdî');
     assert.ok(newroz[0].holiday);
     assert.equal(index.eventsOn(ckb.toJdn('gregorian', 2031, 5, 15)).length, 1);
+    const ids = doc.events.map(ev => ev.id);
+    assert.ok(ids.every(Boolean));
+    assert.equal(new Set(ids).size, ids.length);
+    for (const ev of doc.events)
+        assert.ok(ev.title.ckb && ev.title.kmr && ev.title.en, ev.id);
+});
+
+test('ICS export round-trips through the ICS reader', () => {
+    const {events} = parseEventsJson(JSON.stringify([
+        {id: 'halabja', calendar: 'gregorian', month: 3, day: 16, since: 1988,
+            title: {en: 'Halabja; remembrance, day'}, description: {en: 'Line one\nLine two', ckb: 'هەڵەبجە'}},
+        {id: 'newroz', calendar: 'kurdish', month: 1, day: 1, holiday: true, title: {en: 'Newroz'}},
+        {id: 'eid', calendar: 'islamic', month: 10, day: 1, title: {en: 'Eid'}},
+        {calendar: 'gregorian', year: 2027, month: 2, day: 3, time: '19:30', title: 'Dinner'},
+        {id: 'long', calendar: 'gregorian', month: 7, day: 1, title: {en: 'x'}, description: {en: 'کوردستان '.repeat(40)}},
+    ]));
+    const text = buildIcs(events, {engine: ckb, lang: 'en', name: 'Test', fromYear: 2026, toYear: 2027, stamp: '20260101T000000Z'});
+    assert.ok(text.split('\r\n').every(line => new TextEncoder().encode(line).length <= 75));
+    assert.match(text, /DTSTART;VALUE=DATE:19880316\r\nDTEND;VALUE=DATE:19880317\r\nRRULE:FREQ=YEARLY/);
+    const {name, events: back} = parseIcs(text);
+    assert.equal(name, 'Test');
+    const halabja = back.find(e => e.month === 3 && e.day === 16);
+    assert.equal(halabja.title, 'Halabja; remembrance, day');
+    assert.equal(halabja.description, 'Line one\nLine two');
+    assert.equal(halabja.year, undefined);
+    // Kurdish and Islamic events are written out per year, on the right day.
+    const newroz = back.filter(e => e.title === 'Newroz');
+    assert.deepEqual(newroz.map(e => [e.year, e.month, e.day]), [[2026, 3, 21], [2027, 3, 21]]);
+    assert.ok(newroz.every(e => e.holiday));
+    for (const e of back.filter(e => e.title === 'Eid'))
+        assert.deepEqual(ckb.dateIn('islamic', ckb.toJdn('gregorian', e.year, e.month, e.day)).slice(1), [10, 1]);
+    const dinner = back.find(e => e.title === 'Dinner');
+    assert.deepEqual([dinner.year, dinner.month, dinner.day, dinner.time], [2027, 2, 3, '19:30']);
+    assert.equal(back.find(e => e.month === 7).description, 'کوردستان '.repeat(40));
 });
 
 test('one-off events and format sniffing', () => {

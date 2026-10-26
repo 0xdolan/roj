@@ -4,54 +4,218 @@
     "kmr": "Bûyerên Kurdî",
     "en": "Kurdish events"
   },
-  "version": 1,
+  "version": 2,
   "events": [
     {
-      "calendar": "kurdish", "month": 1, "day": 1, "holiday": true,
-      "title": {"ckb": "نەورۆز، سەری ساڵی کوردی", "kmr": "Newroz, Sersala Kurdî", "en": "Newroz, the Kurdish New Year", "fa": "نوروز، سال نو کردی", "ar": "نوروز، رأس السنة الكردية"}
+      "id": "newroz", "calendar": "kurdish", "month": 1, "day": 1, "holiday": true,
+      "title": {"ckb": "نەورۆز، سەری ساڵی کوردی", "kmr": "Newroz, Sersala Kurdî", "en": "Newroz, the Kurdish New Year", "fa": "نوروز، سال نو کردی", "ar": "نوروز، رأس السنة الكردية"},
+      "description": {"ckb": "سەری ساڵی کوردی و جەژنی بەهار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسنگەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەکات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرامبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخانی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارستانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کوردی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd/calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https://heritage.krd/calendar"}
     },
     {
-      "calendar": "gregorian", "month": 1, "day": 1,
+      "id": "gregorian-new-year", "calendar": "gregorian", "month": 1, "day": 1,
       "title": {"ckb": "سەری ساڵی زایینی", "kmr": "Sersala Zayînî", "en": "Gregorian New Year"}
     },
     {
-      "calendar": "gregorian", "month": 1, "day": 22,
-      "title": {"ckb": "یادی دامەزراندنی کۆماری کوردستان", "kmr": "Salvegera Komara Kurdistanê", "en": "Anniversary of the Republic of Kurdistan"}
+      "id": "mahabad-republic", "calendar": "gregorian", "month": 1, "day": 22, "since": 1946,
+      "title": {"ckb": "ڕاگەیاندنی کۆماری کوردستان لە مەهاباد", "kmr": "Ragihandina Komara Kurdistanê li Mehabadê", "en": "Declaration of the Republic of Kurdistan in Mahabad"},
+      "description": {"ckb": "لە ٢٢ی کانوونی دووەمی ١٩٤٦، لە گۆڕەپانی چوارچرا لە مەهاباد، کۆماری کوردستان بە سەرۆکایەتیی قازی محەممەد ڕاگەیەندرا. کۆمارەکە نزیکەی یازدە مانگ مایەوە و یەکەم دەوڵەتی کوردیی سەدەی بیستەم بوو کە خوێندن بە کوردی و دامەزراوەی حکومیی کوردیی تێدا دامەزرا.\nساڵی ڕووداو: 1946.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://www.erbil.gov.krd/app/ku/node/12506 | https://en.wikipedia.org/wiki/Qazi_Muhammad"}
     },
     {
-      "calendar": "gregorian", "month": 3, "day": 5,
-      "title": {"ckb": "یادی ڕاپەڕین", "kmr": "Salvegera Raperînê", "en": "Uprising anniversary"}
+      "id": "kobani-liberation", "calendar": "gregorian", "month": 1, "day": 26, "since": 2015,
+      "title": {"ckb": "ڕزگارکردنی کۆبانێ", "kmr": "Rizgarkirina Kobaniyê", "en": "Liberation of Kobani"},
+      "description": {"ckb": "لە ٢٦ی کانوونی دووەمی ٢٠١٥، دوای چەندین مانگ بەرگری لە داعش، شاری کۆبانێ ڕزگار کرا. بەرگریی کۆبانێ بووە هێمای خۆڕاگریی ڕۆژاوای کوردستان و لە یادەوەریی گشتیی کوردیدا وەک ڕۆژێکی مێژوویی دەمێنێتەوە.\nساڵی ڕووداو: 2015.\nسەرچاوە: https://en.wikipedia.org/wiki/Siege_of_Koban%C3%AE"}
     },
     {
-      "calendar": "gregorian", "month": 3, "day": 10,
-      "title": {"ckb": "ڕۆژی جلوبەرگی کوردی", "kmr": "Roja Cil û Bergên Kurdî", "en": "Kurdish Clothing Day"}
+      "id": "hawler-twin-bombings", "calendar": "gregorian", "month": 2, "day": 1, "since": 2004,
+      "title": {"ckb": "یادی تەقینەوەکانی یەکی شوبات لە هەولێر", "kmr": "Bîranîna teqînên 1ê Sibatê li Hewlêrê", "en": "Remembrance of the 1 February bombings in Erbil"},
+      "description": {"ckb": "لە ١ی شوباتی ٢٠٠٤ دوو تەقینەوەی خۆکوژی بارەگای پارتی دیموکراتی کوردستان و یەکێتیی نیشتمانیی کوردستان لە هەولێر کردە ئامانج. دەیان کەس شەهید بوون. حکومەتی هەرێم ئەم ڕۆژە وەک یادێکی فەرمی دەهێنێتەوە.\nساڵی ڕووداو: 2004.\nسەرچاوە: https://gov.krd/calendar-2025/"}
     },
     {
-      "calendar": "gregorian", "month": 3, "day": 16,
-      "title": {"ckb": "یادی کیمیابارانی هەڵەبجە", "kmr": "Bîranîna Kîmyabarana Helebceyê", "en": "Halabja remembrance day"}
+      "id": "barzani-death", "calendar": "gregorian", "month": 3, "day": 1, "since": 1979,
+      "title": {"ckb": "کۆچی دوایی مستەفا بارزانی", "kmr": "Koça dawî ya Mistefa Barzanî", "en": "Death of Mustafa Barzani"},
+      "description": {"ckb": "مستەفا بارزانی لە ١ی ئازاری ١٩٧٩ لە ئەمریکا کۆچی دوایی کرد و لە شاری ئۆشنەدا نێژرا. ئەو ڕێبەری شۆڕشی ئەیلوول و یەکێک لە ناوە نیشتمانییەکانی سەدەی بیستەمی کوردستان بوو. لەدایکبوونی ١٤ی ئازاری ١٩٠٣ بوو.\nساڵی ڕووداو: 1979.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://en.wikipedia.org/wiki/Mustafa_Barzani"}
     },
     {
-      "calendar": "gregorian", "month": 4, "day": 14,
-      "title": {"ckb": "یادی ئەنفال", "kmr": "Bîranîna Enfalê", "en": "Anfal remembrance day"}
+      "id": "raparin", "calendar": "gregorian", "month": 3, "day": 5, "since": 1991,
+      "title": {"ckb": "ڕاپەڕینی گەلی کوردستان", "kmr": "Raperîna gelê Kurdistanê", "en": "Uprising of the people of Kurdistan"},
+      "description": {"ckb": "لە ٥ی ئازاری ١٩٩١ ڕاپەڕین لە ڕانیە دەستی پێکرد و بە خێرایی شارەکانی باشووری کوردستان گرتەوە. ئەم ڕاپەڕینە دژی ڕژێمی بەعس بوو و دواتر بووە بناغەی ئیدارەی هەرێمی کوردستان. حکومەتی هەرێم ٥ی ئازار وەک ڕۆژی ڕاپەڕین دیاری دەکات.\nساڵی ڕووداو: 1991.\nسەرچاوە: https://gov.krd/calendar-2026/ | http://bot.gov.krd/about-kurdistan/traditions-and-heritage"}
     },
     {
-      "calendar": "gregorian", "month": 4, "day": 22,
-      "title": {"ckb": "ڕۆژی ڕۆژنامەگەریی کوردی", "kmr": "Roja Rojnamegeriya Kurdî", "en": "Kurdish Journalism Day"}
+      "id": "algiers-agreement", "calendar": "gregorian", "month": 3, "day": 6, "since": 1975,
+      "title": {"ckb": "ڕێککەوتنی جەزائیر", "kmr": "Peymana Cezayîrê", "en": "Algiers Agreement"},
+      "description": {"ckb": "لە ٦ی ئازاری ١٩٧٥ ڕێککەوتنی جەزائیر لە نێوان عێراق و ئێران واژۆ کرا. بەم ڕێککەوتنە پاڵپشتیی ئێران بۆ شۆڕشی ئەیلوول کۆتایی هات و شۆڕشەکە تووشی نسکۆ بوو. لە مێژووی سیاسیی کورددا وەک وەرچەرخانێکی تاڵ دەناسرێت.\nساڵی ڕووداو: 1975.\nسەرچاوە: https://en.wikipedia.org/wiki/Algiers_Agreement_(1975)"}
     },
     {
-      "calendar": "gregorian", "month": 5, "day": 15,
-      "title": {"ckb": "ڕۆژی زمانی کوردی", "kmr": "Roja Zimanê Kurdî", "en": "Kurdish Language Day"}
+      "id": "slemani-liberation", "calendar": "gregorian", "month": 3, "day": 7, "since": 1991,
+      "title": {"ckb": "ڕزگارکردنی سلێمانی", "kmr": "Rizgarkirina Silêmaniyê", "en": "Liberation of Sulaymaniyah"},
+      "description": {"ckb": "لە ٧ی ئازاری ١٩٩١، لە چوارچێوەی ڕاپەڕین، شاری سلێمانی لە دەستی ڕژێمی بەعس ڕزگار کرا. حکومەتی هەرێم ئەم ڕۆژە لە ساڵنامەی فەرمییدا تۆمار دەکات.\nساڵی ڕووداو: 1991.\nسەرچاوە: https://gov.krd/calendar-2026/"}
     },
     {
-      "calendar": "gregorian", "month": 12, "day": 17,
-      "title": {"ckb": "ڕۆژی ئاڵای کوردستان", "kmr": "Roja Ala Kurdistanê", "en": "Kurdistan Flag Day"}
+      "id": "kurdish-clothing-day", "calendar": "gregorian", "month": 3, "day": 10,
+      "title": {"ckb": "ڕۆژی جلوبەرگی نەتەوەییی کوردی", "kmr": "Roja Cil û Bergên Neteweyî yên Kurdî", "en": "Kurdish National Clothing Day"},
+      "description": {"ckb": "١٠ی ئازار ڕۆژی جلوبەرگی نیشتمانیی کوردییە. لەم ڕۆژەدا جلوبەرگی ڕەنگاوڕەنگی ناوچەکانی کوردستان، لە باشوور، ڕۆژهەڵات، باکوور و ڕۆژاوا، وەک هێمای ناسنامەی کولتووری دەپۆشرێت. حکومەتی هەرێم ئەم ڕۆژە لە ساڵنامەی فەرمییدا هەیە.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://zaniary.com/blog/61f15862086e6"}
     },
     {
-      "calendar": "islamic", "month": 10, "day": 1, "holiday": true,
+      "id": "march-11-agreement", "calendar": "gregorian", "month": 3, "day": 11, "since": 1970,
+      "title": {"ckb": "ڕێکەوتننامەی ١١ی ئازار", "kmr": "Peymana 11ê Adarê", "en": "11 March Agreement"},
+      "description": {"ckb": "لە ١١ی ئازاری ١٩٧٠ ڕێکەوتننامەیەک لە نێوان سەرکردایەتیی شۆڕشی کورد و حکومەتی عێراق ڕاگەیەندرا کە ئۆتۆنۆمیی بۆ کوردستان دەناسێنرا. ڕێکەوتنەکە دواتر جێبەجێ نەکرا، بەڵام وەک بەڵگەیەکی سیاسیی گرنگ لە مێژووی پرسی کورددا مایەوە.\nساڵی ڕووداو: 1970.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://en.wikipedia.org/wiki/Iraqi%E2%80%93Kurdish_Autonomy_Agreement_of_1970"}
+    },
+    {
+      "id": "hawler-liberation", "calendar": "gregorian", "month": 3, "day": 11, "since": 1991,
+      "title": {"ckb": "ڕزگارکردنی هەولێر", "kmr": "Rizgarkirina Hewlêrê", "en": "Liberation of Erbil"},
+      "description": {"ckb": "لە ١١ی ئازاری ١٩٩١ شاری هەولێر لە چوارچێوەی ڕاپەڕین ڕزگار کرا. هەولێر دواتر بووە پایتەختی هەرێمی کوردستان. ئەم ڕۆژە لە ساڵنامەی حکومەتی هەرێمدا تۆمارە.\nساڵی ڕووداو: 1991.\nسەرچاوە: https://gov.krd/calendar-2026/"}
+    },
+    {
+      "id": "barzani-birthday", "calendar": "gregorian", "month": 3, "day": 14, "since": 1903,
+      "title": {"ckb": "لەدایکبوونی مستەفا بارزانی", "kmr": "Rojbûna Mistefa Barzanî", "en": "Birth of Mustafa Barzani"},
+      "description": {"ckb": "مستەفا بارزانی لە ١٤ی ئازاری ١٩٠٣ لە بارزان لەدایک بوو. ڕێبەری شۆڕشی ئەیلوول بوو و لە ١٩٧٩ کۆچی دوایی کرد. حکومەتی هەرێم ١٤ی ئازار وەک ڕۆژی لەدایکبوونی ئەو دەهێنێتەوە.\nساڵی ڕووداو: 1903.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://en.wikipedia.org/wiki/Mustafa_Barzani | http://bot.gov.krd/about-kurdistan/traditions-and-heritage"}
+    },
+    {
+      "id": "duhok-liberation", "calendar": "gregorian", "month": 3, "day": 14, "since": 1991,
+      "title": {"ckb": "ڕزگارکردنی دهۆک", "kmr": "Rizgarkirina Duhokê", "en": "Liberation of Duhok"},
+      "description": {"ckb": "لە ١٤ی ئازاری ١٩٩١ شاری دهۆک لە چوارچێوەی ڕاپەڕینی گەلی کوردستان ڕزگار کرا. ئەم ڕۆژە لە ساڵنامەی فەرمیی حکومەتی هەرێمدا هاتووە.\nساڵی ڕووداو: 1991.\nسەرچاوە: https://gov.krd/calendar-2026/"}
+    },
+    {
+      "id": "halabja", "calendar": "gregorian", "month": 3, "day": 16, "since": 1988,
+      "title": {"ckb": "یادی کیمیابارانی هەڵەبجە", "kmr": "Bîranîna Kîmyabarana Helebceyê", "en": "Halabja chemical attack remembrance"},
+      "description": {"ckb": "لە ١٦ی ئازاری ١٩٨٨ ڕژێمی بەعس شاری هەڵەبجەی بە چەکی کیمیایی بۆردومان کرد. هەزاران خەڵکی سیڤیل، زۆربەیان ژن و منداڵ، کوژران. ١٦ی ئازار ڕۆژی یادکردنەوەی هەڵەبەیە و لە ساڵنامەی حکومەتی هەرێمدا ڕۆژێکی فەرمییە.\nساڵی ڕووداو: 1988.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://en.wikipedia.org/wiki/Halabja_chemical_attack | http://bot.gov.krd/about-kurdistan/traditions-and-heritage"}
+    },
+    {
+      "id": "kirkuk-liberation-1991", "calendar": "gregorian", "month": 3, "day": 21, "since": 1991,
+      "title": {"ckb": "ڕزگارکردنی کەرکووک لە ڕاپەڕین", "kmr": "Rizgarkirina Kerkûkê di Raperînê de", "en": "Liberation of Kirkuk in the uprising"},
+      "description": {"ckb": "لە ٢١ی ئازاری ١٩٩١، هاوکات لەگەڵ نەورۆز، شاری کەرکووک لە چوارچێوەی ڕاپەڕین بۆ ماوەیەکی کورت ڕزگار کرا. حکومەتی هەرێم ئەم ڕۆژە جیا لە نەورۆز لە ساڵنامەکەیدا تۆمار دەکات. ڕۆژەکە لەسەر ڕۆژژمێری زایینی جێگیرە، نەک وەک ١ی خاکەلێوە.\nساڵی ڕووداو: 1991.\nسەرچاوە: https://gov.krd/calendar-2026/"}
+    },
+    {
+      "id": "qazi-muhammad-execution", "calendar": "gregorian", "month": 3, "day": 31, "since": 1947,
+      "title": {"ckb": "لەسێدارەدانی قازی محەممەد", "kmr": "Darvekirina Qazî Mihemed", "en": "Execution of Qazi Muhammad"},
+      "description": {"ckb": "قازی محەممەد، سەرۆکی کۆماری کوردستان لە مەهاباد، لە ٣١ی ئازاری ١٩٤٧ لەگەڵ سەدری قازی و سەیفی قازی لە مەهاباد لە سێدارە دران. ئەو لە ١ی ئایاری ١٨٩٣ لەدایک ببوو. ٣١ی ئازار ڕۆژی یادکردنەوەی ئەو و هاوڕێکانییە.\nساڵی ڕووداو: 1947.\nسەرچاوە: https://en.wikipedia.org/wiki/Qazi_Muhammad | https://www.wikidata.org/wiki/Q379849 | https://dckurd.org/2018/07/18/qazi-mohammed/"}
+    },
+    {
+      "id": "feyli-genocide", "calendar": "gregorian", "month": 4, "day": 4, "since": 1980,
+      "title": {"ckb": "یادی جینۆسایدی کوردە فەیلییەکان", "kmr": "Bîranîna jenosîda Kurdên Feylî", "en": "Feyli Kurd genocide remembrance"},
+      "description": {"ckb": "٤ی نیسان ڕۆژی یادکردنەوەی قوربانییانی جینۆسایدی کوردە فەیلییەکانە، کە لە ساڵنامەی حکومەتی هەرێمدا تۆمارە. لە سەرەتای نیسانی ١٩٨٠ ڕژێمی بەعس دەستیکرد بە دەربەدەرکردن و لەناوبردنی کوردانی فەیلی و دەستبەسەرداگرتنی سامان و ڕەگەزنامەکانیان.\nساڵی ڕووداو: 1980.\nسەرچاوە: https://gov.krd/calendar-2026/"}
+    },
+    {
+      "id": "unscr-688", "calendar": "gregorian", "month": 4, "day": 5, "since": 1991,
+      "title": {"ckb": "بڕیاری ٦٨٨ی ئەنجومەنی ئاسایش", "kmr": "Biryara 688 ya Encumena Ewlehiyê", "en": "UN Security Council Resolution 688"},
+      "description": {"ckb": "لە ٥ی نیسانی ١٩٩١ ئەنجومەنی ئاسایشی نەتەوە یەکگرتووەکان بڕیاری ٦٨٨ی دەرکرد و داوای لە عێراق کرد کۆتایی بە سەرکوتکردنی دانیشتووانی کورد و شیعە بهێنێت. ئەم بڕیارە ڕێگەی خۆش کرد بۆ ناوچەی دژەفڕین و گەڕانەوەی ئاوارەکانی ڕاپەڕین.\nساڵی ڕووداو: 1991.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_688"}
+    },
+    {
+      "id": "anfal-garmian", "calendar": "gregorian", "month": 4, "day": 14, "since": 1988,
+      "title": {"ckb": "یادی ئەنفالی گەرمیان", "kmr": "Bîranîna Enfala Germiyanê", "en": "Anfal remembrance, Garmiyan"},
+      "description": {"ckb": "١٤ی نیسان ڕۆژی یادکردنەوەی ئەنفالی گەرمیانە (چەمچەماڵ و کەلار)، کە یەکێک لە قورسترین قۆناغەکانی هەڵمەتی ئەنفال بوو لە ساڵی ١٩٨٨. هەزاران خەڵکی گەرمیان ڕاپێچ کران و کوژران. حکومەتی هەرێم ١٤ی نیسان وەک ڕۆژی ئەم یادە دیاری کردووە. قۆناغەکانی دیکەی ئەنفال لە ٣١ی تەممووز (بارزان) و ٢٥ی ئاب (بادینان) دەهێنرێنەوە.\nساڵی ڕووداو: 1988.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://www.hrw.org/reports/1993/iraqanfal/ | http://bot.gov.krd/about-kurdistan/traditions-and-heritage"}
+    },
+    {
+      "id": "balisan-chemical", "calendar": "gregorian", "month": 4, "day": 16, "since": 1987,
+      "title": {"ckb": "یادی کیمیابارانی بالیسان", "kmr": "Bîranîna kîmyabarana Balîsanê", "en": "Balisan chemical attack remembrance"},
+      "description": {"ckb": "لە ١٦ی نیسانی ١٩٨٧ گوندەکانی بالیسان و شێخ وەسان بە چەکی کیمیایی بۆردومان کران. ئەمە یەکێک بوو لە یەکەم بەکارهێنانە بەرفراوانەکانی چەکی کیمیایی دژی گوندەکانی کوردستان پێش هەڵەبجە. حکومەتی هەرێم ١٦ی نیسان وەک یادی ئەم تاوانە و هەروەها وەک ڕۆژی ژینگە دەهێنێتەوە.\nساڵی ڕووداو: 1987.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://zaniary.com/blog/61f15862086e6"}
+    },
+    {
+      "id": "kurdish-journalism-day", "calendar": "gregorian", "month": 4, "day": 22, "since": 1898,
+      "title": {"ckb": "ڕۆژی ڕۆژنامەگەریی کوردی", "kmr": "Roja Rojnamegeriya Kurdî", "en": "Kurdish Journalism Day"},
+      "description": {"ckb": "لە ٢٢ی نیسانی ١٨٩٨ یەکەم ژمارەی ڕۆژنامەی «کوردستان» لە قاهیرە بە دەستی میقداد میدحەت بەدرخان دەرچوو. ئەمە سەرەتای ڕۆژنامەگەریی کوردییە. ٢٢ی نیسان ڕۆژی ڕۆژنامەگەریی کوردییە و لە ساڵنامەی حکومەتی هەرێم و پەیامەکانی سەرۆکایەتیی هەرێمدا دەهێنرێتەوە.\nساڵی ڕووداو: 1898.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://presidency.gov.krd/payamy-gegry-sarok-la-salyady-rozhy-rozhnamagaryy-kordyda/"}
+    },
+    {
+      "id": "qaladze-bombardment", "calendar": "gregorian", "month": 4, "day": 24, "since": 1974,
+      "title": {"ckb": "یادی بۆردومانی قەڵادزێ", "kmr": "Bîranîna bombebarana Qeladizê", "en": "Qaladiza bombing remembrance"},
+      "description": {"ckb": "لە ٢٤ی نیسانی ١٩٧٤ فڕۆکە جەنگییەکانی ڕژێمی عێراق شاری قەڵادزێیان بۆردومان کرد و ژمارەیەکی زۆر خەڵکی سیڤیل کوژران. حکومەتی هەرێم ٢٤ی نیسان وەک یادی ئەم تاوانە دیاری کردووە.\nساڵی ڕووداو: 1974.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://zaniary.com/blog/61f15862086e6"}
+    },
+    {
+      "id": "qazi-muhammad-birthday", "calendar": "gregorian", "month": 5, "day": 1, "since": 1893,
+      "title": {"ckb": "لەدایکبوونی قازی محەممەد", "kmr": "Rojbûna Qazî Mihemed", "en": "Birth of Qazi Muhammad"},
+      "description": {"ckb": "قازی محەممەد لە ١ی ئایاری ١٨٩٣ لە مەهاباد لەدایک بوو. دادوەر، سەرۆکی کۆماری کوردستان و دامەزرێنەری حیزبی دیموکراتی کوردستانی ئێران بوو. لە ٣١ی ئازاری ١٩٤٧ لە سێدارە درا.\nساڵی ڕووداو: 1893.\nسەرچاوە: https://en.wikipedia.org/wiki/Qazi_Muhammad | https://www.wikidata.org/wiki/Q379849"}
+    },
+    {
+      "id": "sherko-bekas-birthday", "calendar": "gregorian", "month": 5, "day": 2, "since": 1940,
+      "title": {"ckb": "لەدایکبوونی شێرکۆ بێکەس", "kmr": "Rojbûna Şêrko Bêkes", "en": "Birth of Sherko Bekas"},
+      "description": {"ckb": "شێرکۆ فایەق عەبدوڵڵا، ناسراو بە شێرکۆ بێکەس، لە ٢ی ئایاری ١٩٤٠ لە گەڕەکی گۆیژەی سلێمانی لەدایک بوو. یەکێکە لە دامەزرێنەرانی شیعری نوێی کوردی. لە ٤ی ئابی ٢٠١٣ لە ستۆکهۆڵم کۆچی دوایی کرد.\nساڵی ڕووداو: 1940.\nسەرچاوە: https://en.wikipedia.org/wiki/Sherko_Bekas | https://www.wikidata.org/wiki/Q1395748"}
+    },
+    {
+      "id": "dersim", "calendar": "gregorian", "month": 5, "day": 4, "since": 1937,
+      "title": {"ckb": "یادی تەرتەلەی دەرسیم", "kmr": "Bîranîna komkujiya Dêrsimê", "en": "Dersim massacre remembrance"},
+      "description": {"ckb": "٤ی ئایار وەک دەستپێکی هەڵمەتی سەربازیی ساڵی ١٩٣٧، ١٩٣٨ دژی خەڵکی دەرسیم دەهێنرێتەوە. لەو ڕۆژەدا ئەنجومەنی وەزیرانی تورکیا بڕیارێکی نهێنیی دەرکرد بۆ چارەسەری سەربازیی ناوچەکە. دەیان هەزار کەس کوژران یان ڕاگواستران. سەید ڕزا و هاوڕێکانی دواتر لە هەمان ساڵدا لە سێدارە دران.\nساڵی ڕووداو: 1937.\nسەرچاوە: https://kurdaktuellt.se/2026/05/05/may-4-commemoration-day-of-the-dersim-genocide-in-1937-38/"}
+    },
+    {
+      "id": "leyla-qasim", "calendar": "gregorian", "month": 5, "day": 12, "since": 1974,
+      "title": {"ckb": "لەسێدارەدانی لەیلا قاسم", "kmr": "Darvekirina Leyla Qasim", "en": "Execution of Leyla Qasim"},
+      "description": {"ckb": "لەیلا قاسم، چالاکوانی کورد لە خانەقین، لە ١٢ی ئایاری ١٩٧٤ لەگەڵ چوار هاوڕێکەیدا لە بەغدا لە سێدارە درا. بووە هێمای ژنانی کورد و خەباتی نیشتمانی. سەرۆکایەتیی هەرێمی کوردستان هەموو ساڵێک ئەم ڕۆژە دەهێنێتەوە.\nساڵی ڕووداو: 1974.\nسەرچاوە: https://presidency.gov.krd/en/president-nechirvan-barzanis-message-on-the-commemoration-of-the-martyrdom-of-leyla-qasim-and-her-comrades/"}
+    },
+    {
+      "id": "kurdish-language-day", "calendar": "gregorian", "month": 5, "day": 15, "since": 1932,
+      "title": {"ckb": "ڕۆژی زمانی کوردی", "kmr": "Roja Zimanê Kurdî", "en": "Kurdish Language Day"},
+      "description": {"ckb": "١٥ی ئایار ڕۆژی زمانی کوردییە. لە ١٥ی ئایاری ١٩٣٢ یەکەم ژمارەی گۆڤاری «هاوار» بە دەستی جەلادەت عەلی بەدرخان لە دیمەشق دەرچوو و ڕۆڵی یەکلاکەرەوەی لە ستانداردکردنی ئەلفوبێی لاتینیی کرمانجی و ڕۆشنبیریی کوردیدا گێڕا. کۆنگرەی نەتەوەییی کوردستان لە دەوروبەری ٢٠٠٦، ٢٠٠٩ ئەم ڕۆژەی وەک ڕۆژی زمان دیاری کرد.\nساڵی ڕووداو: 1932.\nسەرچاوە: https://en.wikipedia.org/wiki/Kurdish_Language_Day | https://english.anf-news.com/kurdistan/knk-message-on-kurdish-language-day-kurdish-must-be-protected-and-strengthened-85399"}
+    },
+    {
+      "id": "sardasht-chemical", "calendar": "gregorian", "month": 6, "day": 28, "since": 1987,
+      "title": {"ckb": "یادی کیمیابارانی سەردەشت", "kmr": "Bîranîna kîmyabarana Serdeştê", "en": "Sardasht chemical attack remembrance"},
+      "description": {"ckb": "لە ٢٨ی حوزەیرانی ١٩٨٧ شاری سەردەشت لە ڕۆژهەڵاتی کوردستان بە چەکی کیمیایی بۆردومان کرا. دەیان خەڵکی سیڤیل کوژران و بریندار بوون. ئەم تاوانە پێش کیمیابارانی هەڵەبجە ڕوویدا و یەکێکە لە یەکەم نموونەکانی بەکارهێنانی گازی خەردەڵ دژی دانیشتووانی شارێکی کوردیی.\nساڵی ڕووداو: 1987.\nسەرچاوە: https://en.wikipedia.org/wiki/Sardasht_chemical_attack"}
+    },
+    {
+      "id": "sheikh-said-execution", "calendar": "gregorian", "month": 6, "day": 29, "since": 1925,
+      "title": {"ckb": "لەسێدارەدانی شێخ سەعید", "kmr": "Darvekirina Şêx Seîd", "en": "Execution of Sheikh Said"},
+      "description": {"ckb": "شێخ سەعیدی پیران، سەرکردەی ڕاپەڕینی ١٩٢٥ لە باکووری کوردستان، لە ٢٩ی حوزەیرانی ١٩٢٥ لە دیاربەکر لە سێدارە درا. ڕاپەڕینەکە دوای هەڵوەشاندنەوەی خەلافەت و سیاسەتی یەکزمانیی کۆماری تورکیا هەڵگیرسا.\nساڵی ڕووداو: 1925.\nسەرچاوە: https://en.wikipedia.org/wiki/Sheikh_Said"}
+    },
+    {
+      "id": "lausanne", "calendar": "gregorian", "month": 7, "day": 24, "since": 1923,
+      "title": {"ckb": "پەیمانی لۆزان", "kmr": "Peymana Lozanê", "en": "Treaty of Lausanne"},
+      "description": {"ckb": "لە ٢٤ی تەممووزی ١٩٢٣ پەیمانی لۆزان واژۆ کرا و ئەو دەقەی پەیمانی سیڤەر کە باسی مافی کوردی دەکرد جێگیر نەکرا. سنوورەکانی تورکیا، عێراق و سوریا بەبێ دەوڵەتێکی کوردی داڕێژرانەوە. ٢٤ی تەممووز لە مێژووی سیاسیی کورددا وەک ڕۆژی ئەم بڕیارە دەهێنرێتەوە.\nساڵی ڕووداو: 1923.\nسەرچاوە: https://en.wikipedia.org/wiki/Treaty_of_Lausanne"}
+    },
+    {
+      "id": "anfal-barzan", "calendar": "gregorian", "month": 7, "day": 31, "since": 1983,
+      "title": {"ckb": "یادی ئەنفالی بارزانییەکان", "kmr": "Bîranîna Enfala Barzaniyan", "en": "Anfal remembrance, the Barzanis"},
+      "description": {"ckb": "لە ٣١ی تەممووزی ١٩٨٣ هێزەکانی ڕژێمی بەعس هەزاران پیاوی بارزانییان لە کەمپەکانی قوشتەپە و هەولێر ڕاپێچ کرد و دواتر کوژران. حکومەتی هەرێم ٣١ی تەممووز وەک یادی ئەنفالی بارزانییەکان دیاری کردووە. ئەم تاوانە پێش هەڵمەتی هەشت قۆناغییەی ئەنفالی ١٩٨٨ ڕوویدا.\nساڵی ڕووداو: 1983.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://www.hrw.org/reports/1993/iraqanfal/"}
+    },
+    {
+      "id": "shingal-genocide", "calendar": "gregorian", "month": 8, "day": 3, "since": 2014,
+      "title": {"ckb": "یادی جینۆسایدی شنگال", "kmr": "Bîranîna jenosîda Şengalê", "en": "Shingal genocide remembrance"},
+      "description": {"ckb": "لە ٣ی ئابی ٢٠١٤ داعش هێرشی کردە سەر شنگال. هەزاران ئێزیدی کوژران، ڕفێندران یان ئاوارە بوون. حکومەتی هەرێم ٣ی ئاب وەک یادی ئەم تاوانە تۆمار دەکات. شنگال بەشێکە لە جوگرافیا و یادەوەریی کوردستان.\nساڵی ڕووداو: 2014.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://zaniary.com/blog/61f15862086e6"}
+    },
+    {
+      "id": "sherko-bekas-death", "calendar": "gregorian", "month": 8, "day": 4, "since": 2013,
+      "title": {"ckb": "کۆچی دوایی شێرکۆ بێکەس", "kmr": "Koça dawî ya Şêrko Bêkes", "en": "Death of Sherko Bekas"},
+      "description": {"ckb": "شێرکۆ بێکەس لە ٤ی ئابی ٢٠١٣ لە ستۆکهۆڵم بە نەخۆشیی شێرپەنجە کۆچی دوایی کرد و لە سلێمانی نێژرا. شیعرەکانی لەسەر ئازادی، سروشت و دۆخی کورد نووسراون و کاریگەرییەکی فراوانی لەسەر شیعری هاوچەرخی کوردی هەبوو.\nساڵی ڕووداو: 2013.\nسەرچاوە: https://en.wikipedia.org/wiki/Sherko_Bekas | https://www.wikidata.org/wiki/Q1395748"}
+    },
+    {
+      "id": "sevres", "calendar": "gregorian", "month": 8, "day": 10, "since": 1920,
+      "title": {"ckb": "پەیمانی سیڤەر", "kmr": "Peymana Sevrê", "en": "Treaty of Sèvres"},
+      "description": {"ckb": "لە ١٠ی ئابی ١٩٢٠ پەیمانی سیڤەر واژۆ کرا. ماددەکانی ٦٢ تا ٦٤ باسی ئۆتۆنۆمی و دواتر ئەگەری سەربەخۆیی بۆ کوردانی ئیمپراتۆریی عوسمانی دەکەن. پەیمانەکە جێبەجێ نەکرا و لە ١٩٢٣ بە لۆزان گۆڕدرا، بەڵام وەک بەڵگەیەکی نێودەوڵەتیی مافی کورد لە مێژوودا ماوەتەوە.\nساڵی ڕووداو: 1920.\nسەرچاوە: https://en.wikipedia.org/wiki/Treaty_of_S%C3%A8vres"}
+    },
+    {
+      "id": "anfal-badinan", "calendar": "gregorian", "month": 8, "day": 25, "since": 1988,
+      "title": {"ckb": "یادی ئەنفالی بادینان", "kmr": "Bîranîna Enfala Behdînan", "en": "Anfal remembrance, Badinan"},
+      "description": {"ckb": "٢٥ی ئاب دەستپێکی قۆناغی کۆتاییی هەڵمەتی ئەنفالە دژی ناوچەی بادینان لە ساڵی ١٩٨٨، کە تا ٦ی ئەیلوول بەردەوام بوو. حکومەتی هەرێم ٢٥ی ئاب وەک یادی ئەنفالی بادینانییەکان دیاری کردووە. هەڵمەتی ئەنفال بە گشتی لە ٢٣ی شوبات تا ٦ی ئەیلوولی ١٩٨٨ هەشت قۆناغی گرتەوە.\nساڵی ڕووداو: 1988.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://www.hrw.org/reports/1993/iraqanfal/"}
+    },
+    {
+      "id": "september-revolution", "calendar": "gregorian", "month": 9, "day": 11, "since": 1961,
+      "title": {"ckb": "شۆڕشی ئەیلوول", "kmr": "Şoreşa Îlonê", "en": "September Revolution"},
+      "description": {"ckb": "لە ١١ی ئەیلوولی ١٩٦١ شۆڕشی ئەیلوول بە ڕابەرایەتیی مستەفا بارزانی دژی حکومەتی عێراق هەڵگیرسا. تا نسکۆی ساڵی ١٩٧٥ بەردەوام بوو و یەکێکە لە درێژترین شۆڕشە چەکدارییەکانی کورد. حکومەتی هەرێم ١١ی ئەیلوول وەک ساڵیادی هەڵگیرسانی شۆڕشەکە دەهێنێتەوە.\nساڵی ڕووداو: 1961.\nسەرچاوە: https://gov.krd/salnama-2026/ | https://en.wikipedia.org/wiki/First_Iraqi%E2%80%93Kurdish_War"}
+    },
+    {
+      "id": "musa-anter", "calendar": "gregorian", "month": 9, "day": 20, "since": 1992,
+      "title": {"ckb": "تیرۆرکردنی موسا عەنتەر", "kmr": "Kuştina Musa Anter", "en": "Assassination of Musa Anter"},
+      "description": {"ckb": "موسا عەنتەر (ئاپێ موسا)، نووسەر و ڕۆژنامەنووسی کورد، لە ٢٠ی ئەیلوولی ١٩٩٢ لە دیاربەکر تیرۆر کرا. یەکێک بوو لە دەنگە دیارەکانی ڕۆژنامەگەری و زمانەوانیی کوردی لە باکوور. ٢٠ی ئەیلوول وەک ڕۆژی یادکردنەوەی ئەو دەهێنرێتەوە.\nساڵی ڕووداو: 1992.\nسەرچاوە: https://en.wikipedia.org/wiki/Musa_Anter"}
+    },
+    {
+      "id": "mahabad-fall", "calendar": "gregorian", "month": 12, "day": 15, "since": 1946,
+      "title": {"ckb": "کۆتایی کۆماری مەهاباد", "kmr": "Dawiya Komara Kurdistanê li Mehabadê", "en": "End of the Republic of Kurdistan in Mahabad"},
+      "description": {"ckb": "لە ١٥ی کانوونی یەکەمی ١٩٤٦ سوپای ئێران بەبێ بەرگرییەکی گەورە هاتە ناو مەهاباد و کۆماری کوردستان کۆتایی هات. قازی محەممەد دوو ڕۆژ دواتر دەستگیر کرا و لە ٣١ی ئازاری ١٩٤٧ لە سێدارە درا. ئاڵای کوردستان دوو ڕۆژ پێش کۆتاییی کۆمار، لە ١٧ی کانوونی یەکەمی ١٩٤٥، بۆ یەکەمجار لە مەهاباد هەڵکرابوو.\nساڵی ڕووداو: 1946.\nسەرچاوە: https://en.wikipedia.org/wiki/Republic_of_Mahabad | https://en.wikipedia.org/wiki/Qazi_Muhammad"}
+    },
+    {
+      "id": "kurdistan-flag-day", "calendar": "gregorian", "month": 12, "day": 17, "since": 1945,
+      "title": {"ckb": "ڕۆژی ئاڵای کوردستان", "kmr": "Roja Ala Kurdistanê", "en": "Kurdistan Flag Day"},
+      "description": {"ckb": "١٧ی کانوونی یەکەم ڕۆژی ئاڵای کوردستانە. لە ١٧ی کانوونی یەکەمی ١٩٤٥ ئاڵای ڕەنگاوڕەنگ (ئالا ڕەنگین) بۆ یەکەمجار لە مەهاباد هەڵکرا، پێش ڕاگەیاندنی کۆمار لە ٢٢ی کانوونی دووەمی ١٩٤٦. پەرلەمانی کوردستان لە ١١ی تشرینی دووەمی ١٩٩٩ یاسای ئاڵای پەسەند کرد و لە ١٩ی حوزەیرانی ٢٠٠٤ ڕۆژی ١٧ی کانوونی یەکەمی وەک ڕۆژی ئاڵا دیاری کرد.\nساڵی ڕووداو: 1945.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://www.kurdistan24.net/en/story/381451/Kurds-across-Kurdistan-Region,-world-celebrate-Kurdistan-Flag-Day"}
+    },
+    {
+      "id": "roboski", "calendar": "gregorian", "month": 12, "day": 28, "since": 2011,
+      "title": {"ckb": "یادی کۆمەڵکوژیی ڕۆبۆسکی", "kmr": "Bîranîna komkujiya Roboskiyê", "en": "Roboski massacre remembrance"},
+      "description": {"ckb": "لە ٢٨ی کانوونی یەکەمی ٢٠١١ فڕۆکەی جەنگیی تورکیا لە نزیک ئولودەرە / ڕۆبۆسکی ٣٤ کەسی کوشت، زۆربەیان گەنجی خەڵکی ناوچەکە بوون کە باری قاچاخیان دەگواستەوە. ٢٨ی کانوونی یەکەم ڕۆژی یادکردنەوەی قوربانییەکانە.\nساڵی ڕووداو: 2011.\nسەرچاوە: https://en.wikipedia.org/wiki/Roboski_massacre"}
+    },
+    {
+      "id": "eid-al-fitr", "calendar": "islamic", "month": 10, "day": 1, "holiday": true,
       "title": {"ckb": "جەژنی ڕەمەزان", "kmr": "Cejna Remezanê", "en": "Eid al-Fitr"}
     },
     {
-      "calendar": "islamic", "month": 12, "day": 10, "holiday": true,
+      "id": "eid-al-adha", "calendar": "islamic", "month": 12, "day": 10, "holiday": true,
       "title": {"ckb": "جەژنی قوربان", "kmr": "Cejna Qurbanê", "en": "Eid al-Adha"}
     }
   ]

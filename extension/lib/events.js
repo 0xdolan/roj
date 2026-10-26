@@ -8,7 +8,8 @@
 //     "month": 1-12, "day": 1-31, "year": optional (one-off event),
 //     "title": "text" | {"ckb": "…", "kmr": "…", "en": "…"},
 //     "description": optional, same shapes as title,
-//     "holiday": optional boolean, "time": optional "HH:MM" }
+//     "holiday": optional boolean, "time": optional "HH:MM",
+//     "id": optional stable name, "since": optional year it first happened }
 
 import {CALENDARS} from './engine.js';
 import {parseIcs} from './ics.js';
@@ -52,6 +53,8 @@ export function normalizeEvent(raw) {
         description: raw.description ?? null,
         holiday: raw.holiday === true,
         time: typeof raw.time === 'string' ? raw.time : null,
+        id: typeof raw.id === 'string' ? raw.id : null,
+        since: Number.isInteger(raw.since) ? raw.since : null,
     };
 }
 

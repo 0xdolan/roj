@@ -16,7 +16,13 @@ DEVTOOLS="roj-devtools@0xdolan.github.io"
 SIZE="${ROJ_SANDBOX_SIZE:-1600x1000}"
 
 SANDBOX="$(mktemp -d "${TMPDIR:-/tmp}/roj-sandbox.XXXXXX")"
-trap 'rm -rf "$SANDBOX"' EXIT
+# The document portal mounts runtime/doc and may still be unmounting it when
+# the shell exits; unmount it and retry once so cleanup never fails the run.
+cleanup() {
+  fusermount3 -uz "$SANDBOX/runtime/doc" 2>/dev/null || fusermount -uz "$SANDBOX/runtime/doc" 2>/dev/null || true
+  rm -rf "$SANDBOX" 2>/dev/null || { sleep 1; rm -rf "$SANDBOX" || true; }
+}
+trap cleanup EXIT
 mkdir -p "$OUT" "$SANDBOX"/{data/gnome-shell/extensions,config,cache,runtime}
 chmod 700 "$SANDBOX/runtime"
 

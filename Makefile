@@ -13,7 +13,7 @@ BINDIR   := $(DESTDIR)$(PREFIX)/bin
 USER_BIN := $(HOME)/.local/bin
 
 .PHONY: help test lint i18n schemas icons pack install uninstall dev-link install-system \
-        dist deb checksums release-assets vendor screenshots marketing clean
+        dist deb calendars checksums release-assets vendor ics screenshots marketing clean
 
 help:
 	@echo "Roj $(VERSION)"
@@ -31,6 +31,7 @@ help:
 	@echo
 	@echo "  make i18n            list untranslated interface messages"
 	@echo "  make vendor          update the bundled tsroj engine (TSROJ=latest|x.y.z)"
+	@echo "  make ics             rebuild docs/calendar/*.ics from the bundled Kurdish events"
 	@echo "  make icons           regenerate the logo and icons"
 	@echo "  make screenshots     capture screenshots in a sandboxed, headless GNOME Shell"
 	@echo "  make marketing       render the banner and store images"
@@ -41,6 +42,7 @@ test: lint i18n
 	node --test tests/*.test.js
 	GSETTINGS_BACKEND=memory gjs -m tests/config.gjs.js
 	gjs -m extension/cli/roj.js --no-config convert 2026-06-26 --to kurdish | grep -qx 2726-04-05
+	node scripts/build-ics.mjs --check
 
 lint: schemas
 	@for f in $(JS_FILES); do node --check "$$f" || exit 1; done
@@ -106,12 +108,19 @@ dist:
 deb:
 	scripts/build-deb.sh
 
-checksums:
-	cd dist && sha256sum *.zip *.tar.gz *.deb > SHA256SUMS && cat SHA256SUMS
+calendars:
+	mkdir -p dist
+	cp docs/calendar/kurdish-events-*.ics dist/
 
-release-assets: test pack dist deb checksums
+checksums:
+	cd dist && sha256sum *.zip *.tar.gz *.deb *.ics > SHA256SUMS && cat SHA256SUMS
+
+release-assets: test pack dist deb calendars checksums
 
 # Maintenance
+
+ics:
+	node scripts/build-ics.mjs
 
 vendor:
 	scripts/vendor-tsroj.sh $(or $(TSROJ),latest)

@@ -7,6 +7,12 @@ a release is described in [RELEASING.md](RELEASING.md).
 
 ## [Unreleased]
 
+### Added
+
+- 43 Kurdish events, up from 12: the historical, cultural and remembrance days of the pyroj calendar (Halabja, the Anfal, the liberation of the cities in 1991, Shingal, Roboski, the Republic of Kurdistan and more), with Sorani descriptions and sources and titles in Sorani, Kurmanji and English.
+- The Kurdish events as calendars for Google Calendar, iPhone and Mac, in Sorani, Kurmanji and English, to subscribe to or import. They are on the website and attached to every release.
+- `roj ics` prints your events as an .ics file.
+
 ## [0.1.0] - 2026-10-26
 
 The first release.

@@ -16,13 +16,13 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends libglib2.0-bin gjs zip debhelper devscripts lintian
+          sudo apt-get install -y --no-install-recommends libglib2.0-bin gjs zip build-essential debhelper devscripts lintian
       - name: Lint, translations and tests
         run: make test
       - name: Versions agree
         run: scripts/check-version.sh
       - name: Build the extension, tarball and packages
-        run: make pack dist deb checksums
+        run: make pack dist deb calendars checksums
       - name: Lintian
         run: lintian --suppress-tags initial-upload-closes-no-bugs dist/*.deb
       - uses: actions/upload-artifact@v4

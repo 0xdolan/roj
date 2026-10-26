@@ -1,0 +1,2267 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Roj//Kurdish calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+NAME:بۆنە کوردییەکان
+X-WR-CALNAME:بۆنە کوردییەکان
+X-WR-CALDESC:بۆنە کوردییەکان from Roj\, https://0xdolan.githu
+ b.io/roj/. Eid dates follow the arithmetic Hijri calendar and can differ b
+ y a day or two from the sighting of the moon.
+REFRESH-INTERVAL;VALUE=DURATION:P1W
+X-PUBLISHED-TTL:P1W
+BEGIN:VEVENT
+UID:newroz-2020@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20200320
+DTEND;VALUE=DATE:20200321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2021@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20210321
+DTEND;VALUE=DATE:20210322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2022@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20220321
+DTEND;VALUE=DATE:20220322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2023@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20230321
+DTEND;VALUE=DATE:20230322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2024@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20240320
+DTEND;VALUE=DATE:20240321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2025@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20250320
+DTEND;VALUE=DATE:20250321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2026@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2027@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270321
+DTEND;VALUE=DATE:20270322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2028@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280320
+DTEND;VALUE=DATE:20280321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2029@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290320
+DTEND;VALUE=DATE:20290321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2030@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300321
+DTEND;VALUE=DATE:20300322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2031@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20310321
+DTEND;VALUE=DATE:20310322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2032@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20320320
+DTEND;VALUE=DATE:20320321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2033@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20330320
+DTEND;VALUE=DATE:20330321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2034@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20340321
+DTEND;VALUE=DATE:20340322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2035@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20350321
+DTEND;VALUE=DATE:20350322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2036@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20360320
+DTEND;VALUE=DATE:20360321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2037@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20370320
+DTEND;VALUE=DATE:20370321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2038@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20380321
+DTEND;VALUE=DATE:20380322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2039@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20390321
+DTEND;VALUE=DATE:20390322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2040@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20400320
+DTEND;VALUE=DATE:20400321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2041@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20410320
+DTEND;VALUE=DATE:20410321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2042@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20420321
+DTEND;VALUE=DATE:20420322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2043@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20430321
+DTEND;VALUE=DATE:20430322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2044@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20440320
+DTEND;VALUE=DATE:20440321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2045@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20450320
+DTEND;VALUE=DATE:20450321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2046@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20460321
+DTEND;VALUE=DATE:20460322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2047@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20470321
+DTEND;VALUE=DATE:20470322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2048@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20480320
+DTEND;VALUE=DATE:20480321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2049@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20490320
+DTEND;VALUE=DATE:20490321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2050@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20500321
+DTEND;VALUE=DATE:20500322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2051@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20510321
+DTEND;VALUE=DATE:20510322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2052@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20520320
+DTEND;VALUE=DATE:20520321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2053@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20530320
+DTEND;VALUE=DATE:20530321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2054@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20540321
+DTEND;VALUE=DATE:20540322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2055@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20550321
+DTEND;VALUE=DATE:20550322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2056@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20560320
+DTEND;VALUE=DATE:20560321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2057@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20570320
+DTEND;VALUE=DATE:20570321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2058@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20580320
+DTEND;VALUE=DATE:20580321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2059@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20590321
+DTEND;VALUE=DATE:20590322
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:newroz-2060@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20600320
+DTEND;VALUE=DATE:20600321
+SUMMARY;LANGUAGE=ckb:نەورۆز، سەری ساڵی کوردی
+DESCRIPTION;LANGUAGE=ckb:سەری ساڵی کوردی و جەژنی بەه
+ ار. لە ئایینی نەورۆزدا چیرۆکی کاوەی ئاسن
+ گەر و ڕزگاربوون لە زوڵم دەگێڕدرێتەوە. ڕۆ
+ ژژمێری خۆریی کوردی لەم ڕۆژەوە دەست پێدەک
+ ات: ١ی خاکەلێوە. لە زۆربەی ساڵەکاندا بەرا
+ مبەر ٢١ی ئازارە، بەڵام خۆی لەسەر وەرچەرخ
+ انی بەهار جێگیرە و pyroj/tsroj دەبێت ڕۆژی شارس
+ تانیی ئەو ساڵە دیاری بکەن.\nڕۆژژمێری کورد
+ ی: 1/1 (مانگ ١ = خاکەلێوە).\nسەرچاوە: https://gov.krd
+ /calendar-2026/ | https://en.wikipedia.org/wiki/Kurdish_calendar | https:/
+ /heritage.krd/calendar
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:gregorian-new-year@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20200101
+DTEND;VALUE=DATE:20200102
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:سەری ساڵی زایینی
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:mahabad-republic@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19460122
+DTEND;VALUE=DATE:19460123
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕاگەیاندنی کۆماری کوردستان ل
+ ە مەهاباد
+DESCRIPTION;LANGUAGE=ckb:لە ٢٢ی کانوونی دووەمی ١٩٤٦،
+  لە گۆڕەپانی چوارچرا لە مەهاباد، کۆماری 
+ کوردستان بە سەرۆکایەتیی قازی محەممەد ڕا
+ گەیەندرا. کۆمارەکە نزیکەی یازدە مانگ مای
+ ەوە و یەکەم دەوڵەتی کوردیی سەدەی بیستەم 
+ بوو کە خوێندن بە کوردی و دامەزراوەی حکوم
+ یی کوردیی تێدا دامەزرا.\nساڵی ڕووداو: 1946.\n
+ سەرچاوە: https://gov.krd/calendar-2026/ | https://www.erbil.gov.krd
+ /app/ku/node/12506 | https://en.wikipedia.org/wiki/Qazi_Muhammad
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:kobani-liberation@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20150126
+DTEND;VALUE=DATE:20150127
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕزگارکردنی کۆبانێ
+DESCRIPTION;LANGUAGE=ckb:لە ٢٦ی کانوونی دووەمی ٢٠١٥،
+  دوای چەندین مانگ بەرگری لە داعش، شاری کۆ
+ بانێ ڕزگار کرا. بەرگریی کۆبانێ بووە هێما
+ ی خۆڕاگریی ڕۆژاوای کوردستان و لە یادەوەر
+ یی گشتیی کوردیدا وەک ڕۆژێکی مێژوویی دەمێ
+ نێتەوە.\nساڵی ڕووداو: 2015.\nسەرچاوە: https://en.wi
+ kipedia.org/wiki/Siege_of_Koban%C3%AE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:hawler-twin-bombings@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20040201
+DTEND;VALUE=DATE:20040202
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی تەقینەوەکانی یەکی شوبات 
+ لە هەولێر
+DESCRIPTION;LANGUAGE=ckb:لە ١ی شوباتی ٢٠٠٤ دوو تەقین
+ ەوەی خۆکوژی بارەگای پارتی دیموکراتی کور
+ دستان و یەکێتیی نیشتمانیی کوردستان لە هە
+ ولێر کردە ئامانج. دەیان کەس شەهید بوون. ح
+ کومەتی هەرێم ئەم ڕۆژە وەک یادێکی فەرمی د
+ ەهێنێتەوە.\nساڵی ڕووداو: 2004.\nسەرچاوە: https:/
+ /gov.krd/calendar-2025/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:barzani-death@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19790301
+DTEND;VALUE=DATE:19790302
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:کۆچی دوایی مستەفا بارزانی
+DESCRIPTION;LANGUAGE=ckb:مستەفا بارزانی لە ١ی ئازاری
+  ١٩٧٩ لە ئەمریکا کۆچی دوایی کرد و لە شاری 
+ ئۆشنەدا نێژرا. ئەو ڕێبەری شۆڕشی ئەیلوول 
+ و یەکێک لە ناوە نیشتمانییەکانی سەدەی بیس
+ تەمی کوردستان بوو. لەدایکبوونی ١٤ی ئازار
+ ی ١٩٠٣ بوو.\nساڵی ڕووداو: 1979.\nسەرچاوە: https:/
+ /gov.krd/calendar-2026/ | https://en.wikipedia.org/wiki/Mustafa_Barzani
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:raparin@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19910305
+DTEND;VALUE=DATE:19910306
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕاپەڕینی گەلی کوردستان
+DESCRIPTION;LANGUAGE=ckb:لە ٥ی ئازاری ١٩٩١ ڕاپەڕین ل
+ ە ڕانیە دەستی پێکرد و بە خێرایی شارەکانی 
+ باشووری کوردستان گرتەوە. ئەم ڕاپەڕینە دژ
+ ی ڕژێمی بەعس بوو و دواتر بووە بناغەی ئیدا
+ رەی هەرێمی کوردستان. حکومەتی هەرێم ٥ی ئا
+ زار وەک ڕۆژی ڕاپەڕین دیاری دەکات.\nساڵی ڕ
+ ووداو: 1991.\nسەرچاوە: https://gov.krd/calendar-2026/ | http:/
+ /bot.gov.krd/about-kurdistan/traditions-and-heritage
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:algiers-agreement@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19750306
+DTEND;VALUE=DATE:19750307
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕێککەوتنی جەزائیر
+DESCRIPTION;LANGUAGE=ckb:لە ٦ی ئازاری ١٩٧٥ ڕێککەوتنی
+  جەزائیر لە نێوان عێراق و ئێران واژۆ کرا. 
+ بەم ڕێککەوتنە پاڵپشتیی ئێران بۆ شۆڕشی ئە
+ یلوول کۆتایی هات و شۆڕشەکە تووشی نسکۆ بو
+ و. لە مێژووی سیاسیی کورددا وەک وەرچەرخان
+ ێکی تاڵ دەناسرێت.\nساڵی ڕووداو: 1975.\nسەرچا
+ وە: https://en.wikipedia.org/wiki/Algiers_Agreement_(1975)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:slemani-liberation@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19910307
+DTEND;VALUE=DATE:19910308
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕزگارکردنی سلێمانی
+DESCRIPTION;LANGUAGE=ckb:لە ٧ی ئازاری ١٩٩١، لە چوارچ
+ ێوەی ڕاپەڕین، شاری سلێمانی لە دەستی ڕژێم
+ ی بەعس ڕزگار کرا. حکومەتی هەرێم ئەم ڕۆژە 
+ لە ساڵنامەی فەرمییدا تۆمار دەکات.\nساڵی ڕ
+ ووداو: 1991.\nسەرچاوە: https://gov.krd/calendar-2026/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:kurdish-clothing-day@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20200310
+DTEND;VALUE=DATE:20200311
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕۆژی جلوبەرگی نەتەوەییی کورد
+ ی
+DESCRIPTION;LANGUAGE=ckb:١٠ی ئازار ڕۆژی جلوبەرگی نیش
+ تمانیی کوردییە. لەم ڕۆژەدا جلوبەرگی ڕەنگ
+ اوڕەنگی ناوچەکانی کوردستان، لە باشوور، 
+ ڕۆژهەڵات، باکوور و ڕۆژاوا، وەک هێمای ناس
+ نامەی کولتووری دەپۆشرێت. حکومەتی هەرێم ئ
+ ەم ڕۆژە لە ساڵنامەی فەرمییدا هەیە.\nسەرچا
+ وە: https://gov.krd/calendar-2026/ | https://zaniary.com/blog/61f1586208
+ 6e6
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:march-11-agreement@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19700311
+DTEND;VALUE=DATE:19700312
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕێکەوتننامەی ١١ی ئازار
+DESCRIPTION;LANGUAGE=ckb:لە ١١ی ئازاری ١٩٧٠ ڕێکەوتنن
+ امەیەک لە نێوان سەرکردایەتیی شۆڕشی کورد 
+ و حکومەتی عێراق ڕاگەیەندرا کە ئۆتۆنۆمیی 
+ بۆ کوردستان دەناسێنرا. ڕێکەوتنەکە دواتر 
+ جێبەجێ نەکرا، بەڵام وەک بەڵگەیەکی سیاسی
+ ی گرنگ لە مێژووی پرسی کورددا مایەوە.\nساڵ
+ ی ڕووداو: 1970.\nسەرچاوە: https://gov.krd/calendar-2026/ | h
+ ttps://en.wikipedia.org/wiki/Iraqi%E2%80%93Kurdish_Autonomy_Agreement_of_1
+ 970
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:hawler-liberation@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19910311
+DTEND;VALUE=DATE:19910312
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕزگارکردنی هەولێر
+DESCRIPTION;LANGUAGE=ckb:لە ١١ی ئازاری ١٩٩١ شاری هەو
+ لێر لە چوارچێوەی ڕاپەڕین ڕزگار کرا. هەول
+ ێر دواتر بووە پایتەختی هەرێمی کوردستان. 
+ ئەم ڕۆژە لە ساڵنامەی حکومەتی هەرێمدا تۆم
+ ارە.\nساڵی ڕووداو: 1991.\nسەرچاوە: https://gov.krd/cal
+ endar-2026/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:barzani-birthday@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19030314
+DTEND;VALUE=DATE:19030315
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:لەدایکبوونی مستەفا بارزانی
+DESCRIPTION;LANGUAGE=ckb:مستەفا بارزانی لە ١٤ی ئازار
+ ی ١٩٠٣ لە بارزان لەدایک بوو. ڕێبەری شۆڕشی
+  ئەیلوول بوو و لە ١٩٧٩ کۆچی دوایی کرد. حکو
+ مەتی هەرێم ١٤ی ئازار وەک ڕۆژی لەدایکبوون
+ ی ئەو دەهێنێتەوە.\nساڵی ڕووداو: 1903.\nسەرچا
+ وە: https://gov.krd/calendar-2026/ | https://en.wikipedia.org/wiki/Musta
+ fa_Barzani | http://bot.gov.krd/about-kurdistan/traditions-and-heritage
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:duhok-liberation@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19910314
+DTEND;VALUE=DATE:19910315
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕزگارکردنی دهۆک
+DESCRIPTION;LANGUAGE=ckb:لە ١٤ی ئازاری ١٩٩١ شاری دهۆ
+ ک لە چوارچێوەی ڕاپەڕینی گەلی کوردستان ڕز
+ گار کرا. ئەم ڕۆژە لە ساڵنامەی فەرمیی حکوم
+ ەتی هەرێمدا هاتووە.\nساڵی ڕووداو: 1991.\nسەر
+ چاوە: https://gov.krd/calendar-2026/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:halabja@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19880316
+DTEND;VALUE=DATE:19880317
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی کیمیابارانی هەڵەبجە
+DESCRIPTION;LANGUAGE=ckb:لە ١٦ی ئازاری ١٩٨٨ ڕژێمی بە
+ عس شاری هەڵەبجەی بە چەکی کیمیایی بۆردوما
+ ن کرد. هەزاران خەڵکی سیڤیل، زۆربەیان ژن و
+  منداڵ، کوژران. ١٦ی ئازار ڕۆژی یادکردنەو
+ ەی هەڵەبەیە و لە ساڵنامەی حکومەتی هەرێمد
+ ا ڕۆژێکی فەرمییە.\nساڵی ڕووداو: 1988.\nسەرچا
+ وە: https://gov.krd/calendar-2026/ | https://en.wikipedia.org/wiki/Halab
+ ja_chemical_attack | http://bot.gov.krd/about-kurdistan/traditions-and-her
+ itage
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:kirkuk-liberation-1991@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19910321
+DTEND;VALUE=DATE:19910322
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕزگارکردنی کەرکووک لە ڕاپەڕی
+ ن
+DESCRIPTION;LANGUAGE=ckb:لە ٢١ی ئازاری ١٩٩١، هاوکات 
+ لەگەڵ نەورۆز، شاری کەرکووک لە چوارچێوەی 
+ ڕاپەڕین بۆ ماوەیەکی کورت ڕزگار کرا. حکوم
+ ەتی هەرێم ئەم ڕۆژە جیا لە نەورۆز لە ساڵنا
+ مەکەیدا تۆمار دەکات. ڕۆژەکە لەسەر ڕۆژژمێ
+ ری زایینی جێگیرە، نەک وەک ١ی خاکەلێوە.\nس
+ اڵی ڕووداو: 1991.\nسەرچاوە: https://gov.krd/calendar-2026/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:qazi-muhammad-execution@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19470331
+DTEND;VALUE=DATE:19470401
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:لەسێدارەدانی قازی محەممەد
+DESCRIPTION;LANGUAGE=ckb:قازی محەممەد، سەرۆکی کۆمار
+ ی کوردستان لە مەهاباد، لە ٣١ی ئازاری ١٩٤
+ ٧ لەگەڵ سەدری قازی و سەیفی قازی لە مەهابا
+ د لە سێدارە دران. ئەو لە ١ی ئایاری ١٨٩٣ لە
+ دایک ببوو. ٣١ی ئازار ڕۆژی یادکردنەوەی ئە
+ و و هاوڕێکانییە.\nساڵی ڕووداو: 1947.\nسەرچاو
+ ە: https://en.wikipedia.org/wiki/Qazi_Muhammad | https://www.wikidata.org
+ /wiki/Q379849 | https://dckurd.org/2018/07/18/qazi-mohammed/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:feyli-genocide@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19800404
+DTEND;VALUE=DATE:19800405
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی جینۆسایدی کوردە فەیلییە
+ کان
+DESCRIPTION;LANGUAGE=ckb:٤ی نیسان ڕۆژی یادکردنەوەی ق
+ وربانییانی جینۆسایدی کوردە فەیلییەکانە
+ ، کە لە ساڵنامەی حکومەتی هەرێمدا تۆمارە. 
+ لە سەرەتای نیسانی ١٩٨٠ ڕژێمی بەعس دەستیک
+ رد بە دەربەدەرکردن و لەناوبردنی کوردانی 
+ فەیلی و دەستبەسەرداگرتنی سامان و ڕەگەزن
+ امەکانیان.\nساڵی ڕووداو: 1980.\nسەرچاوە: https:/
+ /gov.krd/calendar-2026/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:unscr-688@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19910405
+DTEND;VALUE=DATE:19910406
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:بڕیاری ٦٨٨ی ئەنجومەنی ئاسایش
+DESCRIPTION;LANGUAGE=ckb:لە ٥ی نیسانی ١٩٩١ ئەنجومەنی
+  ئاسایشی نەتەوە یەکگرتووەکان بڕیاری ٦٨٨
+ ی دەرکرد و داوای لە عێراق کرد کۆتایی بە س
+ ەرکوتکردنی دانیشتووانی کورد و شیعە بهێن
+ ێت. ئەم بڕیارە ڕێگەی خۆش کرد بۆ ناوچەی دژ
+ ەفڕین و گەڕانەوەی ئاوارەکانی ڕاپەڕین.\nس
+ اڵی ڕووداو: 1991.\nسەرچاوە: https://gov.krd/calendar-2026/
+  | https://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolutio
+ n_688
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:anfal-garmian@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19880414
+DTEND;VALUE=DATE:19880415
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی ئەنفالی گەرمیان
+DESCRIPTION;LANGUAGE=ckb:١٤ی نیسان ڕۆژی یادکردنەوەی 
+ ئەنفالی گەرمیانە (چەمچەماڵ و کەلار)، کە ی
+ ەکێک لە قورسترین قۆناغەکانی هەڵمەتی ئەن
+ فال بوو لە ساڵی ١٩٨٨. هەزاران خەڵکی گەرمی
+ ان ڕاپێچ کران و کوژران. حکومەتی هەرێم ١٤ی
+  نیسان وەک ڕۆژی ئەم یادە دیاری کردووە. قۆ
+ ناغەکانی دیکەی ئەنفال لە ٣١ی تەممووز (با
+ رزان) و ٢٥ی ئاب (بادینان) دەهێنرێنەوە.\nسا
+ ڵی ڕووداو: 1988.\nسەرچاوە: https://gov.krd/calendar-2026/ |
+  https://www.hrw.org/reports/1993/iraqanfal/ | http://bot.gov.krd/about-ku
+ rdistan/traditions-and-heritage
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:balisan-chemical@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19870416
+DTEND;VALUE=DATE:19870417
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی کیمیابارانی بالیسان
+DESCRIPTION;LANGUAGE=ckb:لە ١٦ی نیسانی ١٩٨٧ گوندەکان
+ ی بالیسان و شێخ وەسان بە چەکی کیمیایی بۆر
+ دومان کران. ئەمە یەکێک بوو لە یەکەم بەکار
+ هێنانە بەرفراوانەکانی چەکی کیمیایی دژی 
+ گوندەکانی کوردستان پێش هەڵەبجە. حکومەتی 
+ هەرێم ١٦ی نیسان وەک یادی ئەم تاوانە و هەر
+ وەها وەک ڕۆژی ژینگە دەهێنێتەوە.\nساڵی ڕوو
+ داو: 1987.\nسەرچاوە: https://gov.krd/calendar-2026/ | https://za
+ niary.com/blog/61f15862086e6
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:kurdish-journalism-day@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:18980422
+DTEND;VALUE=DATE:18980423
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕۆژی ڕۆژنامەگەریی کوردی
+DESCRIPTION;LANGUAGE=ckb:لە ٢٢ی نیسانی ١٨٩٨ یەکەم ژم
+ ارەی ڕۆژنامەی «کوردستان» لە قاهیرە بە دە
+ ستی میقداد میدحەت بەدرخان دەرچوو. ئەمە س
+ ەرەتای ڕۆژنامەگەریی کوردییە. ٢٢ی نیسان ڕ
+ ۆژی ڕۆژنامەگەریی کوردییە و لە ساڵنامەی ح
+ کومەتی هەرێم و پەیامەکانی سەرۆکایەتیی ه
+ ەرێمدا دەهێنرێتەوە.\nساڵی ڕووداو: 1898.\nسەر
+ چاوە: https://gov.krd/calendar-2026/ | https://presidency.gov.krd/paya
+ my-gegry-sarok-la-salyady-rozhy-rozhnamagaryy-kordyda/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:qaladze-bombardment@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19740424
+DTEND;VALUE=DATE:19740425
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی بۆردومانی قەڵادزێ
+DESCRIPTION;LANGUAGE=ckb:لە ٢٤ی نیسانی ١٩٧٤ فڕۆکە جە
+ نگییەکانی ڕژێمی عێراق شاری قەڵادزێیان ب
+ ۆردومان کرد و ژمارەیەکی زۆر خەڵکی سیڤیل 
+ کوژران. حکومەتی هەرێم ٢٤ی نیسان وەک یادی 
+ ئەم تاوانە دیاری کردووە.\nساڵی ڕووداو: 1974.
+ \nسەرچاوە: https://gov.krd/calendar-2026/ | https://zaniary.com/blo
+ g/61f15862086e6
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:qazi-muhammad-birthday@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:18930501
+DTEND;VALUE=DATE:18930502
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:لەدایکبوونی قازی محەممەد
+DESCRIPTION;LANGUAGE=ckb:قازی محەممەد لە ١ی ئایاری ١
+ ٨٩٣ لە مەهاباد لەدایک بوو. دادوەر، سەرۆک
+ ی کۆماری کوردستان و دامەزرێنەری حیزبی دی
+ موکراتی کوردستانی ئێران بوو. لە ٣١ی ئازا
+ ری ١٩٤٧ لە سێدارە درا.\nساڵی ڕووداو: 1893.\nس
+ ەرچاوە: https://en.wikipedia.org/wiki/Qazi_Muhammad | https://www.wi
+ kidata.org/wiki/Q379849
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sherko-bekas-birthday@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19400502
+DTEND;VALUE=DATE:19400503
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:لەدایکبوونی شێرکۆ بێکەس
+DESCRIPTION;LANGUAGE=ckb:شێرکۆ فایەق عەبدوڵڵا، ناسر
+ او بە شێرکۆ بێکەس، لە ٢ی ئایاری ١٩٤٠ لە گ
+ ەڕەکی گۆیژەی سلێمانی لەدایک بوو. یەکێکە 
+ لە دامەزرێنەرانی شیعری نوێی کوردی. لە ٤ی 
+ ئابی ٢٠١٣ لە ستۆکهۆڵم کۆچی دوایی کرد.\nسا
+ ڵی ڕووداو: 1940.\nسەرچاوە: https://en.wikipedia.org/wiki/Sh
+ erko_Bekas | https://www.wikidata.org/wiki/Q1395748
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dersim@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19370504
+DTEND;VALUE=DATE:19370505
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی تەرتەلەی دەرسیم
+DESCRIPTION;LANGUAGE=ckb:٤ی ئایار وەک دەستپێکی هەڵمە
+ تی سەربازیی ساڵی ١٩٣٧، ١٩٣٨ دژی خەڵکی دە
+ رسیم دەهێنرێتەوە. لەو ڕۆژەدا ئەنجومەنی و
+ ەزیرانی تورکیا بڕیارێکی نهێنیی دەرکرد ب
+ ۆ چارەسەری سەربازیی ناوچەکە. دەیان هەزار
+  کەس کوژران یان ڕاگواستران. سەید ڕزا و ها
+ وڕێکانی دواتر لە هەمان ساڵدا لە سێدارە د
+ ران.\nساڵی ڕووداو: 1937.\nسەرچاوە: https://kurdaktuell
+ t.se/2026/05/05/may-4-commemoration-day-of-the-dersim-genocide-in-1937-38/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:leyla-qasim@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19740512
+DTEND;VALUE=DATE:19740513
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:لەسێدارەدانی لەیلا قاسم
+DESCRIPTION;LANGUAGE=ckb:لەیلا قاسم، چالاکوانی کورد 
+ لە خانەقین، لە ١٢ی ئایاری ١٩٧٤ لەگەڵ چوا
+ ر هاوڕێکەیدا لە بەغدا لە سێدارە درا. بووە
+  هێمای ژنانی کورد و خەباتی نیشتمانی. سەرۆ
+ کایەتیی هەرێمی کوردستان هەموو ساڵێک ئەم 
+ ڕۆژە دەهێنێتەوە.\nساڵی ڕووداو: 1974.\nسەرچاو
+ ە: https://presidency.gov.krd/en/president-nechirvan-barzanis-message-on-
+ the-commemoration-of-the-martyrdom-of-leyla-qasim-and-her-comrades/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:kurdish-language-day@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19320515
+DTEND;VALUE=DATE:19320516
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕۆژی زمانی کوردی
+DESCRIPTION;LANGUAGE=ckb:١٥ی ئایار ڕۆژی زمانی کوردیی
+ ە. لە ١٥ی ئایاری ١٩٣٢ یەکەم ژمارەی گۆڤاری
+  «هاوار» بە دەستی جەلادەت عەلی بەدرخان ل
+ ە دیمەشق دەرچوو و ڕۆڵی یەکلاکەرەوەی لە س
+ تانداردکردنی ئەلفوبێی لاتینیی کرمانجی و
+  ڕۆشنبیریی کوردیدا گێڕا. کۆنگرەی نەتەوەی
+ یی کوردستان لە دەوروبەری ٢٠٠٦، ٢٠٠٩ ئەم 
+ ڕۆژەی وەک ڕۆژی زمان دیاری کرد.\nساڵی ڕوود
+ او: 1932.\nسەرچاوە: https://en.wikipedia.org/wiki/Kurdish_Languag
+ e_Day | https://english.anf-news.com/kurdistan/knk-message-on-kurdish-lang
+ uage-day-kurdish-must-be-protected-and-strengthened-85399
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sardasht-chemical@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19870628
+DTEND;VALUE=DATE:19870629
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی کیمیابارانی سەردەشت
+DESCRIPTION;LANGUAGE=ckb:لە ٢٨ی حوزەیرانی ١٩٨٧ شاری 
+ سەردەشت لە ڕۆژهەڵاتی کوردستان بە چەکی کی
+ میایی بۆردومان کرا. دەیان خەڵکی سیڤیل کو
+ ژران و بریندار بوون. ئەم تاوانە پێش کیمیا
+ بارانی هەڵەبجە ڕوویدا و یەکێکە لە یەکەم 
+ نموونەکانی بەکارهێنانی گازی خەردەڵ دژی 
+ دانیشتووانی شارێکی کوردیی.\nساڵی ڕووداو: 
+ 1987.\nسەرچاوە: https://en.wikipedia.org/wiki/Sardasht_chemical_att
+ ack
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sheikh-said-execution@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19250629
+DTEND;VALUE=DATE:19250630
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:لەسێدارەدانی شێخ سەعید
+DESCRIPTION;LANGUAGE=ckb:شێخ سەعیدی پیران، سەرکردەی 
+ ڕاپەڕینی ١٩٢٥ لە باکووری کوردستان، لە ٢٩
+ ی حوزەیرانی ١٩٢٥ لە دیاربەکر لە سێدارە د
+ را. ڕاپەڕینەکە دوای هەڵوەشاندنەوەی خەلا
+ فەت و سیاسەتی یەکزمانیی کۆماری تورکیا هە
+ ڵگیرسا.\nساڵی ڕووداو: 1925.\nسەرچاوە: https://en.wi
+ kipedia.org/wiki/Sheikh_Said
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:lausanne@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19230724
+DTEND;VALUE=DATE:19230725
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:پەیمانی لۆزان
+DESCRIPTION;LANGUAGE=ckb:لە ٢٤ی تەممووزی ١٩٢٣ پەیمان
+ ی لۆزان واژۆ کرا و ئەو دەقەی پەیمانی سیڤە
+ ر کە باسی مافی کوردی دەکرد جێگیر نەکرا. س
+ نوورەکانی تورکیا، عێراق و سوریا بەبێ دەو
+ ڵەتێکی کوردی داڕێژرانەوە. ٢٤ی تەممووز لە
+  مێژووی سیاسیی کورددا وەک ڕۆژی ئەم بڕیار
+ ە دەهێنرێتەوە.\nساڵی ڕووداو: 1923.\nسەرچاوە: 
+ https://en.wikipedia.org/wiki/Treaty_of_Lausanne
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:anfal-barzan@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19830731
+DTEND;VALUE=DATE:19830801
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی ئەنفالی بارزانییەکان
+DESCRIPTION;LANGUAGE=ckb:لە ٣١ی تەممووزی ١٩٨٣ هێزەکا
+ نی ڕژێمی بەعس هەزاران پیاوی بارزانییان ل
+ ە کەمپەکانی قوشتەپە و هەولێر ڕاپێچ کرد و 
+ دواتر کوژران. حکومەتی هەرێم ٣١ی تەممووز 
+ وەک یادی ئەنفالی بارزانییەکان دیاری کرد
+ ووە. ئەم تاوانە پێش هەڵمەتی هەشت قۆناغیی
+ ەی ئەنفالی ١٩٨٨ ڕوویدا.\nساڵی ڕووداو: 1983.\n
+ سەرچاوە: https://gov.krd/calendar-2026/ | https://www.hrw.org/repor
+ ts/1993/iraqanfal/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:shingal-genocide@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20140803
+DTEND;VALUE=DATE:20140804
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی جینۆسایدی شنگال
+DESCRIPTION;LANGUAGE=ckb:لە ٣ی ئابی ٢٠١٤ داعش هێرشی ک
+ ردە سەر شنگال. هەزاران ئێزیدی کوژران، ڕف
+ ێندران یان ئاوارە بوون. حکومەتی هەرێم ٣ی 
+ ئاب وەک یادی ئەم تاوانە تۆمار دەکات. شنگا
+ ل بەشێکە لە جوگرافیا و یادەوەریی کوردستا
+ ن.\nساڵی ڕووداو: 2014.\nسەرچاوە: https://gov.krd/calenda
+ r-2026/ | https://zaniary.com/blog/61f15862086e6
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sherko-bekas-death@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20130804
+DTEND;VALUE=DATE:20130805
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:کۆچی دوایی شێرکۆ بێکەس
+DESCRIPTION;LANGUAGE=ckb:شێرکۆ بێکەس لە ٤ی ئابی ٢٠١٣ 
+ لە ستۆکهۆڵم بە نەخۆشیی شێرپەنجە کۆچی دوا
+ یی کرد و لە سلێمانی نێژرا. شیعرەکانی لەسە
+ ر ئازادی، سروشت و دۆخی کورد نووسراون و کا
+ ریگەرییەکی فراوانی لەسەر شیعری هاوچەرخی
+  کوردی هەبوو.\nساڵی ڕووداو: 2013.\nسەرچاوە: htt
+ ps://en.wikipedia.org/wiki/Sherko_Bekas | https://www.wikidata.org/wiki/Q1
+ 395748
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sevres@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19200810
+DTEND;VALUE=DATE:19200811
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:پەیمانی سیڤەر
+DESCRIPTION;LANGUAGE=ckb:لە ١٠ی ئابی ١٩٢٠ پەیمانی سی
+ ڤەر واژۆ کرا. ماددەکانی ٦٢ تا ٦٤ باسی ئۆت
+ ۆنۆمی و دواتر ئەگەری سەربەخۆیی بۆ کوردان
+ ی ئیمپراتۆریی عوسمانی دەکەن. پەیمانەکە ج
+ ێبەجێ نەکرا و لە ١٩٢٣ بە لۆزان گۆڕدرا، بە
+ ڵام وەک بەڵگەیەکی نێودەوڵەتیی مافی کورد 
+ لە مێژوودا ماوەتەوە.\nساڵی ڕووداو: 1920.\nسە
+ رچاوە: https://en.wikipedia.org/wiki/Treaty_of_S%C3%A8vres
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:anfal-badinan@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19880825
+DTEND;VALUE=DATE:19880826
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی ئەنفالی بادینان
+DESCRIPTION;LANGUAGE=ckb:٢٥ی ئاب دەستپێکی قۆناغی کۆت
+ اییی هەڵمەتی ئەنفالە دژی ناوچەی بادینان 
+ لە ساڵی ١٩٨٨، کە تا ٦ی ئەیلوول بەردەوام ب
+ وو. حکومەتی هەرێم ٢٥ی ئاب وەک یادی ئەنفال
+ ی بادینانییەکان دیاری کردووە. هەڵمەتی ئە
+ نفال بە گشتی لە ٢٣ی شوبات تا ٦ی ئەیلوولی 
+ ١٩٨٨ هەشت قۆناغی گرتەوە.\nساڵی ڕووداو: 1988.
+ \nسەرچاوە: https://gov.krd/calendar-2026/ | https://www.hrw.org/rep
+ orts/1993/iraqanfal/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:september-revolution@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19610911
+DTEND;VALUE=DATE:19610912
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:شۆڕشی ئەیلوول
+DESCRIPTION;LANGUAGE=ckb:لە ١١ی ئەیلوولی ١٩٦١ شۆڕشی 
+ ئەیلوول بە ڕابەرایەتیی مستەفا بارزانی د
+ ژی حکومەتی عێراق هەڵگیرسا. تا نسکۆی ساڵی 
+ ١٩٧٥ بەردەوام بوو و یەکێکە لە درێژترین ش
+ ۆڕشە چەکدارییەکانی کورد. حکومەتی هەرێم ١
+ ١ی ئەیلوول وەک ساڵیادی هەڵگیرسانی شۆڕشە
+ کە دەهێنێتەوە.\nساڵی ڕووداو: 1961.\nسەرچاوە: 
+ https://gov.krd/salnama-2026/ | https://en.wikipedia.org/wiki/First_Iraqi%
+ E2%80%93Kurdish_War
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:musa-anter@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19920920
+DTEND;VALUE=DATE:19920921
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:تیرۆرکردنی موسا عەنتەر
+DESCRIPTION;LANGUAGE=ckb:موسا عەنتەر (ئاپێ موسا)، نوو
+ سەر و ڕۆژنامەنووسی کورد، لە ٢٠ی ئەیلوولی
+  ١٩٩٢ لە دیاربەکر تیرۆر کرا. یەکێک بوو لە 
+ دەنگە دیارەکانی ڕۆژنامەگەری و زمانەوانی
+ ی کوردی لە باکوور. ٢٠ی ئەیلوول وەک ڕۆژی ی
+ ادکردنەوەی ئەو دەهێنرێتەوە.\nساڵی ڕووداو
+ : 1992.\nسەرچاوە: https://en.wikipedia.org/wiki/Musa_Anter
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:mahabad-fall@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19461215
+DTEND;VALUE=DATE:19461216
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:کۆتایی کۆماری مەهاباد
+DESCRIPTION;LANGUAGE=ckb:لە ١٥ی کانوونی یەکەمی ١٩٤٦ 
+ سوپای ئێران بەبێ بەرگرییەکی گەورە هاتە ن
+ او مەهاباد و کۆماری کوردستان کۆتایی هات. 
+ قازی محەممەد دوو ڕۆژ دواتر دەستگیر کرا و 
+ لە ٣١ی ئازاری ١٩٤٧ لە سێدارە درا. ئاڵای ک
+ وردستان دوو ڕۆژ پێش کۆتاییی کۆمار، لە ١٧
+ ی کانوونی یەکەمی ١٩٤٥، بۆ یەکەمجار لە مە
+ هاباد هەڵکرابوو.\nساڵی ڕووداو: 1946.\nسەرچاو
+ ە: https://en.wikipedia.org/wiki/Republic_of_Mahabad | https://en.wikiped
+ ia.org/wiki/Qazi_Muhammad
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:kurdistan-flag-day@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:19451217
+DTEND;VALUE=DATE:19451218
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:ڕۆژی ئاڵای کوردستان
+DESCRIPTION;LANGUAGE=ckb:١٧ی کانوونی یەکەم ڕۆژی ئاڵا
+ ی کوردستانە. لە ١٧ی کانوونی یەکەمی ١٩٤٥ ئ
+ اڵای ڕەنگاوڕەنگ (ئالا ڕەنگین) بۆ یەکەمجا
+ ر لە مەهاباد هەڵکرا، پێش ڕاگەیاندنی کۆما
+ ر لە ٢٢ی کانوونی دووەمی ١٩٤٦. پەرلەمانی ک
+ وردستان لە ١١ی تشرینی دووەمی ١٩٩٩ یاسای 
+ ئاڵای پەسەند کرد و لە ١٩ی حوزەیرانی ٢٠٠٤ 
+ ڕۆژی ١٧ی کانوونی یەکەمی وەک ڕۆژی ئاڵا دی
+ اری کرد.\nساڵی ڕووداو: 1945.\nسەرچاوە: https://gov.
+ krd/calendar-2026/ | https://www.kurdistan24.net/en/story/381451/Kurds-acr
+ oss-Kurdistan-Region\,-world-celebrate-Kurdistan-Flag-Day
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:roboski@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20111228
+DTEND;VALUE=DATE:20111229
+RRULE:FREQ=YEARLY
+SUMMARY;LANGUAGE=ckb:یادی کۆمەڵکوژیی ڕۆبۆسکی
+DESCRIPTION;LANGUAGE=ckb:لە ٢٨ی کانوونی یەکەمی ٢٠١١ 
+ فڕۆکەی جەنگیی تورکیا لە نزیک ئولودەرە / ڕ
+ ۆبۆسکی ٣٤ کەسی کوشت، زۆربەیان گەنجی خەڵک
+ ی ناوچەکە بوون کە باری قاچاخیان دەگواستە
+ وە. ٢٨ی کانوونی یەکەم ڕۆژی یادکردنەوەی ق
+ وربانییەکانە.\nساڵی ڕووداو: 2011.\nسەرچاوە: h
+ ttps://en.wikipedia.org/wiki/Roboski_massacre
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2020@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20200524
+DTEND;VALUE=DATE:20200525
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2021@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20210513
+DTEND;VALUE=DATE:20210514
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2022@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20220503
+DTEND;VALUE=DATE:20220504
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2023@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20230422
+DTEND;VALUE=DATE:20230423
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2024@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20240410
+DTEND;VALUE=DATE:20240411
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2025@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20250331
+DTEND;VALUE=DATE:20250401
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2026@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260320
+DTEND;VALUE=DATE:20260321
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2027@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270310
+DTEND;VALUE=DATE:20270311
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2028@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280227
+DTEND;VALUE=DATE:20280228
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2029@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290215
+DTEND;VALUE=DATE:20290216
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2030@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300205
+DTEND;VALUE=DATE:20300206
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2031@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20310125
+DTEND;VALUE=DATE:20310126
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2032@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20320114
+DTEND;VALUE=DATE:20320115
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2033@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20330103
+DTEND;VALUE=DATE:20330104
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2033@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20331223
+DTEND;VALUE=DATE:20331224
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2034@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20341212
+DTEND;VALUE=DATE:20341213
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2035@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20351202
+DTEND;VALUE=DATE:20351203
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2036@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20361120
+DTEND;VALUE=DATE:20361121
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2037@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20371110
+DTEND;VALUE=DATE:20371111
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2038@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20381030
+DTEND;VALUE=DATE:20381031
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2039@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20391019
+DTEND;VALUE=DATE:20391020
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2040@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20401008
+DTEND;VALUE=DATE:20401009
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2041@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20410927
+DTEND;VALUE=DATE:20410928
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2042@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20420916
+DTEND;VALUE=DATE:20420917
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2043@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20430906
+DTEND;VALUE=DATE:20430907
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2044@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20440825
+DTEND;VALUE=DATE:20440826
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2045@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20450815
+DTEND;VALUE=DATE:20450816
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2046@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20460804
+DTEND;VALUE=DATE:20460805
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2047@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20470724
+DTEND;VALUE=DATE:20470725
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2048@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20480713
+DTEND;VALUE=DATE:20480714
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2049@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20490702
+DTEND;VALUE=DATE:20490703
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2050@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20500621
+DTEND;VALUE=DATE:20500622
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2051@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20510611
+DTEND;VALUE=DATE:20510612
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2052@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20520530
+DTEND;VALUE=DATE:20520531
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2053@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20530519
+DTEND;VALUE=DATE:20530520
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2054@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20540509
+DTEND;VALUE=DATE:20540510
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2055@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20550428
+DTEND;VALUE=DATE:20550429
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2056@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20560417
+DTEND;VALUE=DATE:20560418
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2057@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20570406
+DTEND;VALUE=DATE:20570407
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2058@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20580326
+DTEND;VALUE=DATE:20580327
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2059@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20590316
+DTEND;VALUE=DATE:20590317
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-fitr-2060@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20600304
+DTEND;VALUE=DATE:20600305
+SUMMARY;LANGUAGE=ckb:جەژنی ڕەمەزان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2020@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20200731
+DTEND;VALUE=DATE:20200801
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2021@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20210720
+DTEND;VALUE=DATE:20210721
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2022@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20220710
+DTEND;VALUE=DATE:20220711
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2023@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20230629
+DTEND;VALUE=DATE:20230630
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2024@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20240617
+DTEND;VALUE=DATE:20240618
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2025@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20250607
+DTEND;VALUE=DATE:20250608
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2026@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260527
+DTEND;VALUE=DATE:20260528
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2027@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270517
+DTEND;VALUE=DATE:20270518
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2028@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280505
+DTEND;VALUE=DATE:20280506
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2029@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290424
+DTEND;VALUE=DATE:20290425
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2030@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300414
+DTEND;VALUE=DATE:20300415
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2031@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20310403
+DTEND;VALUE=DATE:20310404
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2032@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20320322
+DTEND;VALUE=DATE:20320323
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2033@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20330312
+DTEND;VALUE=DATE:20330313
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2034@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20340301
+DTEND;VALUE=DATE:20340302
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2035@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20350218
+DTEND;VALUE=DATE:20350219
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2036@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20360208
+DTEND;VALUE=DATE:20360209
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2037@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20370127
+DTEND;VALUE=DATE:20370128
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2038@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20380117
+DTEND;VALUE=DATE:20380118
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2039@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20390106
+DTEND;VALUE=DATE:20390107
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2039@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20391226
+DTEND;VALUE=DATE:20391227
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2040@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20401215
+DTEND;VALUE=DATE:20401216
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2041@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20411204
+DTEND;VALUE=DATE:20411205
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2042@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20421123
+DTEND;VALUE=DATE:20421124
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2043@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20431113
+DTEND;VALUE=DATE:20431114
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2044@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20441101
+DTEND;VALUE=DATE:20441102
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2045@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20451022
+DTEND;VALUE=DATE:20451023
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2046@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20461011
+DTEND;VALUE=DATE:20461012
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2047@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20470930
+DTEND;VALUE=DATE:20471001
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2048@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20480919
+DTEND;VALUE=DATE:20480920
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2049@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20490908
+DTEND;VALUE=DATE:20490909
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2050@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20500828
+DTEND;VALUE=DATE:20500829
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2051@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20510818
+DTEND;VALUE=DATE:20510819
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2052@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20520806
+DTEND;VALUE=DATE:20520807
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2053@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20530726
+DTEND;VALUE=DATE:20530727
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2054@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20540716
+DTEND;VALUE=DATE:20540717
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2055@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20550705
+DTEND;VALUE=DATE:20550706
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2056@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20560624
+DTEND;VALUE=DATE:20560625
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2057@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20570613
+DTEND;VALUE=DATE:20570614
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2058@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20580602
+DTEND;VALUE=DATE:20580603
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2059@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20590523
+DTEND;VALUE=DATE:20590524
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eid-al-adha-2060@roj.0xdolan.github.io
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20600511
+DTEND;VALUE=DATE:20600512
+SUMMARY;LANGUAGE=ckb:جەژنی قوربان
+CATEGORIES:HOLIDAY
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

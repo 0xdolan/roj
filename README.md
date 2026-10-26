@@ -26,7 +26,7 @@ The name means both *sun* and *day* in Kurdish, and the logo joins a traditional
 - **Five languages.** Dates and interface in Sorani, Kurmanji, English, Persian or Arabic, laid out right to left where needed. The other calendars can follow your language, the interface, or their own: Gregorian in English, Persian in Persian, Islamic in Arabic.
 - **Four calendars in every day.** The Kurdish day is large; the Gregorian (on by default), Persian and Islamic days appear as small numbers of the same size, in a row or in the corners.
 - **Written properly.** Sorani ezafe (ی), on for the Kurdish date by default and switchable per calendar. Each language uses its own digits (۰۱۲, ٠١٢ or 012) unless you choose otherwise. Traditional month names.
-- **Events.** Kurdish days are included. Add your own JSON events or any `.ics` calendar, local or online, with one-click public holidays for Iraq, Iran, Turkey, Syria and Germany. The top bar shows a dot, a count or the title when today has an event.
+- **Events.** 43 Kurdish days are included, and you can [add them to Google Calendar or an iPhone](#kurdish-events-in-google-calendar-or-on-an-iphone) too. Add your own JSON events or any `.ics` calendar, local or online, with one-click public holidays for Iraq, Iran, Turkey, Syria and Germany. The top bar shows a dot, a count or the title when today has an event.
 - **Fonts per script.** Manrope for left-to-right text; Vazirmatn, Estedad or Sahel for Arabic-script text; or any installed font or font file.
 - **Your own patterns.** Every strftime token of [tsroj](https://www.npmjs.com/package/@0xdolan/tsroj) and [pyroj](https://pypi.org/project/pyroj/), with presets and live previews.
 - **Converter, guide and About pages**, light, dark and system themes, settings export and import, and a popup that keeps the same size on every day.
@@ -86,6 +86,7 @@ roj convert 2726-01-01 --from kurdish --to gregorian
 roj format "%A %d %B %Y" --locale kmr
 roj -l fa --secondary native          # Persian, each calendar in its own language
 roj events --month --file holidays.ics
+roj ics --locale en > kurdish-events.ics  # events for Google or Apple Calendar
 ```
 
 <img src="docs/images/marketing/cli.png" alt="roj in a terminal" width="100%">
@@ -106,6 +107,23 @@ roj events --month --file holidays.ics
 
 `calendar` is `kurdish`, `gregorian`, `persian` or `islamic`; leave out `year` for yearly events. Titles can be `ckb`, `kmr`, `en`, `fa` and `ar`. The included events are in [`extension/data/events/kurdish.json`](extension/data/events/kurdish.json); the full reference is in the [guide](https://0xdolan.github.io/roj/guide.html#events).
 
+## Kurdish events in Google Calendar or on an iPhone
+
+The 43 included Kurdish events are also published as calendars, so you can see them on any phone or computer:
+
+| Language | Subscribe (stays up to date) | Download |
+| --- | --- | --- |
+| Sorani | `https://0xdolan.github.io/roj/calendar/kurdish-events-ckb.ics` | [kurdish-events-ckb.ics](docs/calendar/kurdish-events-ckb.ics) |
+| Kurmanji | `https://0xdolan.github.io/roj/calendar/kurdish-events-kmr.ics` | [kurdish-events-kmr.ics](docs/calendar/kurdish-events-kmr.ics) |
+| English | `https://0xdolan.github.io/roj/calendar/kurdish-events-en.ics` | [kurdish-events-en.ics](docs/calendar/kurdish-events-en.ics) |
+
+- **Google Calendar**: on a computer, open [Settings, Add calendar, From URL](https://calendar.google.com/calendar/r/settings/addbyurl), paste a link and choose **Add calendar**. It then shows on your phone too.
+- **iPhone and iPad**: open **Settings, Apps, Calendar, Calendar Accounts, Add Account, Other, Add Subscribed Calendar**, paste a link and tap **Next**, then **Save**.
+- **Mac**: in Calendar, choose **File, New Calendar Subscription**, paste a link.
+- **Import once** instead: download a file, then use Google Calendar's **Settings, Import and export**, or open the file on an iPhone or Mac.
+
+A subscription follows changes to the events; an imported copy does not. Newroz and the two Eids are listed from 2020 to 2060; Eid dates use the arithmetic Hijri calendar and can differ by a day or two from the sighting of the moon. `roj ics` writes the same file, plus any events of your own.
+
 ## Development
 
 ```sh
@@ -113,6 +131,7 @@ make test            # syntax, the no-dash rule, translations and unit tests
 make dev-link        # use this checkout as your installed extension (and roj)
 make i18n            # untranslated interface messages, per language
 make screenshots     # real screenshots from a sandboxed, headless GNOME Shell
+make ics             # rebuild docs/calendar/*.ics after editing the Kurdish events
 make marketing       # banner, features, store, themes and terminal images
 make release-assets  # zip, tarball, both .deb packages and SHA256SUMS
 ```
@@ -126,7 +145,8 @@ make release-assets  # zip, tarball, both .deb packages and SHA256SUMS
 | `extension/cli/roj.js` | The `roj` command |
 | `debian/` | Packaging for the `roj` and `gnome-shell-extension-roj` packages |
 | `scripts/` | Packaging, releases, screenshots, marketing images and the logo |
-| `docs/` | The website, the guide and the story (GitHub Pages) |
+| `extension/data/events/` | The included Kurdish events |
+| `docs/` | The website, the guide, the story and the Kurdish events calendars (GitHub Pages) |
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) first; it includes the project's rules, such as never using em or en dashes.
 

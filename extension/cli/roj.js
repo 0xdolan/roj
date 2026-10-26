@@ -5,6 +5,7 @@
 
 import {CALENDARS, LOCALES, PRESETS, RojEngine, SECONDARY_CALENDARS, TOKENS, weekdayOf} from '../lib/engine.js';
 import {EventIndex, parseEventsDocument} from '../lib/events.js';
+import {buildIcs} from '../lib/icsExport.js';
 import {localizedText} from '../lib/i18n.js';
 import {SCHEMA_ID, VERSION} from '../lib/constants.js';
 
@@ -20,6 +21,7 @@ Commands:
   convert DATE             Convert DATE (YYYY-MM-DD) between calendars
   format PATTERN           Format a date with a strftime pattern
   events [DATE]            Events on a day (default: today)
+  ics                      Your events as an .ics file for Google or Apple Calendar
   months                   The twelve Kurdish months of this year
   tokens                   Every pattern token with examples
   help                     Show this help
@@ -56,6 +58,7 @@ Examples:
   roj format "%A %d %B %Y" --locale kmr
   roj format "%d %B %Y" --date 1448-09-01 --from islamic
   roj events --month --file ~/holidays.ics
+  roj ics --locale en > kurdish-events.ics
 `;
 
 // Platform layer (GJS or Node)
@@ -362,7 +365,8 @@ function monthSpan(engine, cal, grid) {
     return `${engine.format(grid.first, cal, y1 === y2 ? '%b' : '%b %Y')} · ${engine.format(last, cal, '%b %Y')}`;
 }
 
-function loadEvents(ctx) {
+/** The enabled event sources, as `{id, name, events}`. */
+function loadSources(ctx) {
     const {io, settings, opts} = ctx;
     const sources = [];
     const add = (id, name, path) => {
@@ -396,8 +400,12 @@ function loadEvents(ctx) {
         }
     }
     opts.file.forEach((path, i) => add(`file${i}`, null, path.replace(/^~(?=\/)/, io.home)));
+    return sources;
+}
+
+function loadEvents(ctx) {
     const index = new EventIndex(ctx.engine);
-    index.setSources(sources);
+    index.setSources(loadSources(ctx));
     return index;
 }
 
@@ -435,6 +443,17 @@ function cmdEvents(ctx) {
         const flag = r.holiday ? paint('red', ' ●') : '  ';
         io.out(`${paint('kurdish', r.day.padEnd(14))} ${paint('dim', r.gregorian)}${flag} ${r.time ? `${r.time} ` : ''}${r.title}`);
     }
+}
+
+function cmdIcs(ctx) {
+    const {engine, io} = ctx;
+    const events = loadSources(ctx).flatMap(s => s.events);
+    const year = engine.dateIn('gregorian', engine.todayJdn())[0];
+    const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '');
+    io.out(buildIcs(events, {
+        engine, lang: engine.locale, name: 'Roj',
+        fromYear: year - 1, toYear: year + 30, stamp,
+    }));
 }
 
 function cmdMonths(ctx) {
@@ -481,7 +500,7 @@ function cmdTokens(ctx) {
 
 const COMMANDS = {
     today: cmdToday, convert: cmdConvert, format: cmdFormat, cal: cmdCal,
-    events: cmdEvents, months: cmdMonths, tokens: cmdTokens,
+    events: cmdEvents, ics: cmdIcs, months: cmdMonths, tokens: cmdTokens,
 };
 
 async function main() {

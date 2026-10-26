@@ -249,7 +249,7 @@
     <h2 id="events">Events and .ics calendars</h2>
     <p>Roj shows events from three kinds of source, all managed on the Events page:</p>
     <ul>
-      <li><b>Kurdish events</b>, included: Newroz, Kurdish Language Day, Halabja remembrance and more.</li>
+      <li><b>Kurdish events</b>, included: 43 days such as Newroz, Kurdish Language Day, Halabja and the Anfal, the 1991 uprising and Kurdistan Flag Day, also available <a href="#calendar-apps">for Google Calendar and iPhone</a>.</li>
       <li><b>Files</b>: your own JSON events, or any <code>.ics</code> file.</li>
       <li><b>Online calendars</b>: any <code>https://</code> or <code>webcal://</code> .ics link. <b>Online…</b> offers public holidays for Iraq, Iran, Turkey, Syria and Germany, and Muslim holidays. They are cached in <code>~/.cache/roj</code> and refreshed every 12 hours (you can change it), so they work offline.</li>
     </ul>
@@ -278,6 +278,8 @@
         <tr><td><code>holiday</code></td><td>no</td><td><code>true</code> colours the day like a weekend and adds a holiday badge.</td></tr>
         <tr><td><code>time</code></td><td>no</td><td><code>"HH:MM"</code>, shown before the title.</td></tr>
         <tr><td><code>description</code></td><td>no</td><td>Same shapes as <code>title</code>.</td></tr>
+        <tr><td><code>id</code></td><td>no</td><td>A short stable name, such as <code>halabja</code>. Calendar apps use it to recognise the event when it changes.</td></tr>
+        <tr><td><code>since</code></td><td>no</td><td>The year a yearly event first happened. Calendar apps show it from that year on.</td></tr>
       </tbody>
     </table>
     <p>A bare list of events, without <code>name</code>, also works. Events with mistakes are skipped. <b>Save…</b> on the Events page writes a starter file, and <code>roj events --month --file my-events.json</code> checks one in a terminal.</p>
@@ -289,6 +291,24 @@
       <li>Holidays: events with a category containing “holiday”, or the description “Public holiday” (as in Google's national calendars). You can also treat every event of a source as a holiday.</li>
       <li>Cancelled events are skipped; other repeat rules show only the first occurrence.</li>
     </ul>
+
+    <h3 id="calendar-apps">Kurdish events in Google Calendar, iPhone and Mac</h3>
+    <p>The included Kurdish events are also published as calendars. Subscribe to a link and the calendar stays up to date; download a file to import it once.</p>
+    <table>
+      <thead><tr><th>Language</th><th>Link to subscribe</th><th>File</th></tr></thead>
+      <tbody>
+        <tr><td>Sorani</td><td><code>https://0xdolan.github.io/roj/calendar/kurdish-events-ckb.ics</code></td><td><a href="calendar/kurdish-events-ckb.ics" download>Download</a></td></tr>
+        <tr><td>Kurmanji</td><td><code>https://0xdolan.github.io/roj/calendar/kurdish-events-kmr.ics</code></td><td><a href="calendar/kurdish-events-kmr.ics" download>Download</a></td></tr>
+        <tr><td>English</td><td><code>https://0xdolan.github.io/roj/calendar/kurdish-events-en.ics</code></td><td><a href="calendar/kurdish-events-en.ics" download>Download</a></td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li><b>Google Calendar</b>: on a computer, open <a href="https://calendar.google.com/calendar/r/settings/addbyurl">Settings, Add calendar, From URL</a>, paste a link and choose <b>Add calendar</b>. It then shows on your phone too. To import a file once, use <b>Settings, Import and export</b>.</li>
+      <li><b>iPhone and iPad</b>: <b>Settings, Apps, Calendar, Calendar Accounts, Add Account, Other, Add Subscribed Calendar</b>, paste a link, tap <b>Next</b>, then <b>Save</b>. Or tap <a href="webcal://0xdolan.github.io/roj/calendar/kurdish-events-ckb.ics">Sorani</a>, <a href="webcal://0xdolan.github.io/roj/calendar/kurdish-events-kmr.ics">Kurmanji</a> or <a href="webcal://0xdolan.github.io/roj/calendar/kurdish-events-en.ics">English</a> on the phone.</li>
+      <li><b>Mac</b>: in Calendar, <b>File, New Calendar Subscription</b>, then paste a link.</li>
+      <li><b>Outlook</b>: <b>Add calendar, Subscribe from web</b>, then paste a link.</li>
+    </ul>
+    <p>Gregorian events repeat every year. Newroz and the two Eids follow other calendars, so they are listed for each year from 2020 to 2060. Eid dates use the arithmetic Hijri calendar and can differ by a day or two from the sighting of the moon. The files are also attached to every <a href="https://github.com/0xdolan/roj/releases/latest">release</a>, and <code>roj ics</code> writes the same file, plus your own events, with your Islamic day adjustment.</p>
 
     <h2 id="converter">Converter</h2>
     <div class="pair">
@@ -317,6 +337,7 @@ roj format "%d %B %Y" --date 1448-09-01 --from islamic
 roj -l fa --secondary native           # Persian, each calendar in its own language
 roj events --month                     # this month's events
 roj events 2026-03-21 --file holidays.ics
+roj ics --locale kmr &gt; events.ics       # your events for Google or Apple Calendar
 roj months                             # the twelve months of this year
 roj tokens                             # every pattern token
 roj convert 2026-10-25 --json          # machine-readable output</code></pre>

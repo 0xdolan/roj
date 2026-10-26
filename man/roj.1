@@ -30,6 +30,11 @@ Format a date with a strftime pattern, for example "%A %d %B %Y".
 Events on a day (today by default), from the built-in Kurdish events, your
 extension's event sources and any \fB\-\-file\fR.
 .TP
+.B ics
+Print the same events as an iCalendar file, for Google Calendar, Apple
+Calendar or Outlook. Titles are in the \fB\-\-locale\fR language. Kurdish,
+Persian and Islamic events are written out for last year and the next 30.
+.TP
 .B months
 The twelve Kurdish months of this year, with lengths and start dates.
 .TP
@@ -93,6 +98,7 @@ roj convert 2026\-06\-26
 roj convert 2726\-01\-01 \-\-from kurdish \-\-to gregorian
 roj format "%A %d %B %Y" \-\-locale kmr
 roj events \-\-month \-\-file holidays.ics
+roj ics \-\-locale en > kurdish\-events.ics
 .fi
 .SH EXIT STATUS
 0 on success, 1 on an error such as an invalid date, 2 on a usage error.
