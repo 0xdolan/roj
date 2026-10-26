@@ -5,5 +5,6 @@
 - The engine (`extension/lib/engine.js`) and `extension/lib/tsroj.js` must stay free of GNOME imports so the CLI and tests run on Node.
 - Verify UI changes in the sandboxed headless shell (`scripts/sandbox.sh`, `make screenshots`), never in the user's own session.
 - When a change alters anything a screenshot shows (top bar, popup, events, settings pages, translations, fonts, colours, `roj` output in the marketing images), rerun `make screenshots` (and `make marketing` for the marketing images), look at every changed image, and commit them with the change. Fix captions that no longer match. See rule 7 in `CONTRIBUTING.md`.
-- The Kurdish events live only in `extension/data/events/kurdish.json`. After editing it, run `make ics` to rebuild `docs/calendar/*.ics`; `make test` checks they match.
+- The Kurdish events live only in `extension/data/events/kurdish.json`. After editing it, or anything the website imports from `extension/lib` or `extension/locale`, run `make web` to rebuild `docs/calendar/` (the .ics files and the engine copy); `make test` checks they match. Never edit `docs/calendar/engine/` by hand.
+- Branches follow git flow: `feature/NAME` from `develop`, pull request into `develop`, then `develop` into `main` for release and GitHub Pages. See rule 10 in `CONTRIBUTING.md`.
 - Versioning and releases follow `RELEASING.md`.

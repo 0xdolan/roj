@@ -12,6 +12,7 @@ a release is described in [RELEASING.md](RELEASING.md).
 - 43 Kurdish events, up from 12: the historical, cultural and remembrance days of the pyroj calendar (Halabja, the Anfal, the liberation of the cities in 1991, Shingal, Roboski, the Republic of Kurdistan and more), with Sorani descriptions and sources and titles in Sorani, Kurmanji and English.
 - The Kurdish events as calendars for Google Calendar, iPhone and Mac, in Sorani, Kurmanji and English, to subscribe to or import. They are on the website and attached to every release.
 - `roj ics` prints your events as an .ics file.
+- A live calendar on the website, <https://0xdolan.github.io/roj/calendar/>: the popup running the same engine in any browser, in all five languages, with every Kurdish day and its history, one-click calendar subscriptions and a converter.
 
 ## [0.1.0] - 2026-10-26
 
