@@ -69,14 +69,17 @@ jobs:
           if [ -z "$EGO_USERNAME" ] || [ -z "$EGO_PASSWORD" ]; then
             echo "EGO_USERNAME / EGO_PASSWORD not set: skipping."; exit 0
           fi
-          token="$(jq -n --arg u "$EGO_USERNAME" --arg p "$EGO_PASSWORD" '{login: $u, password: $p}' \
-            | curl -fsS -H 'Content-Type: application/json' -d @- \
-                https://extensions.gnome.org/api/v1/accounts/login/ | jq -r '.token')"
-          [ -n "$token" ] && [ "$token" != null ] || { echo "Login to extensions.gnome.org failed"; exit 1; }
-          curl -fsS -H "Authorization: Token $token" \
+          login="$(jq -n --arg u "$EGO_USERNAME" --arg p "$EGO_PASSWORD" '{login: $u, password: $p}' \
+            | curl -sS -H 'Content-Type: application/json' -d @- \
+                https://extensions.gnome.org/api/v1/accounts/login/)"
+          token="$(echo "$login" | jq -r '.token // empty')"
+          [ -n "$token" ] || { echo "Login to extensions.gnome.org failed: $(echo "$login" | jq -r '.detail // .')"; exit 1; }
+          status="$(curl -sS -o upload.json -w '%{http_code}' -H "Authorization: Token $token" \
             -F "source=@dist/roj@0xdolan.github.io.shell-extension.zip" \
             -F shell_license_compliant=true -F tos_compliant=true \
-            https://extensions.gnome.org/api/v1/extensions
+            https://extensions.gnome.org/api/v1/extensions)"
+          cat upload.json; echo
+          [ "$status" -lt 300 ] || { echo "Upload to extensions.gnome.org refused (HTTP $status)"; exit 1; }
           echo "Uploaded. It goes live after GNOME's review."
 
   launchpad-ppa:

@@ -20,13 +20,24 @@ V="${1:?usage: scripts/release.sh X.Y.Z}"
 step() { printf '\n== %s\n' "$*"; }
 die() { echo "release: $*" >&2; exit 1; }
 
-# Wait for a pull request's checks, then for GitHub to merge it.
+# Wait for a pull request's required checks, then merge it. Only required
+# checks count: the merge back shares its commit with the tag, so the Release
+# workflow's jobs show up there too.
 merge_when_green() {
   local pr="$1"
-  gh pr merge "$pr" --merge --auto >/dev/null
-  # Checks can take a moment to appear after a push.
-  until [ "$(gh pr view "$pr" --json statusCheckRollup --jq '.statusCheckRollup | length')" != 0 ]; do sleep 5; done
-  gh pr checks "$pr" --watch --fail-fast >/dev/null || die "checks failed on $pr: $(gh pr view "$pr" --json url --jq .url)"
+  # Auto-merge cannot be switched on while checks are still being created.
+  gh pr merge "$pr" --merge --auto >/dev/null 2>&1 || true
+  # Wait for the CI workflow's checks (test, gitflow) to appear and finish.
+  local state
+  while :; do
+    state="$(gh pr view "$pr" --json statusCheckRollup --jq '[.statusCheckRollup[] | select(.workflowName == "CI")]
+      | if length == 0 then "waiting" elif any(.conclusion == "FAILURE" or .conclusion == "CANCELLED") then "failed"
+        elif all(.status == "COMPLETED") then "passed" else "waiting" end')"
+    [ "$state" = passed ] && break
+    [ "$state" = failed ] && die "checks failed on $pr: $(gh pr view "$pr" --json url --jq .url)"
+    sleep 15
+  done
+  [ "$(gh pr view "$pr" --json state --jq .state)" = MERGED ] || gh pr merge "$pr" --merge >/dev/null
   until [ "$(gh pr view "$pr" --json state --jq .state)" = MERGED ]; do sleep 5; done
   echo "merged $pr"
 }
@@ -76,8 +87,10 @@ until [ -n "$run" ]; do
   sleep 5
   run="$(gh run list --workflow release.yml --branch "v$V" --limit 1 --json databaseId --jq '.[0].databaseId // empty')"
 done
-gh run watch "$run" --exit-status >/dev/null || die "the Release workflow failed: $(gh run view "$run" --json url --jq .url)"
-echo "$(gh release view "v$V" --json url --jq .url)"
+# The tag is public now: whatever the workflow says, develop gets the release.
+workflow_failed=""
+gh run watch "$run" --exit-status >/dev/null || workflow_failed="$run"
+gh release view "v$V" --json url --jq .url 2>/dev/null || echo "no GitHub release for v$V"
 
 step "main back into develop"
 back="$(gh pr create --base develop --head main --title "Merge release $V back into develop" \
@@ -86,4 +99,8 @@ echo "$back"
 merge_when_green "$back"
 git switch -q develop && git pull -q --ff-only
 
+if [ -n "$workflow_failed" ]; then
+  gh run view "$workflow_failed" --json jobs --jq '.jobs[] | select(.conclusion == "failure") | "failed: \(.name)"'
+  die "v$V is tagged and merged back, but the Release workflow failed: $(gh run view "$workflow_failed" --json url --jq .url) (fix it, then gh run rerun $workflow_failed --failed)"
+fi
 step "Released Roj $V"
