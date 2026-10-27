@@ -9,10 +9,11 @@
 
 [![CI](https://github.com/0xdolan/roj/actions/workflows/ci.yml/badge.svg)](https://github.com/0xdolan/roj/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/0xdolan/roj)](https://github.com/0xdolan/roj/releases/latest)
+[![GNOME Extensions](https://img.shields.io/badge/GNOME%20Extensions-Roj-4a86cf?logo=gnome&logoColor=white)](https://extensions.gnome.org/extension/11501/roj-kurdish-calendar/)
 [![GNOME Shell 45 to 50](https://img.shields.io/badge/GNOME%20Shell-45%20to%2050-4a86cf)](#install)
 [![License: GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue)](LICENSE)
 
-[Website](https://0xdolan.github.io/roj/) · [Live calendar](https://0xdolan.github.io/roj/calendar/) · [Guide](https://0xdolan.github.io/roj/guide.html) · [The name and the logo](docs/STORY.md) · [Releases](https://github.com/0xdolan/roj/releases) · [Changelog](CHANGELOG.md)
+[Website](https://0xdolan.github.io/roj/) · [GNOME Extensions](https://extensions.gnome.org/extension/11501/roj-kurdish-calendar/) · [Live calendar](https://0xdolan.github.io/roj/calendar/) · [Guide](https://0xdolan.github.io/roj/guide.html) · [The name and the logo](docs/STORY.md) · [Releases](https://github.com/0xdolan/roj/releases) · [Changelog](CHANGELOG.md)
 
 <img src="docs/images/marketing/banner.png" alt="Roj in Sorani and Kurmanji" width="100%">
 </div>
@@ -66,11 +67,11 @@ The [guide](https://0xdolan.github.io/roj/guide.html) explains everything with s
 
 ## Install
 
-The extension needs **GNOME Shell 45 to 50**: Ubuntu 24.04 and newer, Debian 13, Fedora 39 and newer, Kali with GNOME, and most current distributions. Every method below also installs the `roj` command.
+The extension needs **GNOME Shell 45 to 50**: Ubuntu 24.04 and newer, Debian 13, Fedora 39 and newer, Kali with GNOME, and most current distributions. Every method below except extensions.gnome.org also installs the `roj` command; there, add it with the `roj` package.
 
 | Method | Commands | Updates |
 | --- | --- | --- |
-| extensions.gnome.org | Search for **Roj** in Extension Manager | Automatic |
+| [extensions.gnome.org](https://extensions.gnome.org/extension/11501/roj-kurdish-calendar/) | Switch it on at [its page](https://extensions.gnome.org/extension/11501/roj-kurdish-calendar/), or search for **Roj** in Extension Manager | Automatic |
 | Ubuntu PPA | `sudo add-apt-repository ppa:0xdolan/roj`<br>`sudo apt install gnome-shell-extension-roj roj` | With apt |
 | .deb (Debian, Ubuntu, Kali) | Download both from the [latest release](https://github.com/0xdolan/roj/releases/latest), then<br>`sudo apt install ./gnome-shell-extension-roj_*_all.deb ./roj_*_all.deb` | Manual |
 | Tarball (any distribution) | `tar xzf roj-*.tar.gz && cd roj-*`<br>`make install` (your user) or `sudo make install-system PREFIX=/usr` | Manual |
@@ -172,11 +173,10 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) first; it includes the project's 
 
 Roj follows git flow. Work happens on `feature/NAME` branches from `develop`, merged by pull request into `develop`. A release goes from `develop` to `main` on a `release/X.Y.Z` branch, also by pull request; `main` is what is released and what the website serves. Both branches are protected: no direct or force pushes, no deletion, and CI must pass. See rule 11 in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Roj uses [Semantic Versioning](https://semver.org/) and keeps a [changelog](CHANGELOG.md). Once the release pull request is merged, one tag publishes everything:
+Roj uses [Semantic Versioning](https://semver.org/) and keeps a [changelog](CHANGELOG.md). One command runs the whole release: the release branch, the version bump, the changelog, screenshots, tests, the pull request into `main` (merged once CI passes), the tag and the merge back into `develop`:
 
 ```sh
-git switch main && git pull
-git tag -a v0.2.0 -m "Roj 0.2.0" && git push origin v0.2.0
+make release V=0.2.1
 ```
 
 The tag builds and publishes everything: the GitHub release with the extension zip, both .deb packages, the source tarball and checksums; the upload to extensions.gnome.org; and the source packages for the Ubuntu PPA. [RELEASING.md](RELEASING.md) has the rules, and [docs/PUBLISHING.md](docs/PUBLISHING.md) the one-time account setup.

@@ -33,6 +33,11 @@ text = log.read_text()
 if f"## [{v}]" not in text:
     from datetime import date
     text = text.replace("## [Unreleased]", f"## [Unreleased]\n\n## [{v}] - {date.today().isoformat()}", 1)
+    # Links: Unreleased compares from the new tag; the new version from the last one.
+    m = re.search(r"^\[Unreleased\]: (\S+)/compare/(v[0-9.]+)\.\.\.HEAD$", text, flags=re.M)
+    if m:
+        base, prev = m.groups()
+        text = text.replace(m.group(0), f"[Unreleased]: {base}/compare/v{v}...HEAD\n[{v}]: {base}/compare/{prev}...v{v}", 1)
     log.write_text(text)
 PY
 # The website calendar imports a copy of constants.js, which holds the version.

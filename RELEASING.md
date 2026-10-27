@@ -41,31 +41,32 @@ Write for users, in plain words, one change per line. No dashes (see [CONTRIBUTI
 
 ## Cutting a release
 
-`main` and `develop` are protected (see [Branch protection](#branch-protection)), so a release travels as a pull request. Release branches start from `develop`:
+`main` and `develop` are protected (see [Branch protection](#branch-protection)), so a release travels as pull requests. One command runs the whole flow, from a clean checkout with the changes already under **Unreleased** in CHANGELOG.md:
 
 ```sh
-git switch develop && git pull
-git switch -c release/0.2.0
-make test                             # everything must pass
-scripts/bump-version.sh 0.2.0         # sets the version everywhere, opens the changelog section
-$EDITOR CHANGELOG.md                  # move the Unreleased lines under [0.2.0], add the compare link
-make screenshots marketing            # only if the interface changed
-git commit -am "Release 0.2.0"
-git push -u origin release/0.2.0
-gh pr create --base main --title "Release 0.2.0" --body "See CHANGELOG.md"
+make release V=0.2.1
 ```
 
-When CI is green, merge the pull request with a merge commit, then tag the merge on `main` and bring `main` back into `develop`:
+`scripts/release.sh` stops at the first failure, so nothing merges unless the tests and CI pass:
+
+1. Creates `release/0.2.1` from an up-to-date `develop`.
+2. Runs `scripts/bump-version.sh 0.2.1`: every version string, the Unreleased lines moved under `[0.2.1]`, the changelog compare links, and the website's engine copy.
+3. Runs `make screenshots marketing`, because the images show the version (`SKIP_IMAGES=1` skips them).
+4. Runs `make test` and `make release-assets`.
+5. Commits "Release 0.2.1", pushes, and opens a pull request into `main` with the changelog section as its description. GitHub merges it by itself once the **test** and **gitflow** checks pass (auto-merge).
+6. Tags the merge commit `v0.2.1`, pushes the tag and waits for the Release workflow.
+7. Opens a pull request from `main` back into `develop` and waits for GitHub to merge it.
+
+Choose the version by the table above. A hotfix works the same way by hand: `hotfix/0.2.2` from `main`, a pull request into `main`, the tag, then `main` back into `develop`.
+
+### Feature branches
+
+Every change starts on `feature/NAME` from `develop`. When `make test` passes, push it and let GitHub merge the pull request once CI is green:
 
 ```sh
-gh pr merge --merge
-git switch main && git pull
-git tag -a v0.2.0 -m "Roj 0.2.0"
-git push origin v0.2.0                # starts the Release workflow
-gh pr create --base develop --head main --title "Merge release 0.2.0 back into develop" --body ""
+gh pr create --base develop --fill
+gh pr merge --merge --auto
 ```
-
-A hotfix works the same way from `main`: `hotfix/0.2.1` from `main`, a pull request into `main`, the tag, then `main` back into `develop`.
 
 ## What the tag does
 

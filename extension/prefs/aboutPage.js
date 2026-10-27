@@ -9,7 +9,7 @@ import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
 import {
-    AUTHOR, AUTHOR_URL, CHANGELOG_URL, DOCS_URL, ISSUES_URL, PYROJ_URL, REPO_URL, SITE_URL,
+    AUTHOR, AUTHOR_URL, CHANGELOG_URL, DOCS_URL, EGO_URL, ISSUES_URL, PYROJ_URL, REPO_URL, SITE_URL,
     STORY_URL, TSROJ_URL, TSROJ_VERSION,
 } from '../lib/constants.js';
 import {textButton} from './common.js';
@@ -71,6 +71,7 @@ class RojAboutPage extends Adw.PreferencesPage {
         this._link(group, _('Made by {author}', {author: AUTHOR}), bare(AUTHOR_URL), AUTHOR_URL, 'avatar-default-symbolic');
         this._link(group, _('Source code'), bare(REPO_URL), REPO_URL, 'text-x-generic-symbolic');
         this._link(group, _('Website'), bare(SITE_URL), SITE_URL, 'web-browser-symbolic');
+        this._link(group, _('Roj on GNOME Extensions'), bare(EGO_URL), EGO_URL, 'application-x-addon-symbolic');
         this._link(group, _('Documentation'), _('Guide, event format and command line'), DOCS_URL, 'help-browser-symbolic');
         this._link(group, _('What’s new'), _('The changelog of every version'), CHANGELOG_URL, 'document-open-recent-symbolic');
         this._link(group, _('Report a problem or suggest an idea'), bare(ISSUES_URL), ISSUES_URL, 'dialog-warning-symbolic');
@@ -84,9 +85,15 @@ class RojAboutPage extends Adw.PreferencesPage {
         });
         this.add(group);
         const row = new Adw.ActionRow({title: 'roj'});
+        group.add(row);
+        // The extensions.gnome.org download has no roj command; point to the packages.
+        if (!GLib.file_test(GLib.build_filenamev([this._ctx.path, 'cli', 'roj.js']), GLib.FileTest.EXISTS)) {
+            row.subtitle = _('Not part of the extensions.gnome.org download. Install the roj package, or see the guide.');
+            row.add_suffix(textButton(_('How to install'), () => this._ctx.openUri(`${DOCS_URL}#cli`)));
+            return;
+        }
         const button = textButton(_('Install'), () => this._installCli(row, button), ['suggested-action']);
         row.add_suffix(button);
-        group.add(row);
         this._syncCli(row, button);
     }
 

@@ -7,6 +7,16 @@ a release is described in [RELEASING.md](RELEASING.md).
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-10-26
+
+### Added
+
+- Roj on extensions.gnome.org (<https://extensions.gnome.org/extension/11501/roj-kurdish-calendar/>), linked from the About page, the website, the guide and the README.
+
+### Changed
+
+- The extensions.gnome.org download no longer contains the `roj` command, as that site asks for no files the extension does not use. The packages, the tarball and `make install` still install it, and the About page shows how.
+
 ## [0.2.0] - 2026-10-26
 
 The first published release. It also contains everything listed under [0.1.0](https://github.com/0xdolan/roj/blob/main/CHANGELOG.md#010---2026-10-26) in the changelog.
@@ -49,6 +59,7 @@ The first version. It was never tagged or published on its own; it ships as part
 - Packages: extensions.gnome.org bundle, `roj` and `gnome-shell-extension-roj` .deb packages, a source tarball and checksums.
 - Engine: tsroj 1.0.6.
 
-[Unreleased]: https://github.com/0xdolan/roj/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/0xdolan/roj/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/0xdolan/roj/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/0xdolan/roj/releases/tag/v0.2.0
 [0.1.0]: https://github.com/0xdolan/roj/tree/4fe8b47

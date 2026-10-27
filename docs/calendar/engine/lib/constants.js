@@ -3,13 +3,14 @@
 
 export const UUID = 'roj@0xdolan.github.io';
 export const SCHEMA_ID = 'org.gnome.shell.extensions.roj';
-export const VERSION = '0.2.0';
+export const VERSION = '0.2.1';
 export const TSROJ_VERSION = '1.0.6';
 
 export const AUTHOR = '0xdolan';
 export const REPO_URL = 'https://github.com/0xdolan/roj';
 export const SITE_URL = 'https://0xdolan.github.io/roj/';
 export const DOCS_URL = `${SITE_URL}guide.html`;
+export const EGO_URL = 'https://extensions.gnome.org/extension/11501/roj-kurdish-calendar/';
 export const ISSUES_URL = `${REPO_URL}/issues`;
 export const STORY_URL = `${SITE_URL}story.html`;
 export const CHANGELOG_URL = `${REPO_URL}/blob/main/CHANGELOG.md`;
