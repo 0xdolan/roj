@@ -7,6 +7,10 @@ a release is described in [RELEASING.md](RELEASING.md).
 
 ## [Unreleased]
 
+### Added
+
+- Roj on extensions.gnome.org (<https://extensions.gnome.org/extension/11501/roj-kurdish-calendar/>), linked from the About page, the website, the guide and the README.
+
 ### Changed
 
 - The extensions.gnome.org download no longer contains the `roj` command, as that site asks for no files the extension does not use. The packages, the tarball and `make install` still install it, and the About page shows how.

@@ -29,6 +29,7 @@ export default {
     "Made by {author}": "ساخته‌ی {author}",
     "Source code": "کد منبع",
     "Website": "وب‌سایت",
+    "Roj on GNOME Extensions": "روژ در GNOME Extensions",
     "Documentation": "مستندات",
     "Guide, event format and command line": "راهنما، قالب رویدادها و خط فرمان",
     "What’s new": "تازه‌ها",

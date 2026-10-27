@@ -9,7 +9,7 @@ import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
 import {
-    AUTHOR, AUTHOR_URL, CHANGELOG_URL, DOCS_URL, ISSUES_URL, PYROJ_URL, REPO_URL, SITE_URL,
+    AUTHOR, AUTHOR_URL, CHANGELOG_URL, DOCS_URL, EGO_URL, ISSUES_URL, PYROJ_URL, REPO_URL, SITE_URL,
     STORY_URL, TSROJ_URL, TSROJ_VERSION,
 } from '../lib/constants.js';
 import {textButton} from './common.js';
@@ -71,6 +71,7 @@ class RojAboutPage extends Adw.PreferencesPage {
         this._link(group, _('Made by {author}', {author: AUTHOR}), bare(AUTHOR_URL), AUTHOR_URL, 'avatar-default-symbolic');
         this._link(group, _('Source code'), bare(REPO_URL), REPO_URL, 'text-x-generic-symbolic');
         this._link(group, _('Website'), bare(SITE_URL), SITE_URL, 'web-browser-symbolic');
+        this._link(group, _('Roj on GNOME Extensions'), bare(EGO_URL), EGO_URL, 'application-x-addon-symbolic');
         this._link(group, _('Documentation'), _('Guide, event format and command line'), DOCS_URL, 'help-browser-symbolic');
         this._link(group, _('What’s new'), _('The changelog of every version'), CHANGELOG_URL, 'document-open-recent-symbolic');
         this._link(group, _('Report a problem or suggest an idea'), bare(ISSUES_URL), ISSUES_URL, 'dialog-warning-symbolic');

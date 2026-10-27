@@ -29,6 +29,7 @@ export default {
     "Made by {author}": "Ji aliyê {author} ve hatiye çêkirin",
     "Source code": "Koda çavkaniyê",
     "Website": "Malper",
+    "Roj on GNOME Extensions": "Roj li ser GNOME Extensions",
     "Documentation": "Belgekirin",
     "Guide, event format and command line": "Rêber, şêwaza bûyeran û rêza fermanan",
     "What’s new": "Çi nû ye",
