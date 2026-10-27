@@ -1,8 +1,7 @@
 # Releasing Roj
 
 How versions are numbered, how changes are recorded, and what happens when a
-release is tagged. The one-time account setup (GitHub, extensions.gnome.org,
-Launchpad) is in [docs/PUBLISHING.md](docs/PUBLISHING.md).
+release is tagged.
 
 ## Versions
 
@@ -75,9 +74,9 @@ The **Release** workflow (`.github/workflows/release.yml`) runs on the tag:
 1. **build**: checks that the tag matches every version string, runs `make release-assets` (tests, then the extension zip, the source tarball, both .deb packages and `SHA256SUMS`) and writes the release notes from the changelog.
 2. **github-release**: publishes the GitHub release with all those files.
 3. **extensions-gnome-org**: uploads the zip to extensions.gnome.org. GNOME reviews every version; users get it after approval, usually within a few days.
-4. **launchpad-ppa**: builds signed source packages for each Ubuntu series in `PPA_SERIES` and uploads them to the PPA, where Launchpad builds the packages for apt.
+4. **launchpad-ppa**: uploads signed source packages to the PPA, where Launchpad builds the packages for apt.
 
-Steps 3 and 4 skip themselves until their secrets exist, so a release always works.
+Steps 3 and 4 skip themselves when they are not set up, so a release always works.
 
 | Channel | Users get it |
 | --- | --- |
@@ -105,7 +104,3 @@ Both long-lived branches have a repository ruleset (Settings, Rules, Rulesets):
 ## Engine updates
 
 `.github/workflows/tsroj-update.yml` checks npm every Monday. When `@0xdolan/tsroj` has a new version, it vendors it on `feature/tsroj-X.Y.Z` from `develop`, runs the tests and opens a pull request into `develop`. Merge it, add a changelog line under **Changed** ("Engine: tsroj X.Y.Z"), and release as usual.
-
-## Ubuntu series
-
-`PPA_SERIES` (a repository variable) lists the Ubuntu releases to build for. Add a new series when Ubuntu releases one, and drop series when they reach end of life. The default is `noble questing resolute` (24.04, 25.10 and 26.04).

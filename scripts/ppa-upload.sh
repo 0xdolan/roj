@@ -1,14 +1,7 @@
 #!/usr/bin/env bash
-# Build signed source packages for each Ubuntu series and upload them to a
-# Launchpad PPA, where Launchpad builds the .deb files for apt users.
-#
-#   PPA=ppa:0xdolan/roj SERIES="noble questing resolute" \
-#   DEBFULLNAME="Your Name" DEBEMAIL=you@example.com GPG_KEY_ID=ABCD1234 \
-#   scripts/ppa-upload.sh
-#
-# DRY_RUN=1 builds unsigned source packages in build/ppa/ without uploading.
-# DEB_REVISION (default 1) is the Debian revision; raise it to re-upload the
-# same upstream version with packaging fixes.
+# Build signed source packages for each Ubuntu series and upload them to the
+# PPA. Run by the Release workflow. DRY_RUN=1 builds unsigned packages in
+# build/ppa/ without uploading.
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 VERSION="$(python3 -c 'import json,sys;print(json.load(open(sys.argv[1]))["version-name"])' "$ROOT/extension/metadata.json")"

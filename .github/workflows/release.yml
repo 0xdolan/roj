@@ -1,12 +1,8 @@
 name: Release
 
-# Push an annotated tag like v0.2.0 (see RELEASING.md). This workflow:
-#   1. tests and builds every release file,
-#   2. publishes them as a GitHub release with the CHANGELOG.md section as notes,
-#   3. uploads the extension to extensions.gnome.org (secrets EGO_USERNAME, EGO_PASSWORD),
-#   4. uploads source packages to the Launchpad PPA (secrets LAUNCHPAD_GPG_PRIVATE_KEY,
-#      LAUNCHPAD_GPG_PASSPHRASE, DEBEMAIL, DEBFULLNAME; variables PPA, PPA_SERIES).
-# Steps 3 and 4 are skipped until their secrets exist.
+# Runs on a tag like v0.2.0 (see RELEASING.md): builds and tests every
+# release file, publishes the GitHub release, and uploads to
+# extensions.gnome.org and the PPA when those are set up.
 
 on:
   push:
