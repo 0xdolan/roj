@@ -6,6 +6,21 @@ on:
   pull_request:
 
 jobs:
+  # Git flow: main only takes develop, release/* and hotfix/* (CONTRIBUTING.md
+  # rule 11). Required on main by the branch ruleset; skipped elsewhere.
+  gitflow:
+    if: github.event_name == 'pull_request' && github.base_ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Source branch may merge into main
+        env:
+          HEAD: ${{ github.head_ref }}
+        run: |
+          case "$HEAD" in
+            develop|release/*|hotfix/*) echo "$HEAD may merge into main" ;;
+            *) echo "::error::$HEAD cannot merge into main. Open the pull request into develop; main takes only develop, release/* and hotfix/*."; exit 1 ;;
+          esac
+
   test:
     runs-on: ubuntu-latest
     steps:
