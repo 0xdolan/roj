@@ -29,6 +29,7 @@ export default {
     "Made by {author}": "دروستکراوی {author}",
     "Source code": "کۆدی سەرچاوە",
     "Website": "ماڵپەڕ",
+    "Roj on GNOME Extensions": "ڕۆژ لە GNOME Extensions",
     "Documentation": "ڕێنمایی",
     "Guide, event format and command line": "ڕێبەر، شێوازی بۆنەکان و هێڵی فەرمان",
     "What’s new": "چی نوێیە",

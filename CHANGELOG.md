@@ -7,6 +7,10 @@ a release is described in [RELEASING.md](RELEASING.md).
 
 ## [Unreleased]
 
+### Added
+
+- Roj on extensions.gnome.org (<https://extensions.gnome.org/extension/11501/roj-kurdish-calendar/>), linked from the About page, the website, the guide and the README.
+
 ## [0.2.0] - 2026-10-26
 
 The first published release. It also contains everything listed under [0.1.0](https://github.com/0xdolan/roj/blob/main/CHANGELOG.md#010---2026-10-26) in the changelog.
