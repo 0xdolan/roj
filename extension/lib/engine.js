@@ -144,7 +144,28 @@ export function isRtlLocale(locale) {
     return RTL_LOCALES.has(locale);
 }
 
+/**
+ * Pin "now" to a local date and time ("2026-12-17" or "2026-12-17 10:30"),
+ * from where the clock keeps running. Screenshots set it through the
+ * ROJ_FAKE_NOW environment variable. Returns false, changing nothing, when
+ * `value` is empty or not in that form.
+ */
+export function pinClock(value) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2}))?$/.exec(String(value ?? '').trim());
+    if (!m)
+        return false;
+    const [y, mo, d, h, mi] = m.slice(1).map(v => Number(v ?? 0));
+    const offset = new Date(y, mo - 1, d, h, mi).getTime() - Date.now();
+    RojEngine.clock = () => new Date(Date.now() + offset);
+    RojEngine.clockPinned = true;
+    return true;
+}
+
 export class RojEngine {
+    /** Where "now" comes from (see pinClock). */
+    static clock = () => new Date();
+    static clockPinned = false;
+
     constructor(options = {}) {
         this.setOptions(options);
     }
@@ -198,6 +219,15 @@ export class RojEngine {
     digitsFor(locale) {
         const mode = this.options.digits[locale] ?? 'native';
         return DIGIT_SETS[mode] ?? getDigits(locale);
+    }
+
+    /**
+     * The ten digit characters for a calendar's numbers. These follow the
+     * calendar's own language (Gregorian English, Persian Persian, Islamic
+     * Arabic, Kurdish the date language), whatever language its words are in.
+     */
+    calendarDigits(calendar) {
+        return this.digitsFor(calendar === 'kurdish' ? this.options.locale : NATIVE_LOCALE[calendar]);
     }
 
     // Conversions
@@ -256,7 +286,7 @@ export class RojEngine {
     }
 
     /** JDN of today, from a JS Date or {year, month, day} (defaults to now). */
-    todayJdn(now = new Date()) {
+    todayJdn(now = RojEngine.clock()) {
         if (now instanceof Date)
             return gregorianToJdn(now.getFullYear(), now.getMonth() + 1, now.getDate());
         return gregorianToJdn(now.year, now.month, now.day);
@@ -276,7 +306,7 @@ export class RojEngine {
             calendar: CalendarKind[calendar.toUpperCase()],
             locale,
             useLocaleDigits: true,
-            digits: this.digitsFor(locale),
+            digits: this.calendarDigits(calendar),
             monthVariant: o.monthVariant,
             weekdayVariant: o.weekdayVariant,
             ezafeAfterDay: !!(o.ezafe[calendar] && o.ezafeAfterDay),
@@ -286,6 +316,8 @@ export class RojEngine {
             opts.leadingZero = true;
         else if (o.leadingZero === 'off')
             opts.leadingZero = false;
+        else if (opts.digits[0] !== '0')
+            opts.leadingZero = false; // automatic: never ٠٧ or ۰۷, whatever the text language
         return opts;
     }
 
@@ -319,7 +351,7 @@ export class RojEngine {
             } else if (tok === '%%') {
                 out += PERCENT_PLACEHOLDER;
             } else if (TIME_TOKENS.has(tok)) {
-                out += this._timeToken(tok, time ?? new Date(), locale);
+                out += this._timeToken(tok, time ?? RojEngine.clock(), locale);
             } else if (borrowWeekday && WEEKDAY_NAME_TOKENS.has(tok)) {
                 // The weekday always belongs to the real day, never the shifted one.
                 const source = NO_KURDISH_DATA.has(locale) ? 'gregorian' : 'kurdish';
@@ -375,9 +407,9 @@ export class RojEngine {
         return tokenize(String(pattern)).some(p => p.type === 'token' && p.value === '%S');
     }
 
-    /** A number in the digits of the language a calendar is written in. */
+    /** A number in the digits of a calendar (see calendarDigits). */
     number(n, calendar = 'kurdish', pad = 0) {
-        const digits = this.digitsFor(this.localeFor(calendar));
+        const digits = this.calendarDigits(calendar);
         return String(n).padStart(pad, '0').replace(/[0-9]/g, d => digits[d.charCodeAt(0) - 48]);
     }
 

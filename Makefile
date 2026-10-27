@@ -3,7 +3,7 @@ VERSION  := $(shell python3 -c 'import json;print(json.load(open("extension/meta
 EXT_DIR  := $(HOME)/.local/share/gnome-shell/extensions/$(UUID)
 ZIP      := dist/$(UUID).shell-extension.zip
 FILES    := $(shell cat scripts/extension-files)
-JS_FILES := $(shell find extension scripts tests -name '*.js' -o -name '*.mjs')
+JS_FILES := $(shell find extension scripts tests docs/calendar -name '*.js' -o -name '*.mjs')
 
 # System-wide install (packages, tarball users): make install-system PREFIX=/usr
 PREFIX   ?= /usr/local
@@ -13,7 +13,7 @@ BINDIR   := $(DESTDIR)$(PREFIX)/bin
 USER_BIN := $(HOME)/.local/bin
 
 .PHONY: help test lint i18n schemas icons pack install uninstall dev-link install-system \
-        dist deb calendars checksums release-assets vendor ics screenshots marketing clean
+        dist deb calendars checksums release-assets vendor web screenshots marketing clean
 
 help:
 	@echo "Roj $(VERSION)"
@@ -31,7 +31,7 @@ help:
 	@echo
 	@echo "  make i18n            list untranslated interface messages"
 	@echo "  make vendor          update the bundled tsroj engine (TSROJ=latest|x.y.z)"
-	@echo "  make ics             rebuild docs/calendar/*.ics from the bundled Kurdish events"
+	@echo "  make web             rebuild the website calendar files from the extension"
 	@echo "  make icons           regenerate the logo and icons"
 	@echo "  make screenshots     capture screenshots in a sandboxed, headless GNOME Shell"
 	@echo "  make marketing       render the banner and store images"
@@ -42,12 +42,13 @@ test: lint i18n
 	node --test tests/*.test.js
 	GSETTINGS_BACKEND=memory gjs -m tests/config.gjs.js
 	gjs -m extension/cli/roj.js --no-config convert 2026-06-26 --to kurdish | grep -qx 2726-04-05
-	node scripts/build-ics.mjs --check
+	node scripts/build-web.mjs --check
 
 lint: schemas
 	@for f in $(JS_FILES); do node --check "$$f" || exit 1; done
 	@echo "syntax ok: $(words $(JS_FILES)) files"
 	scripts/check-dashes.sh
+	node scripts/check-kurdish.mjs
 
 i18n:
 	node scripts/i18n-check.mjs
@@ -119,8 +120,8 @@ release-assets: test pack dist deb calendars checksums
 
 # Maintenance
 
-ics:
-	node scripts/build-ics.mjs
+web:
+	node scripts/build-web.mjs
 
 vendor:
 	scripts/vendor-tsroj.sh $(or $(TSROJ),latest)

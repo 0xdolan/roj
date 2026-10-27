@@ -1,8 +1,8 @@
 name: tsroj update
 
 # Every Monday, check npm for a newer @0xdolan/tsroj. If there is one, vendor
-# it, run the tests and open a pull request. Merging it and tagging a release
-# ships the new engine everywhere.
+# it on feature/tsroj-X.Y.Z from develop, run the tests and open a pull
+# request into develop. The next release ships the new engine everywhere.
 
 on:
   schedule:
@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: develop
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -32,7 +34,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           LATEST: ${{ steps.v.outputs.latest }}
         run: |
-          branch="tsroj-$LATEST"
+          branch="feature/tsroj-$LATEST"
           if git ls-remote --exit-code --heads origin "$branch"; then echo "A pull request branch already exists."; exit 0; fi
           scripts/vendor-tsroj.sh "$LATEST"
           node --test tests/*.test.js
@@ -41,5 +43,5 @@ jobs:
           git checkout -b "$branch"
           git commit -am "Update tsroj to $LATEST"
           git push origin "$branch"
-          gh pr create --title "Update tsroj to $LATEST" \
+          gh pr create --base develop --title "Update tsroj to $LATEST" \
             --body "Vendored @0xdolan/tsroj $LATEST into extension/lib/tsroj.js and the tests pass. Merge, add a CHANGELOG entry and release."

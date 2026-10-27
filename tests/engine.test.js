@@ -3,7 +3,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
-import {RojEngine, tokenize, weekdayOf} from '../extension/lib/engine.js';
+import {RojEngine, pinClock, tokenize, weekdayOf} from '../extension/lib/engine.js';
 import {EventIndex, parseEventsDocument, parseEventsJson} from '../extension/lib/events.js';
 import {parseIcs} from '../extension/lib/ics.js';
 import {buildIcs} from '../extension/lib/icsExport.js';
@@ -59,7 +59,7 @@ test('time tokens use the locale AM/PM labels and always pad minutes', () => {
 test('Islamic offset shifts the Hijri date but not the weekday', () => {
     const e = new RojEngine({locale: 'kmr', islamicOffset: 1});
     assert.deepEqual(e.dateIn('islamic', jdn), [1448, 1, 11]);
-    assert.equal(e.format(jdn, 'islamic', '%A %-d'), `${kmr.format(jdn, 'islamic', '%A')} 11`);
+    assert.equal(e.format(jdn, 'islamic', '%A %-d'), `${kmr.format(jdn, 'islamic', '%A')} ١١`);
     assert.equal(e.toJdn('islamic', 1448, 1, 11), jdn);
 });
 
@@ -166,11 +166,29 @@ test('script runs split Latin and Arabic text and keep ZWNJ in place', () => {
         '<span font_family="Manrope">a&lt;b</span>');
 });
 
+test('each calendar uses the digits of its own language', () => {
+    assert.equal(ckb.format(jdn, 'kurdish', '%Y'), '٢٧٢٦');
+    assert.equal(kmr.format(jdn, 'kurdish', '%Y'), '2726');
+    for (const e of [ckb, kmr]) {
+        assert.equal(e.format(jdn, 'gregorian', '%Y'), '2026');
+        assert.equal(e.format(jdn, 'persian', '%Y'), '۱۴۰۵');
+        assert.equal(e.format(jdn, 'islamic', '%Y'), '١٤٤٨');
+        assert.equal(e.number(26, 'persian'), '۲۶');
+    }
+    // Automatic leading zeros are for Western digits only.
+    assert.equal(kmr.format(jdn, 'kurdish', '%d'), '05');
+    assert.equal(kmr.format(jdn, 'persian', '%d'), '۵');
+    assert.equal(kmr.format(jdn, 'gregorian', '%d %m'), '26 06');
+    const custom = new RojEngine({locale: 'ckb', digits: {fa: 'latin', en: 'arabic'}});
+    assert.equal(custom.format(jdn, 'persian', '%Y'), '1405');
+    assert.equal(custom.format(jdn, 'gregorian', '%Y'), '٢٠٢٦');
+});
+
 test('ezafe is on for the Kurdish date only, by default', () => {
-    assert.equal(ckb.format(jdn, 'gregorian', '%d %B %Y'), '٢٦ یونیۆ ٢٠٢٦');
+    assert.equal(ckb.format(jdn, 'gregorian', '%d %B %Y'), '26 یونیۆ 2026');
     assert.equal(ckb.format(jdn, 'islamic', '%d %B %Y'), '١٠ محرم ١٤٤٨');
     const all = new RojEngine({locale: 'ckb', ezafe: {gregorian: true}});
-    assert.equal(all.format(jdn, 'gregorian', '%d %B %Y'), '٢٦ی یونیۆی ٢٠٢٦');
+    assert.equal(all.format(jdn, 'gregorian', '%d %B %Y'), '26ی یونیۆی 2026');
 });
 
 test('Persian and Arabic dates use their own digits and the right weekday', () => {
@@ -196,4 +214,21 @@ test('digits can be chosen per language', () => {
     const e = new RojEngine({locale: 'fa', digits: {fa: 'arabic'}});
     assert.equal(e.number(2026), '٢٠٢٦');
     assert.equal(new RojEngine({locale: 'en', digits: {en: 'persian'}}).number(15), '۱۵');
+});
+
+test('pinClock moves today and the time, and ignores anything else', () => {
+    const real = RojEngine.clock;
+    try {
+        assert.equal(RojEngine.clockPinned, false);
+        assert.equal(pinClock(''), false);
+        assert.equal(pinClock('17 December'), false);
+        assert.equal(RojEngine.clock, real);
+        assert.equal(pinClock('2026-12-17 10:30'), true);
+        assert.equal(RojEngine.clockPinned, true);
+        assert.deepEqual(ckb.dateIn('gregorian', ckb.todayJdn()), [2026, 12, 17]);
+        assert.equal(kmr.format(ckb.todayJdn(), 'kurdish', '%H:%M'), '10:30');
+    } finally {
+        RojEngine.clock = real;
+        RojEngine.clockPinned = false;
+    }
 });

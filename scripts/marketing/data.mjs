@@ -8,7 +8,8 @@ import {localizedText} from '../../extension/lib/i18n.js';
 
 const ckb = new RojEngine({locale: 'ckb'});
 const kmr = new RojEngine({locale: 'kmr'});
-const today = ckb.toJdn('gregorian', 2026, 10, 25);
+// The same day as the screenshots: 17 December 2026, Kurdistan Flag Day.
+const today = ckb.toJdn('gregorian', 2026, 12, 17);
 const iso = ([y, m, d]) => `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
 
 const week = [];
@@ -17,12 +18,12 @@ for (let i = -1; i < 6; i++) {
     week.push({
         main: ckb.number(ckb.dateIn('kurdish', jdn)[2]),
         mainKmr: String(kmr.dateIn('kurdish', jdn)[2]),
-        g: ckb.number(ckb.dateIn('gregorian', jdn)[2]),
-        p: ckb.number(ckb.dateIn('persian', jdn)[2]),
-        i: ckb.number(ckb.dateIn('islamic', jdn)[2]),
-        gK: String(kmr.dateIn('gregorian', jdn)[2]),
-        pK: String(kmr.dateIn('persian', jdn)[2]),
-        iK: String(kmr.dateIn('islamic', jdn)[2]),
+        g: ckb.number(ckb.dateIn('gregorian', jdn)[2], 'gregorian'),
+        p: ckb.number(ckb.dateIn('persian', jdn)[2], 'persian'),
+        i: ckb.number(ckb.dateIn('islamic', jdn)[2], 'islamic'),
+        gK: kmr.number(kmr.dateIn('gregorian', jdn)[2], 'gregorian'),
+        pK: kmr.number(kmr.dateIn('persian', jdn)[2], 'persian'),
+        iK: kmr.number(kmr.dateIn('islamic', jdn)[2], 'islamic'),
         today: jdn === today,
         weekday: ckb.format(jdn, 'kurdish', '%a'),
     });

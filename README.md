@@ -12,7 +12,7 @@
 [![GNOME Shell 45 to 50](https://img.shields.io/badge/GNOME%20Shell-45%20to%2050-4a86cf)](#install)
 [![License: GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue)](LICENSE)
 
-[Website](https://0xdolan.github.io/roj/) · [Guide](https://0xdolan.github.io/roj/guide.html) · [The name and the logo](docs/STORY.md) · [Releases](https://github.com/0xdolan/roj/releases) · [Changelog](CHANGELOG.md)
+[Website](https://0xdolan.github.io/roj/) · [Live calendar](https://0xdolan.github.io/roj/calendar/) · [Guide](https://0xdolan.github.io/roj/guide.html) · [The name and the logo](docs/STORY.md) · [Releases](https://github.com/0xdolan/roj/releases) · [Changelog](CHANGELOG.md)
 
 <img src="docs/images/marketing/banner.png" alt="Roj in Sorani and Kurmanji" width="100%">
 </div>
@@ -25,7 +25,8 @@ The name means both *sun* and *day* in Kurdish, and the logo joins a traditional
 
 - **Five languages.** Dates and interface in Sorani, Kurmanji, English, Persian or Arabic, laid out right to left where needed. The other calendars can follow your language, the interface, or their own: Gregorian in English, Persian in Persian, Islamic in Arabic.
 - **Four calendars in every day.** The Kurdish day is large; the Gregorian (on by default), Persian and Islamic days appear as small numbers of the same size, in a row or in the corners.
-- **Written properly.** Sorani ezafe (ی), on for the Kurdish date by default and switchable per calendar. Each language uses its own digits (۰۱۲, ٠١٢ or 012) unless you choose otherwise. Traditional month names.
+- **Written properly.** Sorani ezafe (ی), on for the Kurdish date by default and switchable per calendar. Each calendar keeps the digits of its own language: Persian ۰۱۲, Islamic ٠١٢, Gregorian 012, and the Kurdish date those of your language, unless you choose otherwise. Traditional month names.
+- **On the web too.** [The live calendar](https://0xdolan.github.io/roj/calendar/) runs the same engine in any browser: the popup, every Kurdish day with its history, and a converter.
 - **Events.** 43 Kurdish days are included, and you can [add them to Google Calendar or an iPhone](#kurdish-events-in-google-calendar-or-on-an-iphone) too. Add your own JSON events or any `.ics` calendar, local or online, with one-click public holidays for Iraq, Iran, Turkey, Syria and Germany. The top bar shows a dot, a count or the title when today has an event.
 - **Fonts per script.** Manrope for left-to-right text; Vazirmatn, Estedad or Sahel for Arabic-script text; or any installed font or font file.
 - **Your own patterns.** Every strftime token of [tsroj](https://www.npmjs.com/package/@0xdolan/tsroj) and [pyroj](https://pypi.org/project/pyroj/), with presets and live previews.
@@ -36,15 +37,32 @@ The name means both *sun* and *day* in Kurdish, and the logo joins a traditional
 
 ## Screenshots
 
-| Sorani · events | Kurmanji · light | Persian · own languages |
+| Sorani · Kurdistan Flag Day | Kurmanji · Newroz | Persian · own languages |
 | --- | --- | --- |
-| <img src="docs/images/popup/popup-ckb-events.png" width="270"> | <img src="docs/images/popup/popup-kmr-light.png" width="270"> | <img src="docs/images/popup/popup-fa-native.png" width="270"> |
+| <img src="docs/images/popup/popup-ckb-dark.png" width="270"> | <img src="docs/images/popup/popup-kmr-newroz.png" width="270"> | <img src="docs/images/popup/popup-fa-native.png" width="270"> |
+
+| All four calendars | Arabic | English · light |
+| --- | --- | --- |
+| <img src="docs/images/popup/popup-ckb-events.png" width="270"> | <img src="docs/images/popup/popup-ar.png" width="270"> | <img src="docs/images/popup/popup-en-light.png" width="270"> |
 
 | Languages and digits | Appearance | Converter |
 | --- | --- | --- |
 | <img src="docs/images/screenshots/prefs-general.png" width="270"> | <img src="docs/images/screenshots/prefs-appearance.png" width="270"> | <img src="docs/images/screenshots/prefs-converter.png" width="270"> |
 
-Every screenshot comes from a real GNOME Shell 50 session (`make screenshots`).
+<img src="docs/images/screenshots/panel-markers.png" alt="Today's events in the top bar: a dot, a count, the title, and red on a holiday" width="100%">
+
+Every screenshot comes from a real GNOME Shell 50 session (`make screenshots`), on three fixed days with Kurdish events: 17 December 2026 (Kurdistan Flag Day), 22 January 2027 (the Republic of Kurdistan) and 21 March 2027 (Newroz).
+
+## Guides
+
+The [guide](https://0xdolan.github.io/roj/guide.html) explains everything with screenshots. Quick recipes:
+
+- [Show the dates in your language](https://0xdolan.github.io/roj/guide.html#howto-language)
+- [Show the Persian and Islamic days on every card](https://0xdolan.github.io/roj/guide.html#howto-cards)
+- [Add your country's public holidays](https://0xdolan.github.io/roj/guide.html#howto-holidays)
+- [Change what the top bar shows](https://0xdolan.github.io/roj/guide.html#howto-topbar)
+- [Convert a date](https://0xdolan.github.io/roj/guide.html#howto-convert)
+- [Get the Kurdish days on your phone](#kurdish-events-in-google-calendar-or-on-an-iphone)
 
 ## Install
 
@@ -109,7 +127,7 @@ roj ics --locale en > kurdish-events.ics  # events for Google or Apple Calendar
 
 ## Kurdish events in Google Calendar or on an iPhone
 
-The 43 included Kurdish events are also published as calendars, so you can see them on any phone or computer:
+The 43 included Kurdish events are also published as calendars, so you can see them on any phone or computer. The [live calendar page](https://0xdolan.github.io/roj/calendar/) has one-click buttons, the popup itself and every event with its history:
 
 | Language | Subscribe (stays up to date) | Download |
 | --- | --- | --- |
@@ -131,7 +149,7 @@ make test            # syntax, the no-dash rule, translations and unit tests
 make dev-link        # use this checkout as your installed extension (and roj)
 make i18n            # untranslated interface messages, per language
 make screenshots     # real screenshots from a sandboxed, headless GNOME Shell
-make ics             # rebuild docs/calendar/*.ics after editing the Kurdish events
+make web             # rebuild the website calendar files after editing the engine or events
 make marketing       # banner, features, store, themes and terminal images
 make release-assets  # zip, tarball, both .deb packages and SHA256SUMS
 ```
@@ -150,13 +168,15 @@ make release-assets  # zip, tarball, both .deb packages and SHA256SUMS
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) first; it includes the project's rules, such as never using em or en dashes.
 
-## Releases
+## Branches and releases
 
-Roj uses [Semantic Versioning](https://semver.org/) and keeps a [changelog](CHANGELOG.md). A release is one command and one tag:
+Roj follows git flow. Work happens on `feature/NAME` branches from `develop`, merged by pull request into `develop`. A release goes from `develop` to `main` on a `release/X.Y.Z` branch, also by pull request; `main` is what is released and what the website serves. Both branches are protected: no direct or force pushes, no deletion, and CI must pass. See rule 11 in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Roj uses [Semantic Versioning](https://semver.org/) and keeps a [changelog](CHANGELOG.md). Once the release pull request is merged, one tag publishes everything:
 
 ```sh
-scripts/bump-version.sh 0.2.0     # then describe the changes in CHANGELOG.md
-git commit -am "Release 0.2.0" && git tag -a v0.2.0 -m "Roj 0.2.0" && git push origin main v0.2.0
+git switch main && git pull
+git tag -a v0.2.0 -m "Roj 0.2.0" && git push origin v0.2.0
 ```
 
 The tag builds and publishes everything: the GitHub release with the extension zip, both .deb packages, the source tarball and checksums; the upload to extensions.gnome.org; and the source packages for the Ubuntu PPA. [RELEASING.md](RELEASING.md) has the rules, and [docs/PUBLISHING.md](docs/PUBLISHING.md) the one-time account setup.

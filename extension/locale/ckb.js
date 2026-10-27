@@ -266,7 +266,7 @@ export default {
     "Fall of Nineveh: Persian year + 1233 ({year})": "ڕووخانی نەینەوا: ساڵی هەتاوی + 1233 ({year})",
     "Months and days stay the same; only the year number changes": "مانگ و ڕۆژەکان وەک خۆیان دەمێننەوە؛ تەنها ژمارەی ساڵ دەگۆڕێت",
     "Digits": "ژمارەکان",
-    "Each language uses its own digits by default: Persian ۰۱۲, Sorani and Arabic ٠١٢, English and Kurmanji 012.": "بە شێوەی بنەڕەت هەر زمانێک ژمارەکانی خۆی بەکاردەهێنێت: فارسی ۰۱۲، سۆرانی و عەرەبی ٠١٢، ئینگلیزی و کورمانجی 012.",
+    "Each calendar's numbers use the digits of its own language: Gregorian English 012, Persian Persian ۰۱۲, Islamic Arabic ٠١٢, and the Kurdish date the main language. Choose other digits for a language here.": "ژمارەکانی هەر ساڵنامەیەک بە ژمارەی زمانی خۆی دەنووسرێن: زایینی ئینگلیزی 012، هەتاوی فارسی ۰۱۲، کۆچی عەرەبی ٠١٢، و ڕێکەوتی کوردی هی زمانی سەرەکی. لێرە ژمارەی تر بۆ هەر زمانێک هەڵبژێرە.",
     "Own digits": "ژمارەکانی خۆی",
     "Western": "ڕۆژئاوایی",
     "Leading zero": "سفری پێشەوە",

@@ -266,7 +266,7 @@ export default {
     "Fall of Nineveh: Persian year + 1233 ({year})": "Hilweşîna Nînewayê: sala hetawî + 1233 ({year})",
     "Months and days stay the same; only the year number changes": "Meh û roj wekî xwe dimînin; tenê hejmara salê diguhere",
     "Digits": "Reqem",
-    "Each language uses its own digits by default: Persian ۰۱۲, Sorani and Arabic ٠١٢, English and Kurmanji 012.": "Bi xweber her ziman reqemên xwe bi kar tîne: farisî ۰۱۲, soranî û erebî ٠١٢, îngilîzî û kurmancî 012.",
+    "Each calendar's numbers use the digits of its own language: Gregorian English 012, Persian Persian ۰۱۲, Islamic Arabic ٠١٢, and the Kurdish date the main language. Choose other digits for a language here.": "Hejmarên her salnameyê bi reqemên zimanê wê ne: zayînî îngilîzî 012, hetawî farisî ۰۱۲, hicrî erebî ٠١٢, û dîroka kurdî ya zimanê sereke. Li vir ji bo her zimanî reqemên din hilbijêre.",
     "Own digits": "Reqemên xwe",
     "Western": "Rojavayî",
     "Leading zero": "Sifira pêşîn",
