@@ -157,12 +157,14 @@ export function pinClock(value) {
     const [y, mo, d, h, mi] = m.slice(1).map(v => Number(v ?? 0));
     const offset = new Date(y, mo - 1, d, h, mi).getTime() - Date.now();
     RojEngine.clock = () => new Date(Date.now() + offset);
+    RojEngine.clockPinned = true;
     return true;
 }
 
 export class RojEngine {
     /** Where "now" comes from (see pinClock). */
     static clock = () => new Date();
+    static clockPinned = false;
 
     constructor(options = {}) {
         this.setOptions(options);
