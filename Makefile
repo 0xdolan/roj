@@ -11,6 +11,7 @@ DESTDIR  ?=
 SHARE    := $(DESTDIR)$(PREFIX)/share
 BINDIR   := $(DESTDIR)$(PREFIX)/bin
 USER_BIN := $(HOME)/.local/bin
+USER_CLI := $(HOME)/.local/share/roj/command
 
 .PHONY: help test lint i18n schemas icons pack install uninstall dev-link install-system \
         dist deb calendars checksums release-assets vendor web screenshots marketing clean
@@ -62,7 +63,10 @@ install: pack
 	gnome-extensions install --force $(ZIP)
 	glib-compile-schemas $(EXT_DIR)/schemas
 	gnome-extensions enable $(UUID) || true
-	@$(MAKE) --no-print-directory install-user-cli CLI_SCRIPT=$(EXT_DIR)/cli/roj.js
+	# The extensions.gnome.org zip has no roj command, so it gets its own copy.
+	command rm -rf $(USER_CLI) && install -d $(USER_CLI)
+	cd extension && tar cf - cli lib locale data | tar xf - -C $(USER_CLI)
+	@$(MAKE) --no-print-directory install-user-cli CLI_SCRIPT=$(USER_CLI)/cli/roj.js
 	@echo
 	@echo "Installed Roj $(VERSION). On Wayland, log out and back in once so GNOME Shell loads it."
 
@@ -77,6 +81,7 @@ uninstall:
 	gnome-extensions uninstall $(UUID) || true
 	@if grep -q 'roj, the Kurdish calendar' $(USER_BIN)/roj 2>/dev/null; then command rm -f $(USER_BIN)/roj; fi
 	command rm -f $(HOME)/.local/share/man/man1/roj.1
+	command rm -rf $(USER_CLI)
 
 dev-link: schemas
 	mkdir -p $(dir $(EXT_DIR))

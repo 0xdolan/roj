@@ -37,6 +37,8 @@ export default {
     "Command-line tool": "ابزار خط فرمان",
     "roj prints the same dates in a terminal, with the same engine and your settings.": "roj همین تاریخ‌ها را با همان موتور و تنظیمات شما در ترمینال چاپ می‌کند.",
     "Install": "نصب",
+    "Not part of the extensions.gnome.org download. Install the roj package, or see the guide.": "بخشی از دانلود extensions.gnome.org نیست. بستهٔ roj را نصب کنید یا راهنما را ببینید.",
+    "How to install": "روش نصب",
     "Installed in {path}. Try: roj cal": "در {path} نصب شد. امتحان کنید: roj cal",
     "Adds a small launcher to ~/.local/bin": "یک اجراکننده‌ی کوچک به ~/.local/bin اضافه می‌کند",
     "Reinstall": "نصب دوباره",

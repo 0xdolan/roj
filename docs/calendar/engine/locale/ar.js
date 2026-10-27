@@ -37,6 +37,8 @@ export default {
     "Command-line tool": "أداة سطر الأوامر",
     "roj prints the same dates in a terminal, with the same engine and your settings.": "يطبع roj التواريخ نفسها في الطرفية، بالمحرك نفسه وبإعداداتك.",
     "Install": "تثبيت",
+    "Not part of the extensions.gnome.org download. Install the roj package, or see the guide.": "ليس جزءًا من تنزيل extensions.gnome.org. ثبّت حزمة roj أو راجع الدليل.",
+    "How to install": "طريقة التثبيت",
     "Installed in {path}. Try: roj cal": "ثُبّت في {path}. جرّب: roj cal",
     "Adds a small launcher to ~/.local/bin": "يضيف مشغّلًا صغيرًا إلى ~/.local/bin",
     "Reinstall": "إعادة التثبيت",
