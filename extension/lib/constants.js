@@ -3,7 +3,7 @@
 
 export const UUID = 'roj@0xdolan.github.io';
 export const SCHEMA_ID = 'org.gnome.shell.extensions.roj';
-export const VERSION = '0.2.1';
+export const VERSION = '0.2.2';
 export const TSROJ_VERSION = '1.0.6';
 
 export const AUTHOR = '0xdolan';
