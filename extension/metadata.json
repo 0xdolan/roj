@@ -13,5 +13,5 @@
   "url": "https://github.com/0xdolan/roj",
   "settings-schema": "org.gnome.shell.extensions.roj",
   "gettext-domain": "roj",
-  "version-name": "0.2.0"
+  "version-name": "0.2.1"
 }
