@@ -59,14 +59,11 @@ EGO shows one screenshot. Everything else is one click away: the description lin
 
 ### 2.4 Link the listing everywhere
 
-The listing's address contains its number, for example `https://extensions.gnome.org/extension/1234/roj-kurdish-calendar/`. Once you have it:
+The listing is <https://extensions.gnome.org/extension/11501/roj-kurdish-calendar/> (number 11501). It is linked from these places; keep them in step if it ever changes:
 
-1. README: in the badges, add
-   `[![GNOME Extensions](https://img.shields.io/badge/GNOME%20Extensions-Roj-4a86cf?logo=gnome&logoColor=white)](https://extensions.gnome.org/extension/1234/roj-kurdish-calendar/)`
-   and turn **extensions.gnome.org** in the Install table into the same link.
-2. Website: in `docs/index.html`, make the extensions.gnome.org install option a link to the listing, and do the same in the guide's Getting started.
-3. Extension: the About page's links are in `extension/prefs/aboutPage.js`; add the listing there too.
-4. Commit this on a `feature/` branch like any other change.
+1. README: the GNOME Extensions badge, the link line under it and the Install table.
+2. Website: the extensions.gnome.org install step in `docs/index.html` and Getting started in `docs/guide.html`.
+3. Extension: `EGO_URL` in `extension/lib/constants.js`, shown on the About page as "Roj on GNOME Extensions".
 
 ### 2.5 Automatic uploads
 

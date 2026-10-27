@@ -29,6 +29,7 @@ export default {
     "Made by {author}": "من صنع {author}",
     "Source code": "الشيفرة المصدرية",
     "Website": "الموقع",
+    "Roj on GNOME Extensions": "روژ على GNOME Extensions",
     "Documentation": "التوثيق",
     "Guide, event format and command line": "الدليل وصيغة المناسبات وسطر الأوامر",
     "What’s new": "ما الجديد",
