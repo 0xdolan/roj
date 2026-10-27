@@ -179,7 +179,7 @@ Roj uses [Semantic Versioning](https://semver.org/) and keeps a [changelog](CHAN
 make release V=0.2.1
 ```
 
-The tag builds and publishes everything: the GitHub release with the extension zip, both .deb packages, the source tarball and checksums; the upload to extensions.gnome.org; and the source packages for the Ubuntu PPA. [RELEASING.md](RELEASING.md) has the rules, and [docs/PUBLISHING.md](docs/PUBLISHING.md) the one-time account setup.
+The tag builds and publishes everything: the GitHub release with the extension zip, both .deb packages, the source tarball and checksums; the upload to extensions.gnome.org; and the source packages for the Ubuntu PPA. [RELEASING.md](RELEASING.md) has the rules.
 
 ## Credits
 

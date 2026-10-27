@@ -4,7 +4,6 @@
 # Updates metadata.json, package.json, constants.js, the man page and
 # debian/changelog, opens a CHANGELOG.md section from "Unreleased" and
 # rebuilds the website's copy of the engine.
-# DEBFULLNAME and DEBEMAIL set the debian/changelog signature.
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 V="${1:?usage: bump-version.sh X.Y.Z}"
