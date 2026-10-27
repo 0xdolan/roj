@@ -3,7 +3,7 @@
 // extension. Runs with `gjs -m roj.js` (preferred: reads your extension
 // settings) or `node roj.js`.
 
-import {CALENDARS, LOCALES, PRESETS, RojEngine, SECONDARY_CALENDARS, TOKENS, weekdayOf} from '../lib/engine.js';
+import {CALENDARS, LOCALES, PRESETS, RojEngine, SECONDARY_CALENDARS, TOKENS, pinClock, weekdayOf} from '../lib/engine.js';
 import {EventIndex, parseEventsDocument} from '../lib/events.js';
 import {buildIcs} from '../lib/icsExport.js';
 import {localizedText} from '../lib/i18n.js';
@@ -70,6 +70,7 @@ async function platform() {
         const path = await import('node:path');
         const url = await import('node:url');
         const crypto = await import('node:crypto');
+        pinClock(process.env.ROJ_FAKE_NOW);
         return {
             args: process.argv.slice(2),
             out: s => process.stdout.write(`${s}\n`),
@@ -83,13 +84,14 @@ async function platform() {
             cacheDir: process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache'),
             sha256: s => crypto.createHash('sha256').update(s).digest('hex'),
             settings: () => null,
-            now: () => new Date(),
+            now: () => RojEngine.clock(),
         };
     }
     const {default: GLib} = await import('gi://GLib');
     const {default: Gio} = await import('gi://Gio');
     const {default: System} = await import('system');
     const fromHere = rel => GLib.filename_from_uri(`${here}${rel}`)[0];
+    pinClock(GLib.getenv('ROJ_FAKE_NOW'));
     return {
         args: System.programArgs ?? globalThis.ARGV ?? [],
         out: s => print(s),
@@ -119,7 +121,7 @@ async function platform() {
             const schema = Gio.SettingsSchemaSource.get_default()?.lookup(SCHEMA_ID, true);
             return schema ? new Gio.Settings({settings_schema: schema}) : null;
         },
-        now: () => new Date(),
+        now: () => RojEngine.clock(),
     };
 }
 
@@ -448,7 +450,7 @@ function cmdEvents(ctx) {
 function cmdIcs(ctx) {
     const {engine, io} = ctx;
     const events = loadSources(ctx).flatMap(s => s.events);
-    const year = engine.dateIn('gregorian', engine.todayJdn())[0];
+    const year = engine.dateIn('gregorian', engine.todayJdn(io.now()))[0];
     const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '');
     io.out(buildIcs(events, {
         engine, lang: engine.locale, name: 'Roj',

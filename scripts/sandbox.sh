@@ -4,8 +4,9 @@
 #   scripts/sandbox.sh PLAN.json [OUT_DIR]
 #
 # A throwaway XDG environment is used, so your real session, settings and
-# extensions are never touched. scripts/devtools executes PLAN.json (see
-# scripts/screenshots/plan.json) and the shell exits when the plan is done.
+# extensions are never touched. scripts/devtools executes PLAN.json (written
+# by scripts/screenshots.sh) and the shell exits when the plan is done.
+# ROJ_FAKE_NOW="2026-12-17 10:30" pins the date Roj and its settings window see.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"

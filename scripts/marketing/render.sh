@@ -14,9 +14,9 @@ node "$HERE/data.mjs" > "$BUILD/data.js"
 
 # Real CLI output, with colours, converted to HTML spans.
 python3 - "$ROOT" "$BUILD/cli.js" <<'PY'
-import html, json, re, shlex, subprocess, sys
+import html, json, os, re, shlex, subprocess, sys
 root, out = sys.argv[1], sys.argv[2]
-cmds = ["roj -l kmr", "roj cal --with g,p -l kmr", "roj convert 2027-03-21 -l kmr", "roj events --month --date 2027-03-10 -l kmr"]
+cmds = ["roj -l kmr", "roj cal --with g,p -l kmr", "roj convert 2027-03-21 -l kmr", "roj events --month --date 2027-03-21 -l kmr"]
 def to_html(text):
     parts, open_ = [], 0
     for chunk in re.split(r"(\x1b\[[0-9;]*m)", text):
@@ -33,7 +33,9 @@ def to_html(text):
 items = []
 for cmd in cmds:
     args = shlex.split(cmd)[1:]
-    res = subprocess.run([f"{root}/bin/roj", *args, "--color", "--no-config"], capture_output=True, text=True, check=True)
+    # "Today" is 17 December 2026, the day the screenshots show.
+    env = {**os.environ, "ROJ_FAKE_NOW": "2026-12-17 10:30"}
+    res = subprocess.run([f"{root}/bin/roj", *args, "--color", "--no-config"], capture_output=True, text=True, check=True, env=env)
     items.append({"cmd": html.escape(cmd), "html": to_html(res.stdout)})
 open(out, "w").write("window.CLI = " + json.dumps(items, ensure_ascii=False) + ";\n")
 PY

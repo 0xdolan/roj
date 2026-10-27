@@ -119,9 +119,21 @@ export default class DevTools extends Extension {
                 const result = await new AsyncFunction('Main', 'roj', 'settings', step.eval)(Main, this._roj, settings);
                 log(`eval: ${JSON.stringify(result)}`);
             }
-            if (step.shot)
+            if (step.shot) {
+                this._pinShellClock();
                 await this._shoot(step);
+            }
         }
+    }
+
+    // With ROJ_FAKE_NOW set, Roj shows that date; make GNOME's own clock agree.
+    _pinShellClock() {
+        const fake = /^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2}))?$/.exec(GLib.getenv('ROJ_FAKE_NOW') ?? '');
+        const label = Main.panel.statusArea.dateMenu?._clockDisplay;
+        if (!fake || !label)
+            return;
+        const [y, mo, d, h, mi] = fake.slice(1).map(v => Number(v ?? 0));
+        label.text = GLib.DateTime.new_local(y, mo, d, h, mi, 0).format('%a %b %-d  %H:%M');
     }
 
     _prefsWindow() {

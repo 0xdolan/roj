@@ -105,7 +105,7 @@ class RojGeneralPage extends Adw.PreferencesPage {
         const _ = ctx._;
         const group = new Adw.PreferencesGroup({
             title: _('Digits'),
-            description: _('Each language uses its own digits by default: Persian ۰۱۲, Sorani and Arabic ٠١٢, English and Kurmanji 012.'),
+            description: _('Each calendar\'s numbers use the digits of its own language: Gregorian English 012, Persian Persian ۰۱۲, Islamic Arabic ٠١٢, and the Kurdish date the main language. Choose other digits for a language here.'),
         });
         this.add(group);
         const sample = set => DIGIT_SETS[set].slice(0, 4).join('');

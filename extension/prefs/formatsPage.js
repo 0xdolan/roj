@@ -7,7 +7,7 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
-import {CALENDARS, PRESETS, TOKENS} from '../lib/engine.js';
+import {CALENDARS, PRESETS, RojEngine, TOKENS} from '../lib/engine.js';
 import {ENGINE_KEYS} from '../lib/config.js';
 import {N_} from '../lib/i18n.js';
 import {isolate} from '../lib/richtext.js';
@@ -35,8 +35,8 @@ N_('Full'); N_('Long'); N_('Day and month'); N_('Weekday, day and month'); N_('S
 N_('Numeric'); N_('ISO style'); N_('Date and time'); N_('12-hour time');
 
 function nowTime() {
-    const now = GLib.DateTime.new_now_local();
-    return {hour: now.get_hour(), minute: now.get_minute(), second: now.get_second()};
+    const now = RojEngine.clock();
+    return {hour: now.getHours(), minute: now.getMinutes(), second: now.getSeconds()};
 }
 
 const esc = text => GLib.markup_escape_text(text, -1);

@@ -27,6 +27,7 @@
 <div class="wrap doc">
   <nav class="toc" aria-label="Contents">
     <a href="#start">Getting started</a>
+    <a href="#howto">How to</a>
     <a href="#popup">The popup</a>
     <a href="#top-bar">The top bar</a>
     <a href="#day-cards">Day cards</a>
@@ -53,11 +54,67 @@
       <li>The Kurdish date appears next to the clock. Click it to open the calendar.</li>
       <li>Choose your language: click <b>Settings</b> in the popup, then <b>General, Languages</b>.</li>
     </ol>
-    <figure><img src="images/screenshots/panel.png" alt="The Kurdish date in the top bar, next to the clock"><figcaption>The top bar: the Kurdish date sits next to the GNOME clock.</figcaption></figure>
+    <figure><img src="images/screenshots/panel.png" alt="The Kurdish date in the top bar, next to the clock"><figcaption>The top bar on 17 December 2026: the Kurdish date sits next to the GNOME clock, and the dot says today has an event, Kurdistan Flag Day.</figcaption></figure>
+
+    <h2 id="howto">How to</h2>
+    <p>Short recipes for the things people ask most. Every screenshot is from a real GNOME Shell session.</p>
+
+    <h3 id="howto-language">Show the dates in your language</h3>
+    <ol>
+      <li>Click the date in the top bar, then <b>Settings</b>.</li>
+      <li>On <b>General</b>, under <b>Languages</b>, pick the <b>Main date language</b>: Sorani, Kurmanji, English, Persian or Arabic.</li>
+      <li>Pick <b>Other calendars</b>: the same language, the interface language, or each calendar in its own language.</li>
+      <li>Leave <b>Interface language</b> on automatic to follow the date, or pick one.</li>
+    </ol>
+    <div class="pair">
+      <figure><img src="images/screenshots/prefs-general.png" alt="General settings: languages and digits" loading="lazy"><figcaption>General: languages, then digits per language.</figcaption></figure>
+      <figure><img src="images/screenshots/prefs-general-ckb.png" alt="The same page with a Sorani interface" loading="lazy"><figcaption>The same page with the interface in Sorani.</figcaption></figure>
+    </div>
+
+    <h3 id="howto-cards">Show the Persian and Islamic days on every card</h3>
+    <ol>
+      <li>Open <b>Settings, Appearance</b>.</li>
+      <li>Under <b>Day cards</b>, switch on <b>Persian (Jalali) day</b> and <b>Islamic (Hijri) day</b>. Gregorian is on already.</li>
+      <li>Choose the layout: <b>in a row</b> under the day, or <b>in the corners</b>.</li>
+    </ol>
+    <div class="pair">
+      <figure><img src="images/screenshots/prefs-appearance.png" alt="Appearance settings with the day card switches" loading="lazy"><figcaption>Appearance: the top bar, then the day cards.</figcaption></figure>
+      <figure><img src="images/popup/popup-ckb-events.png" alt="All three small numbers in a row" loading="lazy"><figcaption>The result on 22 January 2027, the day the Republic of Kurdistan was declared in Mahabad.</figcaption></figure>
+    </div>
+
+    <h3 id="howto-holidays">Add your country's public holidays</h3>
+    <ol>
+      <li>Open <b>Settings, Events</b>.</li>
+      <li>Next to <b>Add a calendar</b>, choose <b>Online</b>, then a country: Iraq, Iran, Turkey, Syria or Germany. Any .ics link works too, and <b>File</b> adds a local .ics or JSON file.</li>
+      <li>Give it a colour. Its days get a dot in the popup, and holidays turn red.</li>
+    </ol>
+    <figure class="narrow"><img src="images/screenshots/prefs-events.png" alt="Events settings with the Holidays in Iraq calendar added" loading="lazy"><figcaption>The included Kurdish events and the public holidays of Iraq.</figcaption></figure>
+
+    <h3 id="howto-topbar">Change what the top bar shows</h3>
+    <ol>
+      <li>Open <b>Settings, Formats</b>.</li>
+      <li>Edit <b>Top bar</b>, or pick a preset with the list button. The preview under it updates as you type; see <a href="#patterns">Patterns and tokens</a>.</li>
+      <li>Under <b>Appearance, Top bar</b>, choose where it sits and how today's events are marked.</li>
+    </ol>
+    <div class="pair">
+      <figure><img src="images/screenshots/prefs-formats.png" alt="Formats settings with live previews" loading="lazy"><figcaption>Formats: one pattern per place, each with a live preview.</figcaption></figure>
+      <figure><img src="images/screenshots/panel-markers.png" alt="The four event markers" loading="lazy"><figcaption>Today's events as a dot, a count, the title, and in red on Newroz, a holiday.</figcaption></figure>
+    </div>
+
+    <h3 id="howto-convert">Convert a date</h3>
+    <ol>
+      <li>Click <b>Convert</b> in the popup, or open <b>Settings, Converter</b>.</li>
+      <li>Choose the calendar your date is in, then type it as YYYY-MM-DD or set the year, month and day.</li>
+      <li>Read it in every calendar. The copy button next to each line copies it.</li>
+    </ol>
+    <figure class="narrow"><img src="images/screenshots/prefs-converter-light.png" alt="The converter showing 22 January 2027 in four calendars" loading="lazy"><figcaption>22 January 2027 is ٢ی ڕێبەندانی ٢٧٢٦, 2 Bahman 1405 and 13 Shaban 1448.</figcaption></figure>
+
+    <h3 id="howto-phone">Get the Kurdish days on your phone</h3>
+    <p>Subscribe to the Kurdish events in Google Calendar or on an iPhone: see <a href="#calendar-apps">Kurdish events in Google Calendar, iPhone and Mac</a>, or use the buttons on the <a href="calendar/">live calendar</a>.</p>
 
     <h2 id="popup">The popup</h2>
     <div class="pair">
-      <figure><img src="images/popup/popup-ckb-dark.png" alt="The Roj popup in Sorani"><figcaption>Sorani, dark theme, default settings.</figcaption></figure>
+      <figure><img src="images/popup/popup-ckb-dark.png" alt="The Roj popup in Sorani"><figcaption>Sorani, dark theme, default settings, on Kurdistan Flag Day.</figcaption></figure>
       <div>
         <p>From top to bottom:</p>
         <ul>
@@ -76,7 +133,7 @@
 
     <h2 id="top-bar">The top bar</h2>
     <p>The top bar shows the Kurdish date with your <a href="#patterns">pattern</a>. When today has events, it also shows a marker; choose it under <b>Appearance, Top bar, Today's events</b>:</p>
-    <figure><img src="images/screenshots/panel-markers.png" alt="The three event markers: a dot, a count and the title"><figcaption>A dot, the number of events, or the first event's title. The marker is red when today is a holiday.</figcaption></figure>
+    <figure><img src="images/screenshots/panel-markers.png" alt="The event markers: a dot, a count, the title, and the title in red"><figcaption>A dot, the number of events, or the first event's title. The marker is red when today is a holiday, as on Newroz (bottom).</figcaption></figure>
 
     <h2 id="day-cards">Day cards</h2>
     <p>The large number in each card is always the <b>Kurdish</b> day. Up to three small numbers, all the same size, can sit beside it:</p>
@@ -88,9 +145,9 @@
         <tr><td>Islamic (Hijri)</td><td style="color:var(--isl)">● purple</td><td>Off</td></tr>
       </tbody>
     </table>
-    <p>Turn each on or off under <b>Appearance, Day cards</b>: any one, two or all three, <b>in a row</b> under the day or <b>in the corners</b>. Each small number uses the digits of the language its calendar is written in.</p>
+    <p>Turn each on or off under <b>Appearance, Day cards</b>: any one, two or all three, <b>in a row</b> under the day or <b>in the corners</b>. Each small number uses the digits of its calendar's own language: Gregorian 012, Persian ۰۱۲, Islamic ٠١٢.</p>
     <div class="pair">
-      <figure><img src="images/popup/popup-ckb-events.png" alt="All three small numbers in a row"><figcaption>All three in a row. 19 Reşemê is Eid al-Fitr and Kurdish Clothing Day.</figcaption></figure>
+      <figure><img src="images/popup/popup-ckb-events.png" alt="All three small numbers in a row"><figcaption>All three in a row. 2 Rêbendan is the anniversary of the Republic of Kurdistan.</figcaption></figure>
       <figure><img src="images/popup/popup-ckb-corners.png" alt="Small numbers in the corners"><figcaption>The same month with the numbers in the corners.</figcaption></figure>
     </div>
 
@@ -105,17 +162,18 @@
     <table>
       <thead><tr><th>Language</th><th>Kurdish date</th><th>Gregorian date</th></tr></thead>
       <tbody>
-<tr><td>Sorani</td><td class="rtl">هەینی ٥ی پووشپەڕی ٢٧٢٦</td><td class="rtl">٢٦ یونیۆ ٢٠٢٦</td></tr>
+<tr><td>Sorani</td><td class="rtl">هەینی ٥ی پووشپەڕی ٢٧٢٦</td><td class="rtl">26 یونیۆ 2026</td></tr>
 <tr><td>Kurmanji</td><td>În 05 Tîrmeh 2726</td><td>26 June 2026</td></tr>
 <tr><td>English</td><td>Friday 05 Pûşper 2726</td><td>26 June 2026</td></tr>
-<tr><td>Persian</td><td class="rtl">آدینه ۵ پووشپەڕ ۲۷۲۶</td><td class="rtl">۲۶ ژوئن ۲۰۲۶</td></tr>
-<tr><td>Arabic</td><td class="rtl">الجمعة ٥ پووشپەڕ ٢٧٢٦</td><td class="rtl">٢٦ يونيو ٢٠٢٦</td></tr>
+<tr><td>Persian</td><td class="rtl">آدینه ۵ پووشپەڕ ۲۷۲۶</td><td class="rtl">26 ژوئن 2026</td></tr>
+<tr><td>Arabic</td><td class="rtl">الجمعة ٥ پووشپەڕ ٢٧٢٦</td><td class="rtl">26 يونيو 2026</td></tr>
       </tbody>
     </table>
     <p>With <b>each in its own language</b>, a Sorani user sees <span class="rtl">٥ی پووشپەڕی ٢٧٢٦</span> together with 26 June 2026, <span class="rtl">۵ تیر ۱۴۰۵</span> and <span class="rtl">١٠ محرم ١٤٤٨</span>.</p>
-    <figure class="narrow"><img src="images/popup/popup-fa-native.png" alt="Persian popup with each calendar in its own language"><figcaption>Persian, with each calendar in its own language.</figcaption></figure>
+    <figure class="narrow"><img src="images/popup/popup-fa-native.png" alt="Persian popup with each calendar in its own language"><figcaption>Persian on Newroz, with each calendar in its own language.</figcaption></figure>
     <h3>Digits</h3>
-    <p>Each language uses its own digits by default: <b>Persian</b> <span class="rtl">۰۱۲۳</span>, <b>Sorani and Arabic</b> <span class="rtl">٠١٢٣</span>, <b>English and Kurmanji</b> 0123. Change them per language under <b>General, Digits</b>.</p>
+    <p>Numbers follow the <b>calendar's own language</b>, whatever language its words are in: the <b>Gregorian</b> date in English digits (2026), the <b>Persian</b> date in Persian digits (<span class="rtl">۱۴۰۵</span>), the <b>Islamic</b> date in Arabic digits (<span class="rtl">١٤٤٨</span>), and the <b>Kurdish</b> date in the digits of the main language: <span class="rtl">٢٧٢٦</span> in Sorani, 2726 in Kurmanji. So a Sorani date line reads <span class="rtl">٥ی پووشپەڕی ٢٧٢٦</span>, 26 June 2026, <span class="rtl">۵ تیر ۱۴۰۵</span>, <span class="rtl">١٠ محرم ١٤٤٨</span>.</p>
+    <p>Each language's digits can be changed under <b>General, Digits</b>, and the change applies to its calendar: set Persian to Western digits and the Persian date becomes 1405. With <b>Leading zero</b> on automatic, only Western digits get a zero (05); <span class="rtl">۵</span> and <span class="rtl">٥</span> never do.</p>
     <h3>Sorani ezafe</h3>
     <p>Sorani writes a linking <b>ی</b> after the day when a month name follows (<span class="rtl">٥ی پووشپەڕ</span>) and after the month when a year follows (<span class="rtl">پووشپەڕی ٢٧٢٦</span>). Under <b>General, Sorani ezafe</b> you switch it on or off for each calendar. By default it is on for the Kurdish date only. It applies only to dates written in Sorani.</p>
 
