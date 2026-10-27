@@ -24,6 +24,19 @@ mkdir -p "$WORK/orig/roj-$VERSION"
     | tar xf - -C "$WORK/orig/roj-$VERSION"
 tar czf "$WORK/roj_$VERSION.orig.tar.gz" -C "$WORK/orig" "roj-$VERSION"
 
+# Launchpad's upload server sometimes answers 550 under load: try each upload
+# a few times, carry on with the other series, and fail at the end.
+upload() {
+    local tries=0
+    until dput -f "$PPA" "$1"; do
+        tries=$((tries + 1))
+        [ "$tries" -lt 3 ] || return 1
+        echo "upload failed, retrying in 60 s ($tries/3)"
+        sleep 60
+    done
+}
+failed=()
+
 for series in $SERIES; do
     version="$VERSION-$REV~${series}1"
     dir="$WORK/$series"
@@ -38,7 +51,14 @@ for series in $SERIES; do
         echo "built $dir/roj_${version}_source.changes (not uploaded)"
     else
         (cd "$dir/roj-$VERSION" && dpkg-buildpackage -S -sa -d -k"$GPG_KEY_ID" >"$dir/build.log" 2>&1)
-        dput "$PPA" "$dir/roj_${version}_source.changes"
-        echo "uploaded roj $version to $PPA"
+        if upload "$dir/roj_${version}_source.changes"; then
+            echo "uploaded roj $version to $PPA"
+        else
+            failed+=("$version")
+        fi
     fi
 done
+if [ "${#failed[@]}" -gt 0 ]; then
+    echo "not uploaded: ${failed[*]}" >&2
+    exit 1
+fi
