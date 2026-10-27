@@ -48,6 +48,7 @@ lint: schemas
 	@for f in $(JS_FILES); do node --check "$$f" || exit 1; done
 	@echo "syntax ok: $(words $(JS_FILES)) files"
 	scripts/check-dashes.sh
+	node scripts/check-kurdish.mjs
 
 i18n:
 	node scripts/i18n-check.mjs
