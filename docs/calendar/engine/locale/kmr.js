@@ -38,6 +38,8 @@ export default {
     "Command-line tool": "Amûra rêza fermanan",
     "roj prints the same dates in a terminal, with the same engine and your settings.": "roj heman dîrokan di termînalê de nîşan dide, bi heman motor û mîhengên te.",
     "Install": "Saz bike",
+    "Not part of the extensions.gnome.org download. Install the roj package, or see the guide.": "Ne beşek ji daxistina extensions.gnome.org e. Pakêta roj saz bike, an li Rêberê binêre.",
+    "How to install": "Çawa tê sazkirin",
     "Installed in {path}. Try: roj cal": "Li {path} hate sazkirin. Biceribîne: roj cal",
     "Adds a small launcher to ~/.local/bin": "Destpêkerekî biçûk li ~/.local/bin zêde dike",
     "Reinstall": "Ji nû ve saz bike",

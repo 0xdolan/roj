@@ -67,7 +67,7 @@ The [guide](https://0xdolan.github.io/roj/guide.html) explains everything with s
 
 ## Install
 
-The extension needs **GNOME Shell 45 to 50**: Ubuntu 24.04 and newer, Debian 13, Fedora 39 and newer, Kali with GNOME, and most current distributions. Every method below also installs the `roj` command.
+The extension needs **GNOME Shell 45 to 50**: Ubuntu 24.04 and newer, Debian 13, Fedora 39 and newer, Kali with GNOME, and most current distributions. Every method below except extensions.gnome.org also installs the `roj` command; there, add it with the `roj` package.
 
 | Method | Commands | Updates |
 | --- | --- | --- |

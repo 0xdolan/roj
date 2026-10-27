@@ -85,9 +85,15 @@ class RojAboutPage extends Adw.PreferencesPage {
         });
         this.add(group);
         const row = new Adw.ActionRow({title: 'roj'});
+        group.add(row);
+        // The extensions.gnome.org download has no roj command; point to the packages.
+        if (!GLib.file_test(GLib.build_filenamev([this._ctx.path, 'cli', 'roj.js']), GLib.FileTest.EXISTS)) {
+            row.subtitle = _('Not part of the extensions.gnome.org download. Install the roj package, or see the guide.');
+            row.add_suffix(textButton(_('How to install'), () => this._ctx.openUri(`${DOCS_URL}#cli`)));
+            return;
+        }
         const button = textButton(_('Install'), () => this._installCli(row, button), ['suggested-action']);
         row.add_suffix(button);
-        group.add(row);
         this._syncCli(row, button);
     }
 

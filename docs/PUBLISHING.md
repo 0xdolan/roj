@@ -157,7 +157,8 @@ sudo apt install gnome-shell-extension-roj roj
 - Network: only for .ics links the user adds, cached in `~/.cache/roj`.
 - Files written only when the user asks: settings exports, loaded fonts (`~/.local/share/roj/fonts`), the optional `~/.local/bin/roj` launcher, and, on Pango older than 1.56, the optional font install.
 - `extension/lib/tsroj.js` is the unminified tsroj build (GPL-3.0), copied verbatim.
-- `cli/roj.js` is the optional command-line tool; the extension never runs it.
+- The command-line tool (`cli/roj.js` and `lib/icsExport.js`, which only it uses) is not in the zip, so every JavaScript file is reachable from `extension.js` or `prefs.js`. The About page links to the guide's install instructions instead. The packages and the tarball still ship it.
+- Clipboard: the popup's **Copy** button calls `St.Clipboard.set_text()` with the selected date, only when the user clicks it (`ui/calendarView.js`, `_copySelected`). Roj never reads the clipboard.
 - `ROJ_FAKE_NOW` is read in `enable()` and in the preferences window: when it is set (only the screenshot sandbox sets it), Roj shows that date instead of today. Nothing else reads the environment.
 
 ## Longer listing description
