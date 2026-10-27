@@ -162,7 +162,10 @@ class CalendarView extends St.BoxLayout {
     }
 
     _buildGrid() {
+        // Homogeneous rows give every column the same width, so each weekday
+        // name is centred over its column whatever its length.
         this._weekdays = box(false, {style_class: 'roj-weekdays'});
+        this._weekdays.layout_manager.homogeneous = true;
         this._weekdayLabels = [];
         for (let i = 0; i < 7; i++) {
             const label = new St.Label({style_class: 'roj-weekday', x_expand: true});
@@ -175,6 +178,7 @@ class CalendarView extends St.BoxLayout {
         this._cards = [];
         for (let w = 0; w < 6; w++) {
             const row = box(false, {style_class: 'roj-week'});
+            row.layout_manager.homogeneous = true;
             for (let d = 0; d < 7; d++) {
                 const card = new DayCard();
                 card.connect('day-activated', (_c, jdn) => this.select(jdn));

@@ -87,7 +87,7 @@
 .roj-light .roj-icon-button:hover { background-color: rgba(0, 0, 0, 0.06); }
 
 /* Grid */
-.roj-weekdays { spacing: 0.25em; padding: 0 0.1em; }
+.roj-weekdays { spacing: 0.25em; }
 .roj-weekday { font-size: 0.74em; font-weight: 700; text-align: center; padding: 0.2em 0; }
 .roj-dark .roj-weekday { color: #9a9aa4; }
 .roj-light .roj-weekday { color: #6a6a74; }
