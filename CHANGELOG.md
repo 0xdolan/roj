@@ -10,6 +10,11 @@ a release is described in [RELEASING.md](RELEASING.md).
 ### Changed
 
 - Persian and Arabic write "Kurdish" the Kurdish way, with و: کوردی and کوردستان, الكوردية and كوردستان.
+- Each calendar's numbers use the digits of its own language, whatever language its words are in: Gregorian in English digits (2026), Persian in Persian digits (۱۴۰۵), Islamic in Arabic digits (١٤٤٨) and the Kurdish date in the digits of the main language. The Digits settings for each language apply to its calendar.
+
+### Fixed
+
+- The weekday names in the popup sit exactly over their columns of day cards.
 
 ### Added
 

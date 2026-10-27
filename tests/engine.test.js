@@ -59,7 +59,7 @@ test('time tokens use the locale AM/PM labels and always pad minutes', () => {
 test('Islamic offset shifts the Hijri date but not the weekday', () => {
     const e = new RojEngine({locale: 'kmr', islamicOffset: 1});
     assert.deepEqual(e.dateIn('islamic', jdn), [1448, 1, 11]);
-    assert.equal(e.format(jdn, 'islamic', '%A %-d'), `${kmr.format(jdn, 'islamic', '%A')} 11`);
+    assert.equal(e.format(jdn, 'islamic', '%A %-d'), `${kmr.format(jdn, 'islamic', '%A')} ١١`);
     assert.equal(e.toJdn('islamic', 1448, 1, 11), jdn);
 });
 
@@ -166,11 +166,25 @@ test('script runs split Latin and Arabic text and keep ZWNJ in place', () => {
         '<span font_family="Manrope">a&lt;b</span>');
 });
 
+test('each calendar uses the digits of its own language', () => {
+    assert.equal(ckb.format(jdn, 'kurdish', '%Y'), '٢٧٢٦');
+    assert.equal(kmr.format(jdn, 'kurdish', '%Y'), '2726');
+    for (const e of [ckb, kmr]) {
+        assert.equal(e.format(jdn, 'gregorian', '%Y'), '2026');
+        assert.equal(e.format(jdn, 'persian', '%Y'), '۱۴۰۵');
+        assert.equal(e.format(jdn, 'islamic', '%Y'), '١٤٤٨');
+        assert.equal(e.number(26, 'persian'), '۲۶');
+    }
+    const custom = new RojEngine({locale: 'ckb', digits: {fa: 'latin', en: 'arabic'}});
+    assert.equal(custom.format(jdn, 'persian', '%Y'), '1405');
+    assert.equal(custom.format(jdn, 'gregorian', '%Y'), '٢٠٢٦');
+});
+
 test('ezafe is on for the Kurdish date only, by default', () => {
-    assert.equal(ckb.format(jdn, 'gregorian', '%d %B %Y'), '٢٦ یونیۆ ٢٠٢٦');
+    assert.equal(ckb.format(jdn, 'gregorian', '%d %B %Y'), '26 یونیۆ 2026');
     assert.equal(ckb.format(jdn, 'islamic', '%d %B %Y'), '١٠ محرم ١٤٤٨');
     const all = new RojEngine({locale: 'ckb', ezafe: {gregorian: true}});
-    assert.equal(all.format(jdn, 'gregorian', '%d %B %Y'), '٢٦ی یونیۆی ٢٠٢٦');
+    assert.equal(all.format(jdn, 'gregorian', '%d %B %Y'), '26ی یونیۆی 2026');
 });
 
 test('Persian and Arabic dates use their own digits and the right weekday', () => {

@@ -350,7 +350,7 @@ function cmdCal(ctx) {
                 main = paint('inverse', main);
             else if (weekend.has(weekdayOf(cell.jdn)))
                 main = paint('red', main);
-            const small = subs.map(cal => paint(cal, engine.number(cell.dates[cal][2]).padStart(3))).join('');
+            const small = subs.map(cal => paint(cal, engine.number(cell.dates[cal][2], cal).padStart(3))).join('');
             return main + small;
         }).join(''));
     }

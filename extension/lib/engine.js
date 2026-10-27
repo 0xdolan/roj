@@ -200,6 +200,15 @@ export class RojEngine {
         return DIGIT_SETS[mode] ?? getDigits(locale);
     }
 
+    /**
+     * The ten digit characters for a calendar's numbers. These follow the
+     * calendar's own language (Gregorian English, Persian Persian, Islamic
+     * Arabic, Kurdish the date language), whatever language its words are in.
+     */
+    calendarDigits(calendar) {
+        return this.digitsFor(calendar === 'kurdish' ? this.options.locale : NATIVE_LOCALE[calendar]);
+    }
+
     // Conversions
     /** Kurdish solar date object (tsroj) for a JDN. */
     kurdishDate(jdn) {
@@ -276,7 +285,7 @@ export class RojEngine {
             calendar: CalendarKind[calendar.toUpperCase()],
             locale,
             useLocaleDigits: true,
-            digits: this.digitsFor(locale),
+            digits: this.calendarDigits(calendar),
             monthVariant: o.monthVariant,
             weekdayVariant: o.weekdayVariant,
             ezafeAfterDay: !!(o.ezafe[calendar] && o.ezafeAfterDay),
@@ -375,9 +384,9 @@ export class RojEngine {
         return tokenize(String(pattern)).some(p => p.type === 'token' && p.value === '%S');
     }
 
-    /** A number in the digits of the language a calendar is written in. */
+    /** A number in the digits of a calendar (see calendarDigits). */
     number(n, calendar = 'kurdish', pad = 0) {
-        const digits = this.digitsFor(this.localeFor(calendar));
+        const digits = this.calendarDigits(calendar);
         return String(n).padStart(pad, '0').replace(/[0-9]/g, d => digits[d.charCodeAt(0) - 48]);
     }
 
