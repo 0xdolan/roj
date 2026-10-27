@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roj · Kurdish calendar</title>
+<meta name="description" content="The Kurdish solar calendar, live: today in Kurdish, Gregorian, Persian and Islamic dates, 43 Kurdish days with their history, a date converter, and calendars for Google Calendar and iPhone.">
+<meta property="og:title" content="Roj · Kurdish calendar">
+<meta property="og:description" content="Today in the Kurdish solar calendar, with Kurdish days you can add to Google Calendar or an iPhone.">
+<meta property="og:image" content="https://0xdolan.github.io/roj/images/marketing/banner.png">
+<link rel="icon" href="../favicon.ico">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="calendar.css">
+<script src="../theme.js"></script>
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../"><img src="../images/logo.svg" alt="">Roj</a>
+    <nav>
+      <a href="./" aria-current="page">Calendar</a>
+      <a href="../#install">Install</a>
+      <a href="../guide.html">Guide</a>
+      <a href="../story.html" class="hide-sm">Story</a>
+      <a href="https://github.com/0xdolan/roj" class="hide-sm">GitHub</a>
+      <button class="theme-toggle" type="button" data-theme-toggle>Theme: system</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="cal-hero">
+    <div class="wrap">
+      <h1>The Kurdish calendar, today</h1>
+      <p class="sub">The same calendar as the Roj extension for GNOME, running in your browser. Pick a day to see it in four calendars and the Kurdish days that fall on it.</p>
+      <div class="cal-stage">
+        <div id="popup" class="roj-popup" aria-live="polite">
+          <noscript><p class="cal-noscript">The live calendar needs JavaScript. The Kurdish days are also listed below and in the <a href="../guide.html#calendar-apps">guide</a>.</p></noscript>
+        </div>
+        <aside class="cal-options" id="options" aria-label="Calendar options">
+          <h2>Make it yours</h2>
+          <div class="opt">
+            <span class="opt-label" id="opt-lang">Language</span>
+            <div class="seg" role="radiogroup" aria-labelledby="opt-lang" data-option="locale">
+              <button type="button" data-value="ckb" class="rtl">کوردی</button>
+              <button type="button" data-value="kmr">Kurdî</button>
+              <button type="button" data-value="en">English</button>
+              <button type="button" data-value="fa" class="rtl">فارسی</button>
+              <button type="button" data-value="ar" class="rtl">العربية</button>
+            </div>
+          </div>
+          <div class="opt">
+            <span class="opt-label" id="opt-secondary">Other calendars</span>
+            <div class="seg" role="radiogroup" aria-labelledby="opt-secondary" data-option="secondaryLanguage">
+              <button type="button" data-value="same">In the same language</button>
+              <button type="button" data-value="native">Each in its own</button>
+            </div>
+          </div>
+          <div class="opt">
+            <span class="opt-label">Small numbers in each day</span>
+            <div class="checks">
+              <label><input type="checkbox" data-sub="gregorian"> <span class="swatch greg"></span>Gregorian</label>
+              <label><input type="checkbox" data-sub="persian"> <span class="swatch pers"></span>Persian</label>
+              <label><input type="checkbox" data-sub="islamic"> <span class="swatch isl"></span>Islamic</label>
+            </div>
+          </div>
+          <div class="opt">
+            <span class="opt-label" id="opt-layout">Layout</span>
+            <div class="seg" role="radiogroup" aria-labelledby="opt-layout" data-option="layout">
+              <button type="button" data-value="row">In a row</button>
+              <button type="button" data-value="corners">In the corners</button>
+            </div>
+          </div>
+          <div class="opt">
+            <span class="opt-label" id="opt-era">Year numbering</span>
+            <div class="seg" role="radiogroup" aria-labelledby="opt-era" data-option="era">
+              <button type="button" data-value="solar">Kurdish solar</button>
+              <button type="button" data-value="nineveh">Fall of Nineveh</button>
+            </div>
+          </div>
+          <p class="opt-note">Keys: arrows move a day or a week, Page Up and Page Down a month, Home goes to today. Links to a day can be shared: the address follows your choice.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="subscribe">
+    <div class="wrap">
+      <h2>Kurdish days in your own calendar</h2>
+      <p class="sub">Add the 43 Kurdish days to Google Calendar, an iPhone, a Mac or Outlook. A subscription stays up to date when days are added or corrected; a download is a copy you import once.</p>
+      <div class="grid subs">
+        <div class="tile sub-card" data-lang="ckb">
+          <h3 class="rtl">بۆنە کوردییەکان</h3>
+          <p>Sorani titles, with the history and sources of each day.</p>
+        </div>
+        <div class="tile sub-card" data-lang="kmr">
+          <h3>Bûyerên Kurdî</h3>
+          <p>Kurmanji titles.</p>
+        </div>
+        <div class="tile sub-card" data-lang="en">
+          <h3>Kurdish events</h3>
+          <p>English titles.</p>
+        </div>
+      </div>
+      <div class="howto">
+        <div><h3>Google Calendar</h3><p><b>Google Calendar</b> opens with the calendar ready to add. Or, on a computer, open <a href="https://calendar.google.com/calendar/r/settings/addbyurl">Settings, Add calendar, From URL</a> and paste the link. It then shows on your phone too.</p></div>
+        <div><h3>iPhone and iPad</h3><p>Tap <b>Apple Calendar</b> on the phone and confirm. Or open Settings, Apps, Calendar, Calendar Accounts, Add Account, Other, Add Subscribed Calendar, and paste the link.</p></div>
+        <div><h3>Mac and Outlook</h3><p>On a Mac, <b>Apple Calendar</b> opens Calendar, or use File, New Calendar Subscription. In Outlook, use Add calendar, Subscribe from web, and paste the link.</p></div>
+      </div>
+      <p class="fine">Newroz and the two Eids follow other calendars, so they are listed for each year from 2020 to 2060. Eid dates use the arithmetic Hijri calendar and can differ by a day or two from the sighting of the moon.</p>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="wrap">
+      <h2>Every Kurdish day</h2>
+      <p class="sub" id="events-sub">The days Roj includes, in the order they fall this year. Open one to read what happened and where it comes from.</p>
+      <div id="event-list" class="event-list"></div>
+    </div>
+  </section>
+
+  <section id="convert">
+    <div class="wrap">
+      <h2>Convert a date</h2>
+      <p class="sub">Type a date in any of the four calendars as year, month and day.</p>
+      <div class="converter">
+        <div class="conv-input">
+          <label for="conv-cal">Calendar</label>
+          <select id="conv-cal">
+            <option value="gregorian">Gregorian</option>
+            <option value="kurdish">Kurdish</option>
+            <option value="persian">Persian</option>
+            <option value="islamic">Islamic</option>
+          </select>
+          <label for="conv-date">Date</label>
+          <input id="conv-date" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="YYYY-MM-DD">
+          <button type="button" class="btn" id="conv-show">Show in the calendar</button>
+        </div>
+        <div id="conv-out" class="conv-out" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How the Kurdish calendar works</h2>
+      <div class="how">
+        <div>
+          <p>The Kurdish calendar follows the sun. The year begins at <b>Newroz</b>, the March equinox, usually on 21 March. Months 1 to 6 have 31 days, months 7 to 11 have 30, and the last month has 29, or 30 in a leap year: the same lengths as the Persian calendar.</p>
+          <p>Only the year number differs. In the Kurdish solar numbering, the Kurdish year is the Persian year plus 1321. Counting from the fall of Nineveh in 612 BCE, it is the Persian year plus 1233.</p>
+          <p>Every date is turned into a Julian Day Number, a plain count of days, so any calendar converts to any other. The engine is <a href="https://github.com/0xdolan/tsroj">tsroj</a>, the same one the extension and the <code>roj</code> command use. The Islamic dates are arithmetic (tabular); where months begin with the sighting of the moon they can differ by a day or two.</p>
+        </div>
+        <div>
+          <table class="months" id="months"></table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="get">
+    <div class="wrap get">
+      <div>
+        <h2>Roj on your computer</h2>
+        <p class="sub">On GNOME, Roj puts this calendar in the top bar, one click away, with your own events and any .ics calendar. The <code>roj</code> command gives the same answers in a terminal.</p>
+        <div class="cta-left">
+          <a class="btn primary" href="../#install">Install Roj</a>
+          <a class="btn" href="../guide.html">Read the guide</a>
+        </div>
+      </div>
+<pre><code>roj                  # today in all four calendars
+roj cal --with g     # this Kurdish month
+roj events --month   # this month's Kurdish days
+roj ics --locale en &gt; kurdish-events.ics</code></pre>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Made with <span class="heart">♥</span> by <a href="https://github.com/0xdolan">0xdolan</a></span>
+    <span>·</span><a href="https://github.com/0xdolan/roj">Source</a>
+    <span>·</span><a href="../guide.html">Guide</a>
+    <span>·</span><span>GPL-3.0-or-later</span>
+  </div>
+</footer>
+</body>
+</html>

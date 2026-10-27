@@ -26,6 +26,7 @@ The name means both *sun* and *day* in Kurdish, and the logo joins a traditional
 - **Five languages.** Dates and interface in Sorani, Kurmanji, English, Persian or Arabic, laid out right to left where needed. The other calendars can follow your language, the interface, or their own: Gregorian in English, Persian in Persian, Islamic in Arabic.
 - **Four calendars in every day.** The Kurdish day is large; the Gregorian (on by default), Persian and Islamic days appear as small numbers of the same size, in a row or in the corners.
 - **Written properly.** Sorani ezafe (ی), on for the Kurdish date by default and switchable per calendar. Each language uses its own digits (۰۱۲, ٠١٢ or 012) unless you choose otherwise. Traditional month names.
+- **On the web too.** [The live calendar](https://0xdolan.github.io/roj/calendar/) runs the same engine in any browser: the popup, every Kurdish day with its history, and a converter.
 - **Events.** 43 Kurdish days are included, and you can [add them to Google Calendar or an iPhone](#kurdish-events-in-google-calendar-or-on-an-iphone) too. Add your own JSON events or any `.ics` calendar, local or online, with one-click public holidays for Iraq, Iran, Turkey, Syria and Germany. The top bar shows a dot, a count or the title when today has an event.
 - **Fonts per script.** Manrope for left-to-right text; Vazirmatn, Estedad or Sahel for Arabic-script text; or any installed font or font file.
 - **Your own patterns.** Every strftime token of [tsroj](https://www.npmjs.com/package/@0xdolan/tsroj) and [pyroj](https://pypi.org/project/pyroj/), with presets and live previews.
@@ -109,7 +110,7 @@ roj ics --locale en > kurdish-events.ics  # events for Google or Apple Calendar
 
 ## Kurdish events in Google Calendar or on an iPhone
 
-The 43 included Kurdish events are also published as calendars, so you can see them on any phone or computer:
+The 43 included Kurdish events are also published as calendars, so you can see them on any phone or computer. The [live calendar page](https://0xdolan.github.io/roj/calendar/) has one-click buttons, the popup itself and every event with its history:
 
 | Language | Subscribe (stays up to date) | Download |
 | --- | --- | --- |
@@ -131,7 +132,7 @@ make test            # syntax, the no-dash rule, translations and unit tests
 make dev-link        # use this checkout as your installed extension (and roj)
 make i18n            # untranslated interface messages, per language
 make screenshots     # real screenshots from a sandboxed, headless GNOME Shell
-make ics             # rebuild docs/calendar/*.ics after editing the Kurdish events
+make web             # rebuild the website calendar files after editing the engine or events
 make marketing       # banner, features, store, themes and terminal images
 make release-assets  # zip, tarball, both .deb packages and SHA256SUMS
 ```
