@@ -24,23 +24,60 @@ Secrets and variables are added under **GitHub, repository Settings, Secrets and
 
 ## 2. extensions.gnome.org (EGO)
 
-1. Create an account: <https://extensions.gnome.org/accounts/register/>.
-2. Upload the first version by hand, so the listing gets its icon and screenshot:
-   - `make pack` creates `dist/roj@0xdolan.github.io.shell-extension.zip`.
-   - Upload it at <https://extensions.gnome.org/upload/> and accept the terms.
-   - Wait for the review. The reviewers may ask questions; the notes at the end of this file answer the usual ones.
-3. After approval, edit the listing on your extension's page:
-   - **Icon**: `assets/logo-256.png`
-   - **Screenshot**: `docs/images/marketing/store.png`
-   - The description comes from `extension/metadata.json`; a longer text is at the end of this file.
-4. Add two repository **secrets**:
+EGO is where most people find extensions, from the website or the Extension Manager app. The first version is uploaded by hand; every later version is uploaded by the Release workflow.
 
-   | Secret | Value |
-   | --- | --- |
-   | `EGO_USERNAME` | your extensions.gnome.org user name |
-   | `EGO_PASSWORD` | your extensions.gnome.org password |
+### 2.1 Before the first upload
 
-From then on, every tag uploads the new version through EGO's API (`/api/v1/accounts/login/`, then `/api/v1/extensions`), the same calls `gnome-extensions upload` makes. Each version still goes through review before users receive it.
+1. Release from `main` as described in [RELEASING.md](../RELEASING.md), so the version you upload matches a tag.
+2. Check the listing text. EGO shows the `description` of `extension/metadata.json` word for word, and so does Extension Manager. `url` becomes the listing's **Extension Homepage** link.
+3. Build the zip and test it once in the sandbox:
+
+   ```sh
+   make pack                          # dist/roj@0xdolan.github.io.shell-extension.zip
+   make screenshots                   # loads Roj in the sandbox; check the "JS errors" it lists are empty
+   ```
+
+### 2.2 Upload and review
+
+1. Create an account at <https://extensions.gnome.org/accounts/register/> and confirm the email.
+2. Open <https://extensions.gnome.org/upload/>, choose the zip, tick both boxes (the GPL-compatible licence and the terms) and choose **Upload**.
+3. The extension is now **Unreviewed**. GNOME's volunteers review every version by hand, usually within a few days. You get an email for every comment and for the result; answer on the review page. [Notes for the review](#notes-for-the-extensionsgnomeorg-review) answers the usual questions.
+4. If it is rejected, fix what the reviewer asks on a `hotfix/` branch, release the next PATCH version and upload again.
+
+### 2.3 Make the listing look right
+
+After approval, open your extension's page while logged in. The name, description and homepage are editable in place; the icon and the screenshot are buttons.
+
+| Field | Use |
+| --- | --- |
+| Icon | `assets/logo-256.png` |
+| Screenshot | `docs/images/marketing/store.png`: the top bar, the popup and the settings on Kurdistan Flag Day |
+| Description | Leave it as it comes from `metadata.json`; change the file, not the page, so the next upload does not undo it |
+| Homepage | `https://github.com/0xdolan/roj` from `metadata.json` |
+
+EGO shows one screenshot. Everything else is one click away: the description links the guide, which has every screenshot, and the live calendar.
+
+### 2.4 Link the listing everywhere
+
+The listing's address contains its number, for example `https://extensions.gnome.org/extension/1234/roj-kurdish-calendar/`. Once you have it:
+
+1. README: in the badges, add
+   `[![GNOME Extensions](https://img.shields.io/badge/GNOME%20Extensions-Roj-4a86cf?logo=gnome&logoColor=white)](https://extensions.gnome.org/extension/1234/roj-kurdish-calendar/)`
+   and turn **extensions.gnome.org** in the Install table into the same link.
+2. Website: in `docs/index.html`, make the extensions.gnome.org install option a link to the listing, and do the same in the guide's Getting started.
+3. Extension: the About page's links are in `extension/prefs/aboutPage.js`; add the listing there too.
+4. Commit this on a `feature/` branch like any other change.
+
+### 2.5 Automatic uploads
+
+Add two repository **secrets** (Settings, Secrets and variables, Actions):
+
+| Secret | Value |
+| --- | --- |
+| `EGO_USERNAME` | your extensions.gnome.org user name |
+| `EGO_PASSWORD` | your extensions.gnome.org password |
+
+From then on, every tag uploads the new version through EGO's API (`/api/v1/accounts/login/`, then `/api/v1/extensions`), the same calls `gnome-extensions upload` makes. Each version still goes through review before users receive it. Without the secrets, the step skips itself and you upload the zip from the GitHub release by hand.
 
 ## 3. Ubuntu PPA on Launchpad
 
@@ -124,20 +161,8 @@ sudo apt install gnome-shell-extension-roj roj
 - Files written only when the user asks: settings exports, loaded fonts (`~/.local/share/roj/fonts`), the optional `~/.local/bin/roj` launcher, and, on Pango older than 1.56, the optional font install.
 - `extension/lib/tsroj.js` is the unminified tsroj build (GPL-3.0), copied verbatim.
 - `cli/roj.js` is the optional command-line tool; the extension never runs it.
+- `ROJ_FAKE_NOW` is read in `enable()` and in the preferences window: when it is set (only the screenshot sandbox sets it), Roj shows that date instead of today. Nothing else reads the environment.
 
 ## Longer listing description
 
-> **Roj** shows the Kurdish solar date in your top bar. Roj means both sun and day in Kurdish.
->
-> Every day in its calendar shows the Kurdish day, with the Gregorian, Persian and Islamic days beside it. The popup lists the selected day in all four calendars and its events.
->
-> • Sorani, Kurmanji, English, Persian and Arabic
-> • Sorani ezafe (ی), each language's own digits and traditional month names
-> • Kurdish events included; add JSON events or any .ics calendar, including national holidays
-> • A marker in the top bar when today has an event
-> • Separate fonts for Latin and Arabic-script text: Manrope, Vazirmatn, Estedad, Sahel, any installed font or a font file
-> • Any strftime pattern for the top bar and popup, with live previews
-> • Date converter, a built-in guide, light, dark and system themes, and settings backup
-> • The `roj` command for the terminal
->
-> Source, guide and issues: https://github.com/0xdolan/roj
+The description on EGO is `description` in `extension/metadata.json`. Edit it there, keep it plain text with • bullets, and no dashes.
