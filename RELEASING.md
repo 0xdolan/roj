@@ -95,7 +95,7 @@ Both long-lived branches have a repository ruleset (Settings, Rules, Rulesets):
 
 | Branch | Rules |
 | --- | --- |
-| `main` | No deletion, no force push, changes only by pull request, the **test** and **gitflow** checks must pass, the branch must be up to date first |
+| `main` | No deletion, no force push, changes only by pull request merged with a merge commit, the **test** and **gitflow** checks must pass, the branch must be up to date first |
 | `develop` | No deletion, no force push, changes only by pull request, the **test** check must pass |
 | tags `v*` | No deletion, no moving: a released tag is final |
 
