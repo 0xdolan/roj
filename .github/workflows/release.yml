@@ -103,5 +103,7 @@ jobs:
           printf '%s' "$GPG_PASSPHRASE" > ~/.gnupg/passphrase
           printf 'pinentry-mode loopback\npassphrase-file %s\n' ~/.gnupg/passphrase > ~/.gnupg/gpg.conf
           echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+          # Trust our own key, so dput's signature check passes.
+          gpg --list-secret-keys --with-colons | awk -F: '/^fpr/ {print $10 ":6:"; exit}' | gpg --import-ownertrust
           export GPG_KEY_ID="$(gpg --list-secret-keys --with-colons | awk -F: '/^sec/ {print $5; exit}')"
           scripts/ppa-upload.sh
