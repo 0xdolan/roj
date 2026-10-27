@@ -7,15 +7,9 @@ a release is described in [RELEASING.md](RELEASING.md).
 
 ## [Unreleased]
 
-### Changed
+## [0.2.0] - 2026-10-26
 
-- Persian and Arabic write "Kurdish" the Kurdish way, with و: کوردی and کوردستان, الكوردية and كوردستان.
-- Each calendar's numbers use the digits of its own language, whatever language its words are in: Gregorian in English digits (2026), Persian in Persian digits (۱۴۰۵), Islamic in Arabic digits (١٤٤٨) and the Kurdish date in the digits of the main language. The Digits settings for each language apply to its calendar.
-
-### Fixed
-
-- The weekday names in the popup sit exactly over their columns of day cards.
-- With Leading zero on automatic, Persian and Arabic digits never get a leading zero (۵, not ۰۵), even in Kurmanji or English.
+The first published release. It also contains everything listed under [0.1.0](https://github.com/0xdolan/roj/blob/main/CHANGELOG.md#010---2026-10-26) in the changelog.
 
 ### Added
 
@@ -25,9 +19,20 @@ a release is described in [RELEASING.md](RELEASING.md).
 - How-to guides with screenshots: showing the dates in your language, the Persian and Islamic days on the cards, your country's holidays, the top bar and converting a date.
 - A live calendar on the website, <https://0xdolan.github.io/roj/calendar/>: the popup running the same engine in any browser, in all five languages, with every Kurdish day and its history, one-click calendar subscriptions and a converter.
 
+### Changed
+
+- Persian and Arabic write "Kurdish" the Kurdish way, with و: کوردی and کوردستان, الكوردية and كوردستان.
+- Each calendar's numbers use the digits of its own language, whatever language its words are in: Gregorian in English digits (2026), Persian in Persian digits (۱۴۰۵), Islamic in Arabic digits (١٤٤٨) and the Kurdish date in the digits of the main language. The Digits settings for each language apply to its calendar.
+- The description in Extension Manager and on extensions.gnome.org covers all five languages, each calendar's digits and the Kurdish days, and links to the guide and the live calendar.
+
+### Fixed
+
+- The weekday names in the popup sit exactly over their columns of day cards.
+- With Leading zero on automatic, Persian and Arabic digits never get a leading zero (۵, not ۰۵), even in Kurmanji or English.
+
 ## [0.1.0] - 2026-10-26
 
-The first release.
+The first version. It was never tagged or published on its own; it ships as part of 0.2.0.
 
 ### Added
 
@@ -44,5 +49,6 @@ The first release.
 - Packages: extensions.gnome.org bundle, `roj` and `gnome-shell-extension-roj` .deb packages, a source tarball and checksums.
 - Engine: tsroj 1.0.6.
 
-[Unreleased]: https://github.com/0xdolan/roj/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/0xdolan/roj/releases/tag/v0.1.0
+[Unreleased]: https://github.com/0xdolan/roj/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/0xdolan/roj/releases/tag/v0.2.0
+[0.1.0]: https://github.com/0xdolan/roj/tree/4fe8b47

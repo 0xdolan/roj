@@ -2,7 +2,8 @@
 # Set the release version everywhere: scripts/bump-version.sh 0.2.0
 #
 # Updates metadata.json, package.json, constants.js, the man page and
-# debian/changelog, and opens a CHANGELOG.md section from "Unreleased".
+# debian/changelog, opens a CHANGELOG.md section from "Unreleased" and
+# rebuilds the website's copy of the engine.
 # DEBFULLNAME and DEBEMAIL set the debian/changelog signature.
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -34,5 +35,7 @@ if f"## [{v}]" not in text:
     text = text.replace("## [Unreleased]", f"## [Unreleased]\n\n## [{v}] - {date.today().isoformat()}", 1)
     log.write_text(text)
 PY
+# The website calendar imports a copy of constants.js, which holds the version.
+node "$ROOT/scripts/build-web.mjs" >/dev/null
 "$ROOT/scripts/check-version.sh"
-echo "Now edit CHANGELOG.md under [$V], then: git commit -am 'Release $V' && git tag -a v$V -m 'Roj $V' && git push origin main v$V"
+echo "Now edit CHANGELOG.md under [$V], run make screenshots marketing if the interface changed, then commit and open the release pull request into main (RELEASING.md)."
