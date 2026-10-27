@@ -14,7 +14,7 @@ USER_BIN := $(HOME)/.local/bin
 USER_CLI := $(HOME)/.local/share/roj/command
 
 .PHONY: help test lint i18n schemas icons pack install uninstall dev-link install-system \
-        dist deb calendars checksums release-assets vendor web screenshots marketing clean
+        dist deb calendars checksums release-assets release vendor web screenshots marketing clean
 
 help:
 	@echo "Roj $(VERSION)"
@@ -29,6 +29,7 @@ help:
 	@echo "  make dist            dist/roj-$(VERSION).tar.gz source tarball"
 	@echo "  make deb             dist/roj_*.deb and dist/gnome-shell-extension-roj_*.deb"
 	@echo "  make release-assets  all of the above plus SHA256SUMS"
+	@echo "  make release V=X.Y.Z the whole git flow release: branch, bump, test, PR, tag, merge back"
 	@echo
 	@echo "  make i18n            list untranslated interface messages"
 	@echo "  make vendor          update the bundled tsroj engine (TSROJ=latest|x.y.z)"
@@ -146,6 +147,10 @@ screenshots:
 
 marketing:
 	scripts/marketing/render.sh
+
+release:
+	@test -n "$(V)" || { echo "usage: make release V=X.Y.Z"; exit 2; }
+	scripts/release.sh $(V)
 
 clean:
 	command rm -rf build dist extension/schemas/gschemas.compiled

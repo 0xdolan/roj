@@ -173,11 +173,10 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) first; it includes the project's 
 
 Roj follows git flow. Work happens on `feature/NAME` branches from `develop`, merged by pull request into `develop`. A release goes from `develop` to `main` on a `release/X.Y.Z` branch, also by pull request; `main` is what is released and what the website serves. Both branches are protected: no direct or force pushes, no deletion, and CI must pass. See rule 11 in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Roj uses [Semantic Versioning](https://semver.org/) and keeps a [changelog](CHANGELOG.md). Once the release pull request is merged, one tag publishes everything:
+Roj uses [Semantic Versioning](https://semver.org/) and keeps a [changelog](CHANGELOG.md). One command runs the whole release: the release branch, the version bump, the changelog, screenshots, tests, the pull request into `main` (merged once CI passes), the tag and the merge back into `develop`:
 
 ```sh
-git switch main && git pull
-git tag -a v0.2.0 -m "Roj 0.2.0" && git push origin v0.2.0
+make release V=0.2.1
 ```
 
 The tag builds and publishes everything: the GitHub release with the extension zip, both .deb packages, the source tarball and checksums; the upload to extensions.gnome.org; and the source packages for the Ubuntu PPA. [RELEASING.md](RELEASING.md) has the rules, and [docs/PUBLISHING.md](docs/PUBLISHING.md) the one-time account setup.
