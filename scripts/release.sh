@@ -27,10 +27,16 @@ merge_when_green() {
   local pr="$1"
   # Auto-merge cannot be switched on while checks are still being created.
   gh pr merge "$pr" --merge --auto >/dev/null 2>&1 || true
-  # Checks can take a moment to appear after a push.
-  until [ "$(gh pr view "$pr" --json statusCheckRollup --jq '.statusCheckRollup | length')" != 0 ]; do sleep 5; done
-  sleep 10
-  gh pr checks "$pr" --required --watch --fail-fast >/dev/null || die "checks failed on $pr: $(gh pr view "$pr" --json url --jq .url)"
+  # Wait for the CI workflow's checks (test, gitflow) to appear and finish.
+  local state
+  while :; do
+    state="$(gh pr view "$pr" --json statusCheckRollup --jq '[.statusCheckRollup[] | select(.workflowName == "CI")]
+      | if length == 0 then "waiting" elif any(.conclusion == "FAILURE" or .conclusion == "CANCELLED") then "failed"
+        elif all(.status == "COMPLETED") then "passed" else "waiting" end')"
+    [ "$state" = passed ] && break
+    [ "$state" = failed ] && die "checks failed on $pr: $(gh pr view "$pr" --json url --jq .url)"
+    sleep 15
+  done
   [ "$(gh pr view "$pr" --json state --jq .state)" = MERGED ] || gh pr merge "$pr" --merge >/dev/null
   until [ "$(gh pr view "$pr" --json state --jq .state)" = MERGED ]; do sleep 5; done
   echo "merged $pr"
