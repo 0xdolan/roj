@@ -1,13 +1,18 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Roj: the Kurdish solar calendar for the GNOME Shell top bar.
 
+import GLib from 'gi://GLib';
+
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
+import {pinClock} from './lib/engine.js';
 import {RojIndicator} from './ui/indicator.js';
 
 export default class RojExtension extends Extension {
     enable() {
+        // The screenshot sandbox pins the date; unset everywhere else.
+        pinClock(GLib.getenv('ROJ_FAKE_NOW'));
         this._settings = this.getSettings();
         this._addIndicator();
         this._settings.connectObject(

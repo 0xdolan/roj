@@ -266,7 +266,7 @@ export default {
     "Fall of Nineveh: Persian year + 1233 ({year})": "سقوط نینوا: سال خورشیدی + 1233 ({year})",
     "Months and days stay the same; only the year number changes": "ماه‌ها و روزها همان می‌مانند؛ فقط شماره‌ی سال تغییر می‌کند",
     "Digits": "ارقام",
-    "Each language uses its own digits by default: Persian ۰۱۲, Sorani and Arabic ٠١٢, English and Kurmanji 012.": "به‌طور پیش‌فرض هر زبان ارقام خودش را به کار می‌برد: فارسی ۰۱۲، سورانی و عربی ٠١٢، انگلیسی و کرمانجی 012.",
+    "Each calendar's numbers use the digits of its own language: Gregorian English 012, Persian Persian ۰۱۲, Islamic Arabic ٠١٢, and the Kurdish date the main language. Choose other digits for a language here.": "اعداد هر تقویم با ارقام زبان خودش نوشته می‌شود: میلادی انگلیسی 012، خورشیدی فارسی ۰۱۲، قمری عربی ٠١٢ و تاریخ کوردی با ارقام زبان اصلی. اینجا برای هر زبان ارقام دیگری انتخاب کنید.",
     "Own digits": "ارقام خودش",
     "Western": "لاتین",
     "Leading zero": "صفر ابتدایی",

@@ -3,7 +3,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
-import {RojEngine, tokenize, weekdayOf} from '../extension/lib/engine.js';
+import {RojEngine, pinClock, tokenize, weekdayOf} from '../extension/lib/engine.js';
 import {EventIndex, parseEventsDocument, parseEventsJson} from '../extension/lib/events.js';
 import {parseIcs} from '../extension/lib/ics.js';
 import {buildIcs} from '../extension/lib/icsExport.js';
@@ -175,6 +175,10 @@ test('each calendar uses the digits of its own language', () => {
         assert.equal(e.format(jdn, 'islamic', '%Y'), '١٤٤٨');
         assert.equal(e.number(26, 'persian'), '۲۶');
     }
+    // Automatic leading zeros are for Western digits only.
+    assert.equal(kmr.format(jdn, 'kurdish', '%d'), '05');
+    assert.equal(kmr.format(jdn, 'persian', '%d'), '۵');
+    assert.equal(kmr.format(jdn, 'gregorian', '%d %m'), '26 06');
     const custom = new RojEngine({locale: 'ckb', digits: {fa: 'latin', en: 'arabic'}});
     assert.equal(custom.format(jdn, 'persian', '%Y'), '1405');
     assert.equal(custom.format(jdn, 'gregorian', '%Y'), '٢٠٢٦');
@@ -210,4 +214,18 @@ test('digits can be chosen per language', () => {
     const e = new RojEngine({locale: 'fa', digits: {fa: 'arabic'}});
     assert.equal(e.number(2026), '٢٠٢٦');
     assert.equal(new RojEngine({locale: 'en', digits: {en: 'persian'}}).number(15), '۱۵');
+});
+
+test('pinClock moves today and the time, and ignores anything else', () => {
+    const real = RojEngine.clock;
+    try {
+        assert.equal(pinClock(''), false);
+        assert.equal(pinClock('17 December'), false);
+        assert.equal(RojEngine.clock, real);
+        assert.equal(pinClock('2026-12-17 10:30'), true);
+        assert.deepEqual(ckb.dateIn('gregorian', ckb.todayJdn()), [2026, 12, 17]);
+        assert.equal(kmr.format(ckb.todayJdn(), 'kurdish', '%H:%M'), '10:30');
+    } finally {
+        RojEngine.clock = real;
+    }
 });

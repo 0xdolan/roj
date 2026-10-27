@@ -11,7 +11,7 @@ import PangoCairo from 'gi://PangoCairo';
 import {ExtensionPreferences} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 import {customFonts, fontsFromSettings, prefersDark, uiLanguage} from './lib/config.js';
-import {isRtlLocale} from './lib/engine.js';
+import {isRtlLocale, pinClock} from './lib/engine.js';
 import {bundledFontPaths, registerFonts} from './lib/fonts.js';
 import {PrefsContext} from './prefs/common.js';
 import {GeneralPage} from './prefs/generalPage.js';
@@ -53,6 +53,8 @@ const REBUILD_KEYS = ['ui-language', 'locale'];
 
 export default class RojPreferences extends ExtensionPreferences {
     fillPreferencesWindow(window) {
+        // The screenshot sandbox pins the date; unset everywhere else.
+        pinClock(GLib.getenv('ROJ_FAKE_NOW'));
         const settings = this.getSettings();
         window.set_default_size(900, 880);
         window.search_enabled = true;

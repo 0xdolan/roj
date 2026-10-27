@@ -127,10 +127,10 @@ class RojIndicator extends PanelMenu.Button {
 
     // Clock
     _now() {
-        const now = GLib.DateTime.new_now_local();
+        const now = RojEngine.clock();
         return {
-            jdn: this._engine.toJdn('gregorian', now.get_year(), now.get_month(), now.get_day_of_month()),
-            time: {hour: now.get_hour(), minute: now.get_minute(), second: now.get_second()},
+            jdn: this._engine.todayJdn(now),
+            time: {hour: now.getHours(), minute: now.getMinutes(), second: now.getSeconds()},
         };
     }
 
