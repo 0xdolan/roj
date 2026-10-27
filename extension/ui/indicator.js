@@ -127,10 +127,15 @@ class RojIndicator extends PanelMenu.Button {
 
     // Clock
     _now() {
-        const now = RojEngine.clock();
+        // GLib, like GNOME's own clock, follows timezone changes at once; a
+        // pinned clock (the screenshot sandbox) wins.
+        const d = RojEngine.clockPinned ? RojEngine.clock() : null;
+        const now = d
+            ? GLib.DateTime.new_local(d.getFullYear(), d.getMonth() + 1, d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds())
+            : GLib.DateTime.new_now_local();
         return {
-            jdn: this._engine.todayJdn(now),
-            time: {hour: now.getHours(), minute: now.getMinutes(), second: now.getSeconds()},
+            jdn: this._engine.toJdn('gregorian', now.get_year(), now.get_month(), now.get_day_of_month()),
+            time: {hour: now.get_hour(), minute: now.get_minute(), second: now.get_second()},
         };
     }
 

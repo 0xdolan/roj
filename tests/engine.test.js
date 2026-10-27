@@ -219,13 +219,16 @@ test('digits can be chosen per language', () => {
 test('pinClock moves today and the time, and ignores anything else', () => {
     const real = RojEngine.clock;
     try {
+        assert.equal(RojEngine.clockPinned, false);
         assert.equal(pinClock(''), false);
         assert.equal(pinClock('17 December'), false);
         assert.equal(RojEngine.clock, real);
         assert.equal(pinClock('2026-12-17 10:30'), true);
+        assert.equal(RojEngine.clockPinned, true);
         assert.deepEqual(ckb.dateIn('gregorian', ckb.todayJdn()), [2026, 12, 17]);
         assert.equal(kmr.format(ckb.todayJdn(), 'kurdish', '%H:%M'), '10:30');
     } finally {
         RojEngine.clock = real;
+        RojEngine.clockPinned = false;
     }
 });
