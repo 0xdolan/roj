@@ -7,6 +7,10 @@ a release is described in [RELEASING.md](RELEASING.md).
 
 ## [Unreleased]
 
+### Fixed
+
+- The Ubuntu PPA gets packages for every supported release (24.04, 25.10 and 26.04): uploads now retry when Launchpad's server is busy, instead of stopping after the first failure.
+
 ## [0.2.1] - 2026-10-26
 
 ### Added
