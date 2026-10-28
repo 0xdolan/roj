@@ -10,7 +10,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SOURCE="$(cd "${SOURCE:-$ROOT}" && pwd)"
 VERSION="$(python3 -c 'import json,sys;print(json.load(open(sys.argv[1]))["version-name"])' "$SOURCE/extension/metadata.json")"
 PPA="${PPA:-ppa:0xdolan/roj}"
-SERIES="${SERIES:-noble questing resolute}"
+SERIES="${SERIES:-noble resolute}"
 REV="${DEB_REVISION:-1}"
 export DEBFULLNAME="${DEBFULLNAME:-0xdolan}"
 export DEBEMAIL="${DEBEMAIL:-0xdolan@users.noreply.github.com}"
@@ -44,15 +44,25 @@ tar --sort=name --mtime="@$stamp" --owner=0 --group=0 --numeric-owner -C "$WORK/
     | gzip -n -9 > "$WORK/roj_$VERSION.orig.tar.gz"
 
 # Launchpad keeps one upstream tarball per version: once the PPA has this
-# version for any series, upload the others without it.
+# version for any series, use exactly its tarball and leave it out of the upload.
 orig_flag=-sa
 if [ -z "${DRY_RUN:-}${CHECK:-}" ]; then
-    known="$(curl -s -m 60 "https://api.launchpad.net/devel/~$owner/+archive/ubuntu/$name?ws.op=getPublishedSources&source_name=roj" \
-        | jq -r '.entries[].source_package_version' 2>/dev/null | grep -c "^$VERSION-" || true)"
-    if [ "${known:-0}" -gt 0 ]; then
+    api="https://api.launchpad.net/devel/~$owner/+archive/ubuntu/$name"
+    known="$(curl -s -m 60 "$api?ws.op=getPublishedSources&source_name=roj" \
+        | jq -r '.entries[].source_package_version' 2>/dev/null | grep -m1 "^$VERSION-" || true)"
+    if [ -n "$known" ]; then
+        curl -sSfL -m 300 -o "$WORK/roj_$VERSION.orig.tar.gz" \
+            "https://launchpad.net/~$owner/+archive/ubuntu/$name/+sourcefiles/roj/$known/roj_$VERSION.orig.tar.gz"
         orig_flag=-sd
-        echo "The PPA already has roj $VERSION: uploading without the .orig.tar.gz"
+        echo "The PPA already has roj $VERSION ($known): using its .orig.tar.gz, uploading without it"
     fi
+    # Skip series Launchpad no longer accepts.
+    active="$(curl -s -m 60 https://api.launchpad.net/devel/ubuntu/series | jq -r '.entries[] | select(.status != "Obsolete") | .name')"
+    keep=""
+    for series in $SERIES; do
+        if grep -qx "$series" <<<"$active"; then keep="$keep $series"; else echo "skipping $series: obsolete on Launchpad"; fi
+    done
+    SERIES="${keep# }"
 fi
 
 # The upload path Launchpad documents: ~OWNER/ubuntu/PPA.
