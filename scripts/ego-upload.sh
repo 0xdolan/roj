@@ -11,7 +11,8 @@ if [ "${1:-}" = --check ]; then check=1; shift; fi
 
 login="$(jq -n --arg u "$EGO_USERNAME" --arg p "$EGO_PASSWORD" '{login: $u, password: $p}' \
   | curl -sS -H 'Content-Type: application/json' -d @- "$API/accounts/login/")"
-token="$(jq -r '.token // empty' <<<"$login")"
+# The token comes either as a string or as {"token": ..., "expiry": ...}.
+token="$(jq -r '.token | if type == "object" then .token else . end // empty' <<<"$login")"
 if [ -z "$token" ]; then
   echo "extensions.gnome.org login failed: $(jq -r '.detail // .' <<<"$login" 2>/dev/null || echo "$login")" >&2
   exit 1
@@ -22,15 +23,6 @@ echo "Logged in to extensions.gnome.org as $EGO_USERNAME"
 zip="${1:?usage: scripts/ego-upload.sh [--check] ZIP}"
 [ -f "$zip" ] || { echo "no such file: $zip" >&2; exit 2; }
 reply="$(mktemp)"
-# DIAGNOSTIC (temporary)
-echo "token length: ${#token}; token chars outside [A-Za-z0-9]: $(tr -d 'A-Za-z0-9' <<<"$token" | wc -c)"
-echo "fake token upload: $(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Token bogus" -F "source=@$zip;type=application/zip;filename=extension.zip" -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
-echo "real token, no file: $(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Token $token" -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
-echo "login reply keys: $(jq -c 'keys' <<<"$login")"
-echo "login detail: $(jq -r '.detail' <<<"$login")"
-echo "token punctuation: $(tr -d 'A-Za-z0-9\n' <<<"$token" | fold -w1 | sort | uniq -c | tr -s ' \n' ' ')"
-echo "token dots: $(tr -cd '.' <<<"$token" | wc -c)"
-echo "Bearer, no file: $(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $token" -F tos_compliant=true "$API/extensions")"
 status="$(curl -sS -o "$reply" -w '%{http_code}' -H "Authorization: Token $token" \
   -F "source=@$zip;type=application/zip;filename=extension.zip" \
   -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
