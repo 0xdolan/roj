@@ -22,6 +22,11 @@ echo "Logged in to extensions.gnome.org as $EGO_USERNAME"
 zip="${1:?usage: scripts/ego-upload.sh [--check] ZIP}"
 [ -f "$zip" ] || { echo "no such file: $zip" >&2; exit 2; }
 reply="$(mktemp)"
+# DIAGNOSTIC (temporary)
+echo "token length: ${#token}; token chars outside [A-Za-z0-9]: $(tr -d 'A-Za-z0-9' <<<"$token" | wc -c)"
+echo "fake token upload: $(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Token bogus" -F "source=@$zip;type=application/zip;filename=extension.zip" -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
+echo "real token, no file: $(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Token $token" -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
+echo "login reply keys: $(jq -c 'keys' <<<"$login")"
 status="$(curl -sS -o "$reply" -w '%{http_code}' -H "Authorization: Token $token" \
   -F "source=@$zip;type=application/zip;filename=extension.zip" \
   -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
