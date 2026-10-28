@@ -21,6 +21,16 @@ if [ -z "${DRY_RUN:-}" ] && [ -z "${GPG_KEY_ID:-}" ]; then
     echo "GPG_KEY_ID is required to sign (or set DRY_RUN=1)" >&2
     exit 2
 fi
+# Launchpad finds the uploader by the Changed-By email, so it must be one of
+# the signing key's addresses.
+if [ -z "${DRY_RUN:-}" ]; then
+    uids="$(gpg --list-keys --with-colons "$GPG_KEY_ID" | awk -F: '$1 == "uid" {print tolower($10)}')"
+    if [[ "$uids" != *"<${DEBEMAIL,,}>"* ]]; then
+        echo "DEBEMAIL is not an email address of key $GPG_KEY_ID, so Launchpad would reject the upload" >&2
+        exit 1
+    fi
+    echo "Changed-By email matches key $GPG_KEY_ID"
+fi
 [ -z "${CHECK:-}" ] || SERIES="${SERIES%% *}"
 
 command rm -rf "$WORK"
