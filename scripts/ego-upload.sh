@@ -11,7 +11,8 @@ if [ "${1:-}" = --check ]; then check=1; shift; fi
 
 login="$(jq -n --arg u "$EGO_USERNAME" --arg p "$EGO_PASSWORD" '{login: $u, password: $p}' \
   | curl -sS -H 'Content-Type: application/json' -d @- "$API/accounts/login/")"
-token="$(jq -r '.token // empty' <<<"$login")"
+# The token comes either as a string or as {"token": ..., "expiry": ...}.
+token="$(jq -r '.token | if type == "object" then .token else . end // empty' <<<"$login")"
 if [ -z "$token" ]; then
   echo "extensions.gnome.org login failed: $(jq -r '.detail // .' <<<"$login" 2>/dev/null || echo "$login")" >&2
   exit 1
@@ -23,7 +24,8 @@ zip="${1:?usage: scripts/ego-upload.sh [--check] ZIP}"
 [ -f "$zip" ] || { echo "no such file: $zip" >&2; exit 2; }
 reply="$(mktemp)"
 status="$(curl -sS -o "$reply" -w '%{http_code}' -H "Authorization: Token $token" \
-  -F "source=@$zip" -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
+  -F "source=@$zip;type=application/zip;filename=extension.zip" \
+  -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
 cat "$reply"; echo
 command rm -f "$reply"
 if [ "$status" -ge 300 ]; then
