@@ -1,0 +1,46 @@
+name: Publish
+
+# Run by hand (Actions, Publish, or gh workflow run publish.yml): check the
+# connection to extensions.gnome.org, or upload a release's zip there. Uses
+# the same script as the Release workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: check-ego logs in only; upload-ego uploads the tag's zip
+        type: choice
+        options: [check-ego, upload-ego]
+        default: check-ego
+      tag:
+        description: Release tag for upload-ego, like v0.2.2
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  extensions-gnome-org:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch the release zip
+        if: inputs.action == 'upload-ego'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+        run: |
+          [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "tag must look like v0.2.2"; exit 2; }
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern '*.shell-extension.zip' --dir dist
+      - name: extensions.gnome.org
+        env:
+          EGO_USERNAME: ${{ secrets.EGO_USERNAME }}
+          EGO_PASSWORD: ${{ secrets.EGO_PASSWORD }}
+          ACTION: ${{ inputs.action }}
+        run: |
+          if [ "$ACTION" = check-ego ]; then
+            scripts/ego-upload.sh --check
+          else
+            scripts/ego-upload.sh dist/roj@0xdolan.github.io.shell-extension.zip
+          fi
