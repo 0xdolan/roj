@@ -23,7 +23,8 @@ zip="${1:?usage: scripts/ego-upload.sh [--check] ZIP}"
 [ -f "$zip" ] || { echo "no such file: $zip" >&2; exit 2; }
 reply="$(mktemp)"
 status="$(curl -sS -o "$reply" -w '%{http_code}' -H "Authorization: Token $token" \
-  -F "source=@$zip" -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
+  -F "source=@$zip;type=application/zip;filename=extension.zip" \
+  -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
 cat "$reply"; echo
 command rm -f "$reply"
 if [ "$status" -ge 300 ]; then
