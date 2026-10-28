@@ -38,7 +38,22 @@ mkdir -p "$WORK/orig/roj-$VERSION"
 # The upstream tarball: every tracked file except debian/.
 (cd "$SOURCE" && git ls-files -co --exclude-standard -z -- . ':(exclude)debian' | xargs -0 tar cf - --no-recursion) \
     | tar xf - -C "$WORK/orig/roj-$VERSION"
-tar czf "$WORK/roj_$VERSION.orig.tar.gz" -C "$WORK/orig" "roj-$VERSION"
+# Reproducible, so every upload of this version carries the same bytes.
+stamp="$(cd "$SOURCE" && git log -1 --format=%ct)"
+tar --sort=name --mtime="@$stamp" --owner=0 --group=0 --numeric-owner -C "$WORK/orig" -cf - "roj-$VERSION" \
+    | gzip -n -9 > "$WORK/roj_$VERSION.orig.tar.gz"
+
+# Launchpad keeps one upstream tarball per version: once the PPA has this
+# version for any series, upload the others without it.
+orig_flag=-sa
+if [ -z "${DRY_RUN:-}${CHECK:-}" ]; then
+    known="$(curl -s -m 60 "https://api.launchpad.net/devel/~$owner/+archive/ubuntu/$name?ws.op=getPublishedSources&source_name=roj" \
+        | jq -r '.entries[].source_package_version' 2>/dev/null | grep -c "^$VERSION-" || true)"
+    if [ "${known:-0}" -gt 0 ]; then
+        orig_flag=-sd
+        echo "The PPA already has roj $VERSION: uploading without the .orig.tar.gz"
+    fi
+fi
 
 # The upload path Launchpad documents: ~OWNER/ubuntu/PPA.
 cat > "$WORK/dput.cf" <<CF
@@ -56,9 +71,9 @@ upload() {
     local tries=0
     until dput -f -c "$WORK/dput.cf" launchpad "$1"; do
         tries=$((tries + 1))
-        [ "$tries" -lt 3 ] || return 1
-        echo "upload failed, retrying in 60 s ($tries/3)"
-        sleep 60
+        [ "$tries" -lt 5 ] || return 1
+        echo "upload failed, retrying in 120 s ($tries/5)"
+        sleep 120
     done
 }
 failed=()
@@ -78,7 +93,7 @@ for series in $SERIES; do
         echo "built $changes (not uploaded)"
         continue
     fi
-    (cd "$dir/roj-$VERSION" && dpkg-buildpackage -S -sa -d -k"$GPG_KEY_ID" >"$dir/build.log" 2>&1) \
+    (cd "$dir/roj-$VERSION" && dpkg-buildpackage -S "$orig_flag" -d -k"$GPG_KEY_ID" >"$dir/build.log" 2>&1) \
         || { tail -20 "$dir/build.log" >&2; exit 1; }
     if [ -n "${CHECK:-}" ]; then
         gpg --verify "$changes" 2>&1 | grep -E "Good signature|Primary key fingerprint" || { echo "signature check failed" >&2; exit 1; }
