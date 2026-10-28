@@ -84,8 +84,13 @@ done
 
 if [ -n "${CHECK:-}" ]; then
     fpr="$(gpg --list-keys --with-colons "$GPG_KEY_ID" | awk -F: '/^fpr/ {print $10; exit}')"
-    curl -s -m 60 "https://launchpad.net/~$owner" | tr -d ' ' | grep -q "$fpr" \
-        && echo "Launchpad: key $fpr is on ~$owner" || { echo "Launchpad: key $fpr is not on ~$owner" >&2; exit 1; }
+    profile="$(curl -s -m 60 "https://launchpad.net/~$owner" | tr -d ' ')"
+    if [[ "$profile" == *"$fpr"* ]]; then
+        echo "Launchpad: key $fpr is on ~$owner"
+    else
+        echo "Launchpad: key $fpr is not on ~$owner" >&2
+        exit 1
+    fi
     status="$(curl -s -m 60 "https://api.launchpad.net/devel/~$owner/+archive/ubuntu/$name" | jq -r '.status // empty')"
     [ "$status" = Active ] && echo "Launchpad: PPA ~$owner/ubuntu/$name is active" \
         || { echo "Launchpad: PPA ~$owner/ubuntu/$name not found or not active ($status)" >&2; exit 1; }
