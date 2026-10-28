@@ -20,6 +20,10 @@ on:
         description: Debian revision for upload-ppa (raise it to upload the same version again)
         required: false
         default: '1'
+      series:
+        description: Ubuntu series for upload-ppa, like resolute (empty for all)
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -60,8 +64,10 @@ jobs:
           ACTION: ${{ inputs.action }}
           TAG: ${{ inputs.tag }}
           REVISION: ${{ inputs.revision }}
+          SERIES_IN: ${{ inputs.series }}
         run: |
           [[ "$REVISION" =~ ^[0-9]+$ ]] || { echo "revision must be a number"; exit 2; }
+          [[ "$SERIES_IN" =~ ^[a-z\ ]*$ ]] || { echo "series must be names like resolute"; exit 2; }
           if [ "$ACTION" = upload-ppa ]; then
             [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "tag must look like v0.2.2"; exit 2; }
           fi
@@ -77,7 +83,7 @@ jobs:
           DEBEMAIL: ${{ secrets.DEBEMAIL }}
           DEBFULLNAME: ${{ secrets.DEBFULLNAME }}
           PPA: ${{ vars.PPA || 'ppa:0xdolan/roj' }}
-          SERIES: ${{ vars.PPA_SERIES || 'noble questing resolute' }}
+          SERIES: ${{ inputs.series || vars.PPA_SERIES || 'noble questing resolute' }}
           DEB_REVISION: ${{ inputs.revision }}
           ACTION: ${{ inputs.action }}
         run: |
