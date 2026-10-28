@@ -27,6 +27,10 @@ echo "token length: ${#token}; token chars outside [A-Za-z0-9]: $(tr -d 'A-Za-z0
 echo "fake token upload: $(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Token bogus" -F "source=@$zip;type=application/zip;filename=extension.zip" -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
 echo "real token, no file: $(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Token $token" -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
 echo "login reply keys: $(jq -c 'keys' <<<"$login")"
+echo "login detail: $(jq -r '.detail' <<<"$login")"
+echo "token punctuation: $(tr -d 'A-Za-z0-9\n' <<<"$token" | fold -w1 | sort | uniq -c | tr -s ' \n' ' ')"
+echo "token dots: $(tr -cd '.' <<<"$token" | wc -c)"
+echo "Bearer, no file: $(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $token" -F tos_compliant=true "$API/extensions")"
 status="$(curl -sS -o "$reply" -w '%{http_code}' -H "Authorization: Token $token" \
   -F "source=@$zip;type=application/zip;filename=extension.zip" \
   -F shell_license_compliant=true -F tos_compliant=true "$API/extensions")"
