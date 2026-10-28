@@ -83,7 +83,7 @@ jobs:
           DEBEMAIL: ${{ secrets.DEBEMAIL }}
           DEBFULLNAME: ${{ secrets.DEBFULLNAME }}
           PPA: ${{ vars.PPA || 'ppa:0xdolan/roj' }}
-          SERIES: ${{ inputs.series || vars.PPA_SERIES || 'noble questing resolute' }}
+          SERIES: ${{ inputs.series || vars.PPA_SERIES || 'noble resolute' }}
           DEB_REVISION: ${{ inputs.revision }}
           ACTION: ${{ inputs.action }}
         run: |
