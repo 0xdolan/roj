@@ -1,27 +1,32 @@
 name: Publish
 
 # Run by hand (Actions, Publish, or gh workflow run publish.yml): check the
-# connection to extensions.gnome.org, or upload a release's zip there. Uses
-# the same script as the Release workflow.
+# connections to extensions.gnome.org and the PPA without publishing, or
+# upload a release again. Uses the same scripts as the Release workflow.
 
 on:
   workflow_dispatch:
     inputs:
       action:
-        description: check-ego logs in only; upload-ego uploads the tag's zip
+        description: check-* only test the connection; upload-* publish the tag
         type: choice
-        options: [check-ego, upload-ego]
+        options: [check-ego, upload-ego, check-ppa, upload-ppa]
         default: check-ego
       tag:
-        description: Release tag for upload-ego, like v0.2.2
+        description: Release tag for upload-ego and upload-ppa, like v0.2.2
         required: false
         default: ''
+      revision:
+        description: Debian revision for upload-ppa (raise it to upload the same version again)
+        required: false
+        default: '1'
 
 permissions:
   contents: read
 
 jobs:
   extensions-gnome-org:
+    if: startsWith(inputs.action, 'check-ego') || startsWith(inputs.action, 'upload-ego')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -43,4 +48,44 @@ jobs:
             scripts/ego-upload.sh --check
           else
             scripts/ego-upload.sh dist/roj@0xdolan.github.io.shell-extension.zip
+          fi
+
+  launchpad-ppa:
+    if: startsWith(inputs.action, 'check-ppa') || startsWith(inputs.action, 'upload-ppa')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the inputs
+        env:
+          ACTION: ${{ inputs.action }}
+          TAG: ${{ inputs.tag }}
+          REVISION: ${{ inputs.revision }}
+        run: |
+          [[ "$REVISION" =~ ^[0-9]+$ ]] || { echo "revision must be a number"; exit 2; }
+          if [ "$ACTION" = upload-ppa ]; then
+            [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "tag must look like v0.2.2"; exit 2; }
+          fi
+      - uses: actions/checkout@v4
+        if: inputs.action == 'upload-ppa'
+        with:
+          ref: ${{ inputs.tag }}
+          path: release-source
+      - name: Launchpad PPA
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.LAUNCHPAD_GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.LAUNCHPAD_GPG_PASSPHRASE }}
+          DEBEMAIL: ${{ secrets.DEBEMAIL }}
+          DEBFULLNAME: ${{ secrets.DEBFULLNAME }}
+          PPA: ${{ vars.PPA || 'ppa:0xdolan/roj' }}
+          SERIES: ${{ vars.PPA_SERIES || 'noble questing resolute' }}
+          DEB_REVISION: ${{ inputs.revision }}
+          ACTION: ${{ inputs.action }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends debhelper devscripts dput gnupg
+          export GPG_KEY_ID="$(scripts/gpg-setup.sh)"
+          if [ "$ACTION" = check-ppa ]; then
+            CHECK=1 scripts/ppa-upload.sh
+          else
+            SOURCE=release-source scripts/ppa-upload.sh
           fi
