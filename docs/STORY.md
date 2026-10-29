@@ -35,6 +35,12 @@ The logo joins two Kurdish suns: the **Roj** *deq* tattoo above, and the sun of 
   <img src="images/story/deq-sun.jpg" alt="Four women wearing the Roj deq on the forehead, around the symbol: the sun, representing the source of life" width="300">
 </p>
 
+The Roj deq is still worn today, as a small tattoo on the arm or as a pendant, with the same meaning: **خۆر**, the sun, *"The sun symbolizes the source of life"*, in Sorani **خۆر هێمای سەرچاوەی ژیانە**.
+
+<p align="center">
+  <img src="images/story/deq-roj-today.jpg" alt="The Roj deq today: a small tattoo on an arm and a white pendant with the symbol, above the Roj sun drawn large and the words: the sun symbolizes the source of life" width="380">
+</p>
+
 The logo keeps the shape of the Roj deq: the arc, nine rays and the dot, drawn in ink black.
 
 ### The lower half: the sun of the flag
