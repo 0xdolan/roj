@@ -7,6 +7,10 @@ a release is described in [RELEASING.md](RELEASING.md).
 
 ## [Unreleased]
 
+### Fixed
+
+- The Ubuntu and Debian package no longer stops the extension and its settings from loading: it left an uncompiled settings schema inside the extension folder. The PPA has the corrected package as 0.2.2-5.
+
 ## [0.2.2] - 2026-10-26
 
 ### Fixed

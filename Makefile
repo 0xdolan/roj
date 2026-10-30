@@ -94,7 +94,8 @@ dev-link: schemas
 
 install-system:
 	install -d $(SHARE)/gnome-shell/extensions/$(UUID) $(SHARE)/glib-2.0/schemas
-	cd extension && tar cf - --exclude='gschemas.compiled' $(FILES) | tar xf - -C $(SHARE)/gnome-shell/extensions/$(UUID)
+	# No schemas/ in the extension: the schema goes system-wide, where it is compiled.
+	cd extension && tar cf - --exclude='schemas' $(FILES) | tar xf - -C $(SHARE)/gnome-shell/extensions/$(UUID)
 	install -m 644 extension/schemas/org.gnome.shell.extensions.roj.gschema.xml $(SHARE)/glib-2.0/schemas/
 	install -d $(SHARE)/roj $(BINDIR) $(SHARE)/man/man1
 	cd extension && tar cf - cli lib locale data | tar xf - -C $(SHARE)/roj
