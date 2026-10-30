@@ -4,7 +4,8 @@
 #   DRY_RUN=1   build unsigned packages in build/ppa/, no upload
 #   CHECK=1     build and sign the first series, verify the signature and
 #               that Launchpad knows the key and the PPA; no upload
-#   SOURCE=DIR  package another checkout (a release tag) with this script
+#   SOURCE=DIR  package another checkout (a release tag) with this script and
+#               this checkout's debian/, so packaging fixes reach old versions
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SOURCE="$(cd "${SOURCE:-$ROOT}" && pwd)"
@@ -94,7 +95,7 @@ for series in $SERIES; do
     mkdir -p "$dir"
     cp "$WORK/roj_$VERSION.orig.tar.gz" "$dir/"
     tar xzf "$dir/roj_$VERSION.orig.tar.gz" -C "$dir"
-    cp -r "$SOURCE/debian" "$dir/roj-$VERSION/"
+    cp -r "$ROOT/debian" "$dir/roj-$VERSION/"
     (cd "$dir/roj-$VERSION" && dch -b --newversion "$version" --distribution "$series" --force-distribution \
         "Build for Ubuntu $series. See CHANGELOG.md for the changes in $VERSION." >/dev/null 2>&1)
     changes="$dir/roj_${version}_source.changes"

@@ -11,3 +11,6 @@ override_dh_auto_test:
 
 override_dh_auto_install:
 	$(MAKE) install-system DESTDIR=$(CURDIR)/debian/tmp PREFIX=/usr
+	# The schema is installed and compiled system-wide. A schemas/ folder in
+	# the extension without gschemas.compiled makes GNOME Shell fail to load it.
+	rm -rf $(CURDIR)/debian/tmp/usr/share/gnome-shell/extensions/roj@0xdolan.github.io/schemas

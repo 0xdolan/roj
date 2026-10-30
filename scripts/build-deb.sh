@@ -18,6 +18,11 @@ mkdir -p "$SRC" "$ROOT/dist"
     tail -30 "$WORK/build.log" >&2
     exit 1
 }
+# GNOME Shell refuses an extension with a schemas/ folder but no gschemas.compiled.
+if dpkg -c "$WORK"/gnome-shell-extension-roj_*.deb | grep -q '/extensions/[^/]*/schemas/'; then
+    echo "the extension package must not contain a schemas/ folder" >&2
+    exit 1
+fi
 for deb in "$WORK"/*.deb; do
     mv "$deb" "$ROOT/dist/"
     echo "dist/$(basename "$deb") ($(du -h "$ROOT/dist/$(basename "$deb")" | cut -f1))"
