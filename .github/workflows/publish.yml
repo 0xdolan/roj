@@ -17,7 +17,7 @@ on:
         required: false
         default: ''
       revision:
-        description: Debian revision for upload-ppa (raise it to upload the same version again)
+        description: Debian revision for upload-ppa (raise it to upload the same version again, for example with packaging fixes from this branch)
         required: false
         default: '1'
       series:
