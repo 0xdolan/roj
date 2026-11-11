@@ -79,6 +79,19 @@ The extension needs **GNOME Shell 45 to 50**: Ubuntu 24.04 and newer, Debian 13,
 
 On Wayland, log out and back in once after installing so GNOME Shell loads Roj. The `roj` command alone needs only GJS or Node.js: the `roj` .deb, or `node extension/cli/roj.js` from a checkout.
 
+## In your browser
+
+Roj also runs in Chrome, Edge, Firefox and Safari, with the same calendar, settings, events, converter and five languages as on GNOME. The toolbar button shows today's Kurdish day, with a dot or a count when today has an event, and its tooltip shows the date in your top-bar pattern. Settings backups move between GNOME and the browser.
+
+| Browser | Install |
+| --- | --- |
+| Chrome, Edge, Brave, Opera | Chrome Web Store: search for **Roj: Kurdish Calendar** |
+| Firefox (desktop and Android) | Firefox Add-ons: search for **Roj: Kurdish Calendar** |
+| Safari on macOS | Download `Roj-Safari-macOS-*.zip` from the [latest release](https://github.com/0xdolan/roj/releases/latest), see [the guide](https://0xdolan.github.io/roj/guide.html#browser) |
+| Any browser, phones too | [The web app](https://0xdolan.github.io/roj/app/): open it and choose **Install the app** to add it to your home screen; it works offline |
+
+<img src="docs/images/browser/store-1-popup.png" alt="Roj in the browser toolbar" width="100%">
+
 ## How it works
 
 The Kurdish calendar follows the sun: the year starts at Newroz, the March equinox. Months 1 to 6 have 31 days, months 7 to 11 have 30, and month 12 has 29, or 30 in a leap year; the same lengths as the Persian calendar. Only the year differs: **Kurdish year = Persian year + 1321**, or + 1233 when counting from the fall of Nineveh.

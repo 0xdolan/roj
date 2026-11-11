@@ -41,5 +41,6 @@ if f"## [{v}]" not in text:
 PY
 # The website calendar imports a copy of constants.js, which holds the version.
 node "$ROOT/scripts/build-web.mjs" >/dev/null
+node "$ROOT/scripts/build-browser.mjs" --web >/dev/null
 "$ROOT/scripts/check-version.sh"
 echo "Now edit CHANGELOG.md under [$V], run make screenshots marketing if the interface changed, then commit and open the release pull request into main (RELEASING.md)."
