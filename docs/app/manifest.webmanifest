@@ -1,7 +1,7 @@
 {
   "name": "Roj: Kurdish Calendar",
   "short_name": "Roj",
-  "description": "The Kurdish solar calendar with Gregorian, Persian and Islamic dates, Kurdish events and holidays, in Sorani, Kurmanji, English, Persian and Arabic.",
+  "description": "The Kurdish solar calendar with Gregorian, Persian and Islamic dates, Kurdish events and holidays, in five languages.",
   "id": "./",
   "start_url": "./",
   "scope": "./",
