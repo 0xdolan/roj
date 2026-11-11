@@ -24,7 +24,10 @@ const webOnly = check || process.argv.includes('--web');
 const {VERSION} = await import(join(EXT, 'lib/constants.js'));
 
 const NAME = 'Roj: Kurdish Calendar';
-const DESCRIPTION = 'The Kurdish solar calendar with Gregorian, Persian and Islamic dates, Kurdish events and holidays, in Sorani, Kurmanji, English, Persian and Arabic.';
+const DESCRIPTION = 'The Kurdish solar calendar with Gregorian, Persian and Islamic dates, Kurdish events and holidays, in five languages.';
+// The Chrome Web Store refuses a manifest description longer than 132 characters.
+if (DESCRIPTION.length > 132)
+    throw new Error(`the description is ${DESCRIPTION.length} characters; stores allow 132`);
 const GECKO_ID = 'roj@0xdolan.github.io';
 // Files of extension/ the browser code imports, at the same paths.
 const SHARED = [
