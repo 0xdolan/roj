@@ -1,0 +1,126 @@
+<!doctype html>
+<!-- Store images of the browser extension, rendered by scripts/browser-shots.mjs:
+     browser.html?store-1-popup ... ?store-5-languages 1280x800, ?promo-small 440x280, ?promo-marquee 1400x560.
+     Pages come from build/browser-shots (captured at 2x). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<style>
+  section { display: none; position: absolute; inset: 0; }
+  section.on { display: block; }
+  .copy h2 { font-size: 44px; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
+  .copy p { font-size: 19px; color: var(--muted); margin-top: 18px; line-height: 1.5; }
+  .copy .brand { margin-bottom: 30px; gap: 18px; }
+  .copy .brand img { width: 64px; height: 64px; }
+  .copy .brand h1 { font-size: 46px; letter-spacing: -1px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+  .chip { font-size: 16px; padding: 7px 14px; }
+  .title { position: absolute; left: 0; right: 0; top: 46px; text-align: center; }
+  .title h2 { font-size: 40px; font-weight: 800; letter-spacing: -1px; }
+  .title p { font-size: 19px; color: var(--muted); margin-top: 10px; }
+
+  /* A plain browser window: tabs, address bar and the Roj button. */
+  .window { position: absolute; background: #f3f3f5; border-radius: 14px; overflow: visible; box-shadow: 0 40px 90px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08); }
+  .window.dark { background: #2a2a30; }
+  .window .tabs { height: 38px; display: flex; align-items: flex-end; gap: 8px; padding: 0 14px; }
+  .window .dots { display: flex; gap: 7px; margin: 0 10px 13px 2px; }
+  .window .dots i { width: 12px; height: 12px; border-radius: 99px; background: #d0d0d6; }
+  .window .tab { height: 30px; width: 190px; background: #fff; border-radius: 9px 9px 0 0; display: flex; align-items: center; gap: 8px; padding: 0 12px; font-size: 13px; color: #555; font-weight: 600; }
+  .window.dark .tab { background: #3a3a42; color: #ccc; }
+  .window .tab img { width: 16px; height: 16px; }
+  .window .toolbar { height: 46px; background: #fff; display: flex; align-items: center; gap: 12px; padding: 0 14px; border-bottom: 1px solid #e3e3e8; }
+  .window.dark .toolbar { background: #3a3a42; border-color: #2a2a30; }
+  .window .url { flex: 1; height: 30px; border-radius: 99px; background: #f0f0f3; display: flex; align-items: center; padding: 0 16px; font-size: 14px; color: #777; }
+  .window.dark .url { background: #2a2a30; color: #aaa; }
+  .window .ghost { width: 22px; height: 22px; border-radius: 6px; background: #e4e4e9; }
+  .window.dark .ghost { background: #50505a; }
+  .window .page { position: absolute; left: 0; right: 0; top: 84px; bottom: 0; border-radius: 0 0 14px 14px; overflow: hidden; background: #fff; }
+  .window.dark .page { background: #1e1e22; }
+  .window .page i { display: block; height: 14px; border-radius: 7px; background: #ececf0; margin: 22px 40px 0; }
+  .window.dark .page i { background: #2c2c33; }
+  .window .page i:nth-child(odd) { width: 46%; }
+  .window .page i:nth-child(3n) { width: 70%; }
+  /* The button, as background.js draws it: today's Kurdish day on a sun-yellow square. */
+  .rojicon { width: 26px; height: 26px; border-radius: 6px; background: var(--sun); color: #241f31; font: 800 17px/26px Vazirmatn, sans-serif; text-align: center; position: relative; box-shadow: 0 0 0 4px rgba(245, 205, 14, 0.25); }
+  .rojicon::after { content: ""; position: absolute; top: -3px; right: -3px; width: 9px; height: 9px; border-radius: 99px; background: #3584e4; border: 1.5px solid #241f31; }
+  .popup { position: absolute; width: 380px; border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(0,0,0,0.12); display: block; }
+
+  /* promo tiles */
+  .promo-small .brand { position: absolute; left: 34px; top: 40px; gap: 16px; }
+  .promo-small .brand img { width: 74px; height: 74px; }
+  .promo-small .brand h1 { font-size: 58px; }
+  .promo-small p { position: absolute; left: 36px; top: 140px; width: 380px; font-size: 25px; font-weight: 700; line-height: 1.25; }
+  .promo-small .rtl { position: absolute; left: 36px; bottom: 32px; font-size: 20px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="rays"></div>
+
+<section id="store-1-popup">
+  <div class="copy" style="position:absolute; left:70px; top:120px; width:430px">
+    <div class="brand"><img src="../../assets/logo.svg" alt=""><h1>Roj</h1></div>
+    <h2>Your day, the Kurdish way.</h2>
+    <p>The Kurdish solar calendar on your toolbar, with the Gregorian, Persian and Islamic dates side by side.</p>
+    <div class="chips"><span class="chip"><i></i>Sorani &amp; Kurmanji</span><span class="chip"><i></i>Events &amp; holidays</span><span class="chip"><i></i>Works offline</span><span class="chip"><i></i>No tracking</span></div>
+  </div>
+  <div class="window" style="left:560px; top:70px; width:660px; height:700px">
+    <div class="tabs"><span class="dots"><i></i><i></i><i></i></span><span class="tab"><img src="../../assets/logo.svg" alt="">New tab</span></div>
+    <div class="toolbar"><span class="ghost"></span><span class="url">Search or enter address</span><span class="rojicon">٢٦</span><span class="ghost"></span></div>
+    <div class="page"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <img class="popup" src="../../build/browser-shots/popup-ckb.png" style="right:30px; top:92px" alt="">
+  </div>
+</section>
+
+<section id="store-2-events">
+  <div class="title"><h2>Kurdish events, and your own calendars</h2><p>Newroz, holidays and days of remembrance built in. Add .ics files and online calendars.</p></div>
+  <img class="shot" src="../../build/browser-shots/options-events.png" style="position:absolute; left:60px; top:190px; width:800px" alt="">
+  <img class="shot" src="../../build/browser-shots/popup-kmr.png" style="position:absolute; right:60px; top:170px; width:380px" alt="">
+</section>
+
+<section id="store-3-converter">
+  <div class="title"><h2>Convert any date</h2><p>Between the Kurdish, Gregorian, Persian and Islamic calendars, with the Julian day.</p></div>
+  <img class="shot" src="../../build/browser-shots/options-converter.png" style="position:absolute; left:205px; top:180px; width:870px" alt="">
+</section>
+
+<section id="store-4-themes">
+  <div class="title"><h2>Light, dark, and your own fonts</h2><p>Patterns for every date, a font for each script, and the same settings as Roj on GNOME.</p></div>
+  <img class="shot" src="../../build/browser-shots/options-formats-dark.png" style="position:absolute; left:60px; top:200px; width:640px" alt="">
+  <img class="shot" src="../../build/browser-shots/popup-kmr-dark.png" style="position:absolute; left:730px; top:190px; width:240px" alt="">
+  <img class="shot" src="../../build/browser-shots/popup-en.png" style="position:absolute; left:990px; top:190px; width:240px" alt="">
+</section>
+
+<section id="store-5-languages">
+  <div class="title"><h2>Sorani, Kurmanji, English, Persian and Arabic</h2><p>Each calendar can speak its own language, with its own digits.</p></div>
+  <img class="shot" src="../../build/browser-shots/popup-ckb.png" style="position:absolute; left:70px; top:190px; width:265px" alt="">
+  <img class="shot" src="../../build/browser-shots/popup-kmr.png" style="position:absolute; left:365px; top:190px; width:265px" alt="">
+  <img class="shot" src="../../build/browser-shots/popup-en.png" style="position:absolute; left:660px; top:190px; width:265px" alt="">
+  <img class="shot" src="../../build/browser-shots/popup-ar-dark.png" style="position:absolute; left:955px; top:190px; width:265px" alt="">
+</section>
+
+<section id="promo-small" class="promo-small">
+  <div class="brand"><img src="../../assets/logo.svg" alt=""><h1>Roj</h1></div>
+  <p>The Kurdish calendar in your browser</p>
+  <div class="rtl">ساڵنامەی کوردی · Salnameya Kurdî</div>
+</section>
+
+<section id="promo-marquee">
+  <div class="copy" style="position:absolute; left:80px; top:110px; width:560px">
+    <div class="brand"><img src="../../assets/logo.svg" alt=""><h1>Roj</h1></div>
+    <h2>The Kurdish calendar in your browser</h2>
+    <p>Today's Kurdish date on your toolbar, events and holidays, and a date converter, in five languages.</p>
+  </div>
+  <img class="shot" src="../../build/browser-shots/popup-kmr-dark.png" style="position:absolute; left:1050px; top:60px; width:290px" alt="">
+  <img class="shot" src="../../build/browser-shots/popup-ckb.png" style="position:absolute; left:720px; top:40px; width:300px" alt="">
+</section>
+
+<script>
+  const id = location.search.slice(1) || 'store-1-popup';
+  const sizes = {'promo-small': [440, 280], 'promo-marquee': [1400, 560]};
+  const [w, h] = sizes[id] ?? [1280, 800];
+  document.documentElement.style.setProperty('--w', `${w}px`);
+  document.documentElement.style.setProperty('--h', `${h}px`);
+  document.getElementById(id).classList.add('on');
+</script>
+</body>
+</html>

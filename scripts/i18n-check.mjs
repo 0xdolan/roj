@@ -10,7 +10,7 @@ import {join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-const dirs = ['extension/ui', 'extension/prefs', 'extension/lib'];
+const dirs = ['extension/ui', 'extension/prefs', 'extension/lib', 'browser'];
 const CALL = /(?:\b_|\bN_|\._t|\b_t)\(\s*'((?:[^'\\]|\\.)*)'/g;
 
 function files(dir) {

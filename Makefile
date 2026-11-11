@@ -3,7 +3,7 @@ VERSION  := $(shell python3 -c 'import json;print(json.load(open("extension/meta
 EXT_DIR  := $(HOME)/.local/share/gnome-shell/extensions/$(UUID)
 ZIP      := dist/$(UUID).shell-extension.zip
 FILES    := $(shell cat scripts/extension-files)
-JS_FILES := $(shell find extension scripts tests docs/calendar -name '*.js' -o -name '*.mjs')
+JS_FILES := $(shell find extension scripts tests docs/calendar browser -name '*.js' -o -name '*.mjs')
 
 # System-wide install (packages, tarball users): make install-system PREFIX=/usr
 PREFIX   ?= /usr/local
@@ -14,7 +14,7 @@ USER_BIN := $(HOME)/.local/bin
 USER_CLI := $(HOME)/.local/share/roj/command
 
 .PHONY: help test lint i18n schemas icons pack install uninstall dev-link install-system \
-        dist deb calendars checksums release-assets release vendor web screenshots marketing clean
+        dist deb calendars browser checksums release-assets release vendor web screenshots marketing clean
 
 help:
 	@echo "Roj $(VERSION)"
@@ -28,6 +28,7 @@ help:
 	@echo "  make pack            $(ZIP) for extensions.gnome.org"
 	@echo "  make dist            dist/roj-$(VERSION).tar.gz source tarball"
 	@echo "  make deb             dist/roj_*.deb and dist/gnome-shell-extension-roj_*.deb"
+	@echo "  make browser         dist/roj-{chrome,firefox,safari}-$(VERSION).zip browser extensions"
 	@echo "  make release-assets  all of the above plus SHA256SUMS"
 	@echo "  make release V=X.Y.Z the whole git flow release: branch, bump, test, PR, tag, merge back"
 	@echo
@@ -36,7 +37,7 @@ help:
 	@echo "  make web             rebuild the website calendar files from the extension"
 	@echo "  make icons           regenerate the logo and icons"
 	@echo "  make screenshots     capture screenshots in a sandboxed, headless GNOME Shell"
-	@echo "  make marketing       render the banner and store images"
+	@echo "  make marketing       render the banner and store images, and the browser store images"
 
 # Quality
 
@@ -45,6 +46,7 @@ test: lint i18n
 	GSETTINGS_BACKEND=memory gjs -m tests/config.gjs.js
 	gjs -m extension/cli/roj.js --no-config convert 2026-06-26 --to kurdish | grep -qx 2726-04-05
 	node scripts/build-web.mjs --check
+	node scripts/build-browser.mjs --check
 
 lint: schemas
 	@for f in $(JS_FILES); do node --check "$$f" || exit 1; done
@@ -121,14 +123,19 @@ calendars:
 	cp docs/calendar/kurdish-events-*.ics dist/
 
 checksums:
-	cd dist && sha256sum *.zip *.tar.gz *.deb *.ics > SHA256SUMS && cat SHA256SUMS
+	cd dist && sha256sum *.zip *.xpi *.tar.gz *.deb *.ics > SHA256SUMS && cat SHA256SUMS
 
-release-assets: test pack dist deb calendars checksums
+release-assets: test pack dist deb calendars browser checksums
 
 # Maintenance
 
 web:
 	node scripts/build-web.mjs
+	node scripts/build-browser.mjs --web
+
+# The browser extension: build/browser/ and dist/roj-{chrome,firefox,safari}-VERSION.zip
+browser:
+	node scripts/build-browser.mjs
 
 vendor:
 	scripts/vendor-tsroj.sh $(or $(TSROJ),latest)
@@ -142,12 +149,14 @@ icons:
 	inkscape extension/icons/roj-symbolic.svg -o assets/icon-symbolic-64.png -w 64 -h 64 >/dev/null 2>&1
 	cp assets/logo.svg docs/images/logo.svg && cp assets/logo-256.png docs/images/logo-256.png
 	convert assets/logo-16.png assets/logo-32.png assets/logo-48.png docs/favicon.ico
+	scripts/make-browser-icons.sh
 
 screenshots:
 	scripts/screenshots.sh
 
-marketing:
+marketing: browser
 	scripts/marketing/render.sh
+	node scripts/browser-shots.mjs
 
 release:
 	@test -n "$(V)" || { echo "usage: make release V=X.Y.Z"; exit 2; }
