@@ -37,13 +37,48 @@ jobs:
           name: release
           path: dist/*
 
+  # Safari has no store listing: the browser extension is wrapped in a small
+  # macOS app with Apple's converter and attached to the release, unsigned.
+  safari:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build the Safari extension
+        run: node scripts/build-browser.mjs
+      - name: Wrap it in a macOS app
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          xcrun safari-web-extension-converter build/browser/safari --project-location build/xcode \
+            --app-name Roj --bundle-identifier io.github.xdolan.roj --swift --macos-only --copy-resources --no-open --force
+          project="$(find build/xcode -name '*.xcodeproj' -maxdepth 2 | head -1)"
+          xcodebuild -project "$project" -alltargets -configuration Release \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY= SYMROOT="$PWD/build/xcode-out" build | tail -5
+          # Ad-hoc signed: Apple silicon Macs refuse to run an app with no signature at all.
+          codesign --force --deep --sign - build/xcode-out/Release/Roj.app
+          mkdir -p dist-safari
+          ditto -c -k --keepParent build/xcode-out/Release/Roj.app "dist-safari/Roj-Safari-macOS-$v.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: safari
+          path: dist-safari/*
+
   github-release:
-    needs: build
+    needs: [build, safari]
+    # A failed Safari build must not hold back the other downloads.
+    if: always() && needs.build.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
         with:
           name: release
+          path: dist
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: safari
           path: dist
       - name: Publish the GitHub release
         env:
@@ -51,7 +86,7 @@ jobs:
         run: |
           gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" \
             --title "Roj ${GITHUB_REF_NAME#v}" --notes-file dist/NOTES.md \
-            dist/*.zip dist/*.tar.gz dist/*.deb dist/*.ics dist/SHA256SUMS
+            dist/*.zip dist/*.xpi dist/*.tar.gz dist/*.deb dist/*.ics dist/SHA256SUMS
 
   extensions-gnome-org:
     needs: build

@@ -8,7 +8,10 @@
 <meta property="og:title" content="Roj · Kurdish calendar for GNOME">
 <meta property="og:description" content="The Kurdish solar calendar in your top bar. Roj means sun and day in Kurdish.">
 <meta property="og:image" content="https://0xdolan.github.io/roj/images/marketing/banner.png">
-<link rel="icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#F5CD0E">
 <link rel="stylesheet" href="site.css">
 <script src="theme.js"></script>
 </head>
@@ -18,6 +21,7 @@
     <a class="logo" href="./"><img src="images/logo.svg" alt="">Roj</a>
     <nav>
       <a href="calendar/">Calendar</a>
+      <a href="app/" class="hide-sm">App</a>
       <a href="#features" class="hide-sm">Features</a>
       <a href="#install">Install</a>
       <a href="guide.html">Guide</a>
@@ -93,6 +97,13 @@ make install                         # for your user
 sudo make install-system PREFIX=/usr # or for everyone</code></pre></div>
       </div>
       <p class="muted" style="margin-top:14px">On Wayland, log out and back in once after installing so GNOME Shell loads Roj.</p>
+      <h3 style="margin-top:28px">In your browser</h3>
+      <div class="steps">
+        <div class="step"><h3>Chrome, Edge, Brave</h3><p>Install <b>Roj: Kurdish Calendar</b> from the Chrome Web Store. The toolbar button shows today's Kurdish day.</p></div>
+        <div class="step"><h3>Firefox</h3><p>Install <b>Roj: Kurdish Calendar</b> from Firefox Add-ons, on the desktop or on Android.</p></div>
+        <div class="step"><h3>Safari on macOS</h3><p>Download <code>Roj-Safari-macOS-*.zip</code> from the <a href="https://github.com/0xdolan/roj/releases/latest">latest release</a>, then follow <a href="guide.html#browser-safari">these steps</a>.</p></div>
+        <div class="step"><h3>Web app</h3><p><a href="app/">Open Roj in any browser</a> and choose <b>Install the app</b> to keep it on your phone or desktop. It works offline.</p></div>
+      </div>
     </div>
   </section>
 

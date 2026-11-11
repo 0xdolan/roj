@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Roj guide</title>
 <meta name="description" content="How to use Roj, the Kurdish calendar for GNOME: the popup and top bar, languages and digits, every setting, how dates are converted, events and .ics calendars, fonts, patterns and the roj command.">
-<link rel="icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#F5CD0E">
 <link rel="stylesheet" href="site.css">
 <script src="theme.js"></script>
 </head>
@@ -39,6 +42,7 @@
     <a href="#events">Events and .ics</a>
     <a href="#converter">Converter</a>
     <a href="#cli">Command line</a>
+    <a href="#browser">In your browser</a>
     <a href="#backup">Backup and restore</a>
     <a href="#help">Troubleshooting</a>
   </nav>
@@ -415,6 +419,26 @@ roj convert 2026-10-25 --json          # machine-readable output</code></pre>
       </tbody>
     </table>
     <p>Exit status: 0 on success, 1 for an error such as an invalid date, 2 for a usage error.</p>
+
+    <h2 id="browser">In your browser</h2>
+    <p>Roj runs in Chrome, Edge, Firefox and Safari as a browser extension, and anywhere as a web app. It is the same calendar, with the same engine, settings pages, events, online calendars, fonts and converter as on GNOME; only what needs GNOME is left out: the top-bar position, installed system fonts and the <code>roj</code> command.</p>
+    <figure><img src="images/browser/store-1-popup.png" alt="The Roj popup under its toolbar button" loading="lazy"><figcaption>The toolbar button shows today's Kurdish day, with a dot when today has an event. Its tooltip shows the date in your top-bar pattern and today's events.</figcaption></figure>
+    <ul>
+      <li><b>Chrome, Edge, Brave, Opera</b>: install <b>Roj: Kurdish Calendar</b> from the Chrome Web Store, then pin it with the puzzle-piece button so it stays on the toolbar.</li>
+      <li><b>Firefox</b> on the desktop and on Android: install <b>Roj: Kurdish Calendar</b> from Firefox Add-ons.</li>
+      <li><b>Safari on macOS</b> (13 or newer, Safari 16.4 or newer): Roj is not in the App Store. Download <code>Roj-Safari-macOS-*.zip</code> from the <a href="https://github.com/0xdolan/roj/releases/latest">latest release</a> and follow the steps below.</li>
+      <li><b>Any browser, phones too</b>: open <a href="app/">the web app</a> and choose <b>Install the app</b> (on an iPhone or iPad: Share, then <b>Add to Home Screen</b>). It works offline.</li>
+    </ul>
+    <h3 id="browser-safari">Safari</h3>
+    <ol>
+      <li>Unzip the download and move <b>Roj</b> to <b>Applications</b>.</li>
+      <li>The app is not notarised by Apple, so macOS stops it the first time. Open it once, then go to <b>System Settings, Privacy &amp; Security</b> and choose <b>Open Anyway</b>. Or, in Terminal: <code>xattr -dr com.apple.quarantine /Applications/Roj.app</code>.</li>
+      <li>In Safari, open <b>Settings, Advanced</b> and turn on <b>Show features for web developers</b>. Then, in <b>Settings, Developer</b>, turn on <b>Allow unsigned extensions</b>.</li>
+      <li>In <b>Settings, Extensions</b>, turn on <b>Roj</b>. Its button appears in the toolbar.</li>
+    </ol>
+    <p>Safari forgets <b>Allow unsigned extensions</b> when it quits, so repeat step 3 after restarting Safari. Your settings stay.</p>
+    <h3 id="browser-feeds">Online calendars and settings</h3>
+    <p>Roj asks for no access to websites when you install it. When you add an online calendar, the browser asks once for that address only, so Roj can download it; nothing else is ever sent anywhere. Settings sync with your browser account in Chrome and Firefox. <b>General, Backup and restore</b> saves a backup that the GNOME extension reads too, and the other way round.</p>
 
     <h2 id="backup">Backup and restore</h2>
     <p><b>General, Backup and restore, Export…</b> saves every setting (languages, patterns, fonts, event sources and the rest) to a <code>roj-settings-DATE.json</code> file. On a new computer or a fresh install, <b>Import…</b> that file. Settings that do not apply, for example from a newer version, are skipped and counted. <b>Reset…</b> returns everything to the defaults.</p>

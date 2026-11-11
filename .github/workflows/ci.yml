@@ -36,8 +36,8 @@ jobs:
         run: make test
       - name: Versions agree
         run: scripts/check-version.sh
-      - name: Build the extension, tarball and packages
-        run: make pack dist deb calendars checksums
+      - name: Build the extension, tarball, packages and browser extensions
+        run: make pack dist deb calendars browser checksums
       - name: Lintian
         run: lintian --suppress-tags initial-upload-closes-no-bugs dist/*.deb
       - uses: actions/upload-artifact@v4

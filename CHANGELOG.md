@@ -7,6 +7,14 @@ a release is described in [RELEASING.md](RELEASING.md).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-11
+
+### Added
+
+- Roj for the browser: an extension for Chrome, Edge, Firefox and Safari with the same popup, settings pages, events, online calendars, fonts and converter as on GNOME. The toolbar button shows today's Kurdish day and marks days with events. Settings backups move between GNOME and the browser.
+- [The Roj web app](https://0xdolan.github.io/roj/app/), which installs on phones and desktops and works offline.
+- A favicon and home-screen icon for the website.
+
 ### Fixed
 
 - The Ubuntu and Debian package no longer stops the extension and its settings from loading: it left an uncompiled settings schema inside the extension folder. The PPA has the corrected package as 0.2.2-5.
@@ -69,7 +77,8 @@ The first version. It was never tagged or published on its own; it ships as part
 - Packages: extensions.gnome.org bundle, `roj` and `gnome-shell-extension-roj` .deb packages, a source tarball and checksums.
 - Engine: tsroj 1.0.6.
 
-[Unreleased]: https://github.com/0xdolan/roj/compare/v0.2.2...HEAD
+[Unreleased]: https://github.com/0xdolan/roj/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/0xdolan/roj/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/0xdolan/roj/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/0xdolan/roj/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/0xdolan/roj/releases/tag/v0.2.0
